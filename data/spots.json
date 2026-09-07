@@ -50,15 +50,15 @@
     "id": "mti87djmsy40m1",
     "name": "test 4",
     "description": "",
-    "lat": 51.188447,
-    "lng": 5.518219,
+    "lat": 51.188459,
+    "lng": 5.518261,
     "tags": [],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/Skatespots/main/images/mti87djmsy40m1-1788468832649-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/Skatespots/main/images/mti87djmsy40m1-1788468945796-0.jpg"
     ],
-    "location": "44, Kaulillerdorp, Palmanswijk, Kaulille, Bocholt, Hamont-Achel, Maaseik, Limburg, Vlaanderen, 3950, België",
-    "updatedAt": "2026-09-06T21:58:24.500Z",
+    "location": "Kaulillerdorp, Bocholt, Kaulille, Limburg, 3950, België",
+    "updatedAt": "2026-09-07T19:21:45.076Z",
     "createdAt": "2026-09-01T05:27:50.479Z"
   },
   {
