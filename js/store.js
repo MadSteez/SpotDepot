@@ -1,6 +1,6 @@
-import { GitHubStore } from "./github.js?v=31";
-import { SITE_CONFIG } from "./site-config.js?v=31";
-import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=31";
+import { GitHubStore } from "./github.js?v=32";
+import { SITE_CONFIG } from "./site-config.js?v=32";
+import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=32";
 
 const TOKEN_KEY = "skatespots_token";
 const LEGACY_CONFIG_KEY = "skatespots_config"; // older versions saved a whole config object here, including owner/repo — that could permanently shadow site-config.js, so it's no longer read except to migrate a saved token out of it once.
@@ -169,27 +169,6 @@ async function uploadImages(files, spotId, onProgress) {
  * @param {File[]} newFiles - newly chosen image files to upload
  * @param {string[]} keepImageUrls - existing image URLs the user kept (others are treated as removed)
  */
-async function reverseGeocode(lat, lng) {
-  try {
-    const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`);
-    if (!res.ok) return "";
-    const data = await res.json();
-    const a = data.address || {};
-    const streetLine = [a.road, a.house_number].filter(Boolean).join(" ");
-    const parts = [
-      streetLine,
-      a.suburb, a.city_district, a.borough, a.quarter,
-      a.city, a.town, a.village,
-      a.state_district, a.state,
-      a.postcode,
-      a.country,
-    ];
-    return parts.filter(Boolean).join(", ");
-  } catch (_) {
-    return ""; // best-effort only — a spot still saves fine without a location label
-  }
-}
-
 export async function saveSpot(spotData, newFiles = [], keepImageUrls = null, onProgress) {
   const cfgCheck = getConfig();
   if (cfgCheck.mode === "github" && !isGithubConfigured(cfgCheck)) {
@@ -199,12 +178,9 @@ export async function saveSpot(spotData, newFiles = [], keepImageUrls = null, on
   const existing = spots.find((s) => s.id === spotData.id);
   const kept = keepImageUrls ?? (existing ? existing.images : []);
   const uploaded = newFiles.length ? await uploadImages(newFiles, spotData.id, onProgress) : [];
-  const coordsChanged = !existing || existing.lat !== spotData.lat || existing.lng !== spotData.lng;
-  const location = coordsChanged ? await reverseGeocode(spotData.lat, spotData.lng) : (existing.location || "");
   const finalSpot = {
     ...spotData,
     images: [...kept, ...uploaded],
-    location,
     updatedAt: new Date().toISOString(),
     createdAt: existing ? existing.createdAt : new Date().toISOString(),
   };

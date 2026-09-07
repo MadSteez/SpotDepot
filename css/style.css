@@ -146,6 +146,10 @@ a{color:var(--rail-blue)}
 }
 .chip.is-active{background:var(--curb-yellow);border-color:var(--curb-yellow);color:var(--ink)}
 .chip--clear{border-style:dashed;color:var(--ink-soft)}
+.chip--place{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--curb-yellow);border-color:var(--curb-yellow);color:var(--ink);
+}
 .sort-wrap{position:relative;display:inline-flex}
 .sort-select{
   font-family:var(--font-body);font-size:13px;font-weight:600;

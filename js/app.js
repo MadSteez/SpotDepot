@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=31";
-import * as store from "./store.js?v=31";
-import { escapeHtml, showToast, setLoading, debounce, uid } from "./utils.js?v=31";
+import { createMapController } from "./map.js?v=32";
+import * as store from "./store.js?v=32";
+import { escapeHtml, showToast, setLoading, debounce, uid } from "./utils.js?v=32";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -46,9 +46,9 @@ function allTags() {
 function filteredSpots() {
   const q = searchQuery.trim().toLowerCase();
   return allSpots.filter((s) => {
-    const matchesQuery = !q || s.name.toLowerCase().includes(q) || (s.description || "").toLowerCase().includes(q) || (s.tags || []).some((t) => t.toLowerCase().includes(q)) || (s.location || "").toLowerCase().includes(q);
+    const matchesQuery = !q || s.name.toLowerCase().includes(q) || (s.description || "").toLowerCase().includes(q) || (s.tags || []).some((t) => t.toLowerCase().includes(q));
     const matchesTags = activeTagFilters.size === 0 || (s.tags || []).some((t) => activeTagFilters.has(t));
-    return matchesQuery && matchesTags;
+    return matchesQuery && matchesTags && spotInPlaceFilter(s);
   });
 }
 
@@ -80,6 +80,63 @@ function requestUserLocation(onDone) {
   );
 }
 
+// ---- place-boundary search ("Wilrijk" -> filter to spots inside it) ----
+let placeFilter = null; // { label, geojson, bbox } once a place is found
+
+function pointInRing(lon, lat, ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i];
+    const [xj, yj] = ring[j];
+    const crosses = yi > lat !== yj > lat && lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi;
+    if (crosses) inside = !inside;
+  }
+  return inside;
+}
+
+function pointInPolygonRings(lon, lat, rings) {
+  if (!pointInRing(lon, lat, rings[0])) return false;
+  for (let i = 1; i < rings.length; i++) {
+    if (pointInRing(lon, lat, rings[i])) return false; // inside a hole
+  }
+  return true;
+}
+
+function pointInGeoJson(lon, lat, geojson) {
+  if (!geojson) return false;
+  if (geojson.type === "Polygon") return pointInPolygonRings(lon, lat, geojson.coordinates);
+  if (geojson.type === "MultiPolygon") return geojson.coordinates.some((poly) => pointInPolygonRings(lon, lat, poly));
+  return false;
+}
+
+function pointInBoundingBox(lat, lng, bbox) {
+  const [south, north, west, east] = bbox.map(Number);
+  return lat >= south && lat <= north && lng >= west && lng <= east;
+}
+
+function spotInPlaceFilter(spot) {
+  if (!placeFilter) return true;
+  if (placeFilter.geojson) return pointInGeoJson(spot.lng, spot.lat, placeFilter.geojson);
+  return pointInBoundingBox(spot.lat, spot.lng, placeFilter.bbox);
+}
+
+async function searchPlace(query) {
+  const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&q=${encodeURIComponent(query)}&polygon_geojson=1&limit=1`;
+  const res = await fetch(url);
+  if (!res.ok) return null;
+  const results = await res.json();
+  if (!results.length) return null;
+  const r = results[0];
+  return { label: r.display_name.split(",")[0], geojson: r.geojson || null, bbox: r.boundingbox };
+}
+
+function setPlaceFilter(place) {
+  placeFilter = place;
+  $("placeFilterChip").classList.toggle("hidden", !place);
+  $("placeFilterLabel").textContent = place ? place.label : "";
+  render();
+}
+
 function sortSpots(spots) {
   let sorted;
   if (sortMode === "distance" && userLocation) {
@@ -105,7 +162,7 @@ function renderTagChips() {
         `<button class="chip${activeTagFilters.has(t) ? " is-active" : ""}" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`
     )
     .join("");
-  clearFiltersBtn.classList.toggle("hidden", activeTagFilters.size === 0 && !searchQuery);
+  clearFiltersBtn.classList.toggle("hidden", activeTagFilters.size === 0 && !searchQuery && !placeFilter);
 }
 
 function renderTagPills(tags = []) {
@@ -231,9 +288,7 @@ function openDetailModal(id) {
   $("detailName").innerHTML = `${escapeHtml(spot.name)}${distanceBadge}`;
   $("detailTags").innerHTML = renderTagPills(spot.tags);
   $("detailDesc").textContent = spot.description || "No description yet.";
-  $("detailCoords").textContent = spot.location
-    ? `${spot.location} · ${spot.lat.toFixed(5)}, ${spot.lng.toFixed(5)}`
-    : `${spot.lat.toFixed(5)}, ${spot.lng.toFixed(5)}`;
+  $("detailCoords").textContent = `${spot.lat.toFixed(5)}, ${spot.lng.toFixed(5)}`;
   const added = formatDate(spot.createdAt);
   const edited = formatDate(spot.updatedAt);
   $("detailDates").textContent = [
@@ -599,6 +654,30 @@ $("searchInput").addEventListener(
   }, 150)
 );
 
+$("searchInput").addEventListener("keydown", async (e) => {
+  if (e.key !== "Enter") return;
+  const query = e.target.value.trim();
+  if (!query) return;
+  setLoading(true, "Searching place…");
+  try {
+    const place = await searchPlace(query);
+    if (!place) {
+      showToast(`Couldn't find a place called "${query}".`, { error: true });
+      return;
+    }
+    searchQuery = "";
+    e.target.value = "";
+    setPlaceFilter(place);
+    showToast(`Showing spots in ${place.label}.`);
+  } catch (_) {
+    showToast("Place search failed — check your connection and try again.", { error: true });
+  } finally {
+    setLoading(false);
+  }
+});
+
+$("placeFilterChip").addEventListener("click", () => setPlaceFilter(null));
+
 tagChipsEl.addEventListener("click", (e) => {
   const chip = e.target.closest("[data-tag]");
   if (!chip) return;
@@ -612,6 +691,8 @@ clearFiltersBtn.addEventListener("click", () => {
   activeTagFilters.clear();
   searchQuery = "";
   $("searchInput").value = "";
+  placeFilter = null;
+  $("placeFilterChip").classList.add("hidden");
   render();
 });
 
