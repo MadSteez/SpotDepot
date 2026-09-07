@@ -124,5 +124,17 @@
     "location": "Jan Van Rijswijcklaan, Antwerpen, Antwerpen, Antwerpen, 2018, België",
     "updatedAt": "2026-09-07T19:32:57.485Z",
     "createdAt": "2026-09-07T19:32:57.485Z"
+  },
+  {
+    "id": "mtrndakjjfqujv",
+    "name": "test 9",
+    "description": "",
+    "lat": 51.225134,
+    "lng": 4.380662,
+    "tags": [],
+    "images": [],
+    "location": "Ernest Claesstraat 5, Linkeroever, Antwerpen, Antwerpen, Antwerpen, 2050, België",
+    "updatedAt": "2026-09-07T19:42:17.311Z",
+    "createdAt": "2026-09-07T19:42:17.311Z"
   }
 ]
