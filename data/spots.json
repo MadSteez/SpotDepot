@@ -112,5 +112,17 @@
     "location": "Universiteitsplein 1, Antwerpen, Wilrijk, Antwerpen, 2610, België",
     "updatedAt": "2026-09-07T19:30:46.445Z",
     "createdAt": "2026-09-06T06:39:35.791Z"
+  },
+  {
+    "id": "mtrn1akawo3n7n",
+    "name": "test 8",
+    "description": "",
+    "lat": 51.193628,
+    "lng": 4.402353,
+    "tags": [],
+    "images": [],
+    "location": "Jan Van Rijswijcklaan, Antwerpen, Antwerpen, Antwerpen, 2018, België",
+    "updatedAt": "2026-09-07T19:32:57.485Z",
+    "createdAt": "2026-09-07T19:32:57.485Z"
   }
 ]
