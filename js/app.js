@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=33";
-import * as store from "./store.js?v=33";
-import { escapeHtml, showToast, setLoading, debounce, uid } from "./utils.js?v=33";
+import { createMapController } from "./map.js?v=34";
+import * as store from "./store.js?v=34";
+import { escapeHtml, showToast, setLoading, debounce, uid } from "./utils.js?v=34";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -119,25 +119,34 @@ function spotInPlaceFilter(spot) {
   return placeFilters.some((p) => (p.geojson ? pointInGeoJson(spot.lng, spot.lat, p.geojson) : pointInBoundingBox(spot.lat, spot.lng, p.bbox)));
 }
 
-async function searchPlace(query) {
-  const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&q=${encodeURIComponent(query)}&polygon_geojson=1&limit=5`;
+async function fetchPlaceSuggestions(query) {
+  const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=6`;
+  const res = await fetch(url);
+  if (!res.ok) return [];
+  const data = await res.json();
+  const suggestions = (data.features || [])
+    .map((f) => {
+      const p = f.properties || {};
+      const label = [p.name, p.city, p.state, p.country].filter((v, i, arr) => v && arr.indexOf(v) === i).join(", ");
+      const [lng, lat] = f.geometry?.coordinates || [];
+      return { label, osmType: p.osm_type, osmId: p.osm_id, lat, lng };
+    })
+    .filter((s) => s.label && s.osmType && s.osmId);
+  if (userLocation) {
+    // Surface the closest match first rather than trusting raw search relevance.
+    suggestions.sort((a, b) => distanceKm(userLocation, a) - distanceKm(userLocation, b));
+  }
+  return suggestions;
+}
+
+async function fetchPlaceGeometry(osmType, osmId) {
+  const url = `https://nominatim.openstreetmap.org/lookup?osm_ids=${osmType}${osmId}&format=jsonv2&polygon_geojson=1`;
   const res = await fetch(url);
   if (!res.ok) return null;
   const results = await res.json();
   if (!results.length) return null;
-  let best = results[0];
-  if (userLocation) {
-    // Prefer whichever match is actually closest to the user, not just Nominatim's top-ranked guess.
-    let bestDist = Infinity;
-    for (const r of results) {
-      const d = distanceKm(userLocation, { lat: parseFloat(r.lat), lng: parseFloat(r.lon) });
-      if (d < bestDist) {
-        bestDist = d;
-        best = r;
-      }
-    }
-  }
-  return { label: best.display_name.split(",")[0], geojson: best.geojson || null, bbox: best.boundingbox };
+  const r = results[0];
+  return { label: r.display_name.split(",")[0], geojson: r.geojson || null, bbox: r.boundingbox };
 }
 
 function renderPlaceChips() {
@@ -692,26 +701,80 @@ $("searchInput").addEventListener(
   }, 150)
 );
 
-$("searchInput").addEventListener("keydown", async (e) => {
-  if (e.key !== "Enter") return;
-  const query = e.target.value.trim();
-  if (!query) return;
-  setLoading(true, "Searching place…");
+let currentSuggestions = [];
+let suggestionTimer = null;
+
+function hideSuggestions() {
+  $("placeSuggestions").classList.add("hidden");
+  $("placeSuggestions").innerHTML = "";
+  currentSuggestions = [];
+}
+
+function renderSuggestions(suggestions) {
+  currentSuggestions = suggestions;
+  const el = $("placeSuggestions");
+  if (!suggestions.length) {
+    el.classList.add("hidden");
+    el.innerHTML = "";
+    return;
+  }
+  el.innerHTML = suggestions
+    .map((s, i) => `<button type="button" class="place-suggestion" data-idx="${i}"><svg class="icon" width="13" height="13"><use href="#icon-pin"/></svg> ${escapeHtml(s.label)}</button>`)
+    .join("");
+  el.classList.remove("hidden");
+}
+
+async function selectPlaceSuggestion(suggestion) {
+  hideSuggestions();
+  setLoading(true, "Loading boundary…");
   try {
-    const place = await searchPlace(query);
+    const place = await fetchPlaceGeometry(suggestion.osmType, suggestion.osmId);
     if (!place) {
-      showToast(`Couldn't find a place called "${query}".`, { error: true });
+      showToast(`Couldn't load a boundary for "${suggestion.label}".`, { error: true });
       return;
     }
     searchQuery = "";
-    e.target.value = "";
+    $("searchInput").value = "";
     const added = addPlaceFilter(place);
     showToast(added ? `Showing spots in ${place.label}.` : `${place.label} is already added.`);
   } catch (_) {
-    showToast("Place search failed — check your connection and try again.", { error: true });
+    showToast("Couldn't load that place — check your connection and try again.", { error: true });
   } finally {
     setLoading(false);
   }
+}
+
+$("searchInput").addEventListener("input", (e) => {
+  const value = e.target.value.trim();
+  clearTimeout(suggestionTimer);
+  if (value.length < 2) {
+    hideSuggestions();
+    return;
+  }
+  suggestionTimer = setTimeout(async () => {
+    try {
+      renderSuggestions(await fetchPlaceSuggestions(value));
+    } catch (_) {
+      hideSuggestions();
+    }
+  }, 350);
+});
+
+$("searchInput").addEventListener("keydown", (e) => {
+  if (e.key === "Escape") hideSuggestions();
+});
+
+$("searchInput").addEventListener("blur", () => {
+  setTimeout(hideSuggestions, 150); // delay so a click on a suggestion still registers
+});
+
+$("placeSuggestions").addEventListener("mousedown", (e) => {
+  // mousedown (not click) fires before the input's blur handler hides this list
+  const btn = e.target.closest("[data-idx]");
+  if (!btn) return;
+  e.preventDefault();
+  const suggestion = currentSuggestions[Number(btn.dataset.idx)];
+  if (suggestion) selectPlaceSuggestion(suggestion);
 });
 
 $("placeFilterChips").addEventListener("click", (e) => {
