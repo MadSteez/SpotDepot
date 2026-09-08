@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=32";
-import * as store from "./store.js?v=32";
-import { escapeHtml, showToast, setLoading, debounce, uid } from "./utils.js?v=32";
+import { createMapController } from "./map.js?v=33";
+import * as store from "./store.js?v=33";
+import { escapeHtml, showToast, setLoading, debounce, uid } from "./utils.js?v=33";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -81,7 +81,7 @@ function requestUserLocation(onDone) {
 }
 
 // ---- place-boundary search ("Wilrijk" -> filter to spots inside it) ----
-let placeFilter = null; // { label, geojson, bbox } once a place is found
+let placeFilters = []; // [{ label, geojson, bbox }, ...]
 
 function pointInRing(lon, lat, ring) {
   let inside = false;
@@ -115,26 +115,64 @@ function pointInBoundingBox(lat, lng, bbox) {
 }
 
 function spotInPlaceFilter(spot) {
-  if (!placeFilter) return true;
-  if (placeFilter.geojson) return pointInGeoJson(spot.lng, spot.lat, placeFilter.geojson);
-  return pointInBoundingBox(spot.lat, spot.lng, placeFilter.bbox);
+  if (placeFilters.length === 0) return true;
+  return placeFilters.some((p) => (p.geojson ? pointInGeoJson(spot.lng, spot.lat, p.geojson) : pointInBoundingBox(spot.lat, spot.lng, p.bbox)));
 }
 
 async function searchPlace(query) {
-  const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&q=${encodeURIComponent(query)}&polygon_geojson=1&limit=1`;
+  const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&q=${encodeURIComponent(query)}&polygon_geojson=1&limit=5`;
   const res = await fetch(url);
   if (!res.ok) return null;
   const results = await res.json();
   if (!results.length) return null;
-  const r = results[0];
-  return { label: r.display_name.split(",")[0], geojson: r.geojson || null, bbox: r.boundingbox };
+  let best = results[0];
+  if (userLocation) {
+    // Prefer whichever match is actually closest to the user, not just Nominatim's top-ranked guess.
+    let bestDist = Infinity;
+    for (const r of results) {
+      const d = distanceKm(userLocation, { lat: parseFloat(r.lat), lng: parseFloat(r.lon) });
+      if (d < bestDist) {
+        bestDist = d;
+        best = r;
+      }
+    }
+  }
+  return { label: best.display_name.split(",")[0], geojson: best.geojson || null, bbox: best.boundingbox };
 }
 
-function setPlaceFilter(place) {
-  placeFilter = place;
-  $("placeFilterChip").classList.toggle("hidden", !place);
-  $("placeFilterLabel").textContent = place ? place.label : "";
+function renderPlaceChips() {
+  $("placeFilterChips").innerHTML = placeFilters
+    .map(
+      (p) => `
+      <button class="chip chip--place" data-place="${escapeHtml(p.label)}">
+        <svg class="icon" width="12" height="12"><use href="#icon-pin"/></svg>
+        ${escapeHtml(p.label)} ×
+      </button>`
+    )
+    .join("");
+}
+
+function addPlaceFilter(place) {
+  if (placeFilters.some((p) => p.label === place.label)) return false;
+  placeFilters.push(place);
+  mapCtrl.showPlaceBoundary(place.label, place);
+  mapCtrl.fitToPlaceBoundary(place);
+  renderPlaceChips();
   render();
+  return true;
+}
+
+function removePlaceFilter(label) {
+  placeFilters = placeFilters.filter((p) => p.label !== label);
+  mapCtrl.hidePlaceBoundary(label);
+  renderPlaceChips();
+  render();
+}
+
+function clearPlaceFilters() {
+  placeFilters = [];
+  mapCtrl.clearPlaceBoundaries();
+  renderPlaceChips();
 }
 
 function sortSpots(spots) {
@@ -162,7 +200,7 @@ function renderTagChips() {
         `<button class="chip${activeTagFilters.has(t) ? " is-active" : ""}" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`
     )
     .join("");
-  clearFiltersBtn.classList.toggle("hidden", activeTagFilters.size === 0 && !searchQuery && !placeFilter);
+  clearFiltersBtn.classList.toggle("hidden", activeTagFilters.size === 0 && !searchQuery && placeFilters.length === 0);
 }
 
 function renderTagPills(tags = []) {
@@ -667,8 +705,8 @@ $("searchInput").addEventListener("keydown", async (e) => {
     }
     searchQuery = "";
     e.target.value = "";
-    setPlaceFilter(place);
-    showToast(`Showing spots in ${place.label}.`);
+    const added = addPlaceFilter(place);
+    showToast(added ? `Showing spots in ${place.label}.` : `${place.label} is already added.`);
   } catch (_) {
     showToast("Place search failed — check your connection and try again.", { error: true });
   } finally {
@@ -676,7 +714,10 @@ $("searchInput").addEventListener("keydown", async (e) => {
   }
 });
 
-$("placeFilterChip").addEventListener("click", () => setPlaceFilter(null));
+$("placeFilterChips").addEventListener("click", (e) => {
+  const chip = e.target.closest("[data-place]");
+  if (chip) removePlaceFilter(chip.dataset.place);
+});
 
 tagChipsEl.addEventListener("click", (e) => {
   const chip = e.target.closest("[data-tag]");
@@ -691,8 +732,7 @@ clearFiltersBtn.addEventListener("click", () => {
   activeTagFilters.clear();
   searchQuery = "";
   $("searchInput").value = "";
-  placeFilter = null;
-  $("placeFilterChip").classList.add("hidden");
+  clearPlaceFilters();
   render();
 });
 

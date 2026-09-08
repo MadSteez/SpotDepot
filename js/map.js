@@ -209,6 +209,54 @@ export function createMapController(mapElId) {
     hidePreview();
   });
 
+  const placeLayers = new Map(); // label -> L.Layer
+
+  function showPlaceBoundary(label, place) {
+    let layer;
+    if (place.geojson) {
+      layer = L.geoJSON(place.geojson, {
+        interactive: false,
+        style: { color: "#FFC83D", weight: 2, fillColor: "#FFC83D", fillOpacity: 0.15 },
+      });
+    } else if (place.bbox) {
+      const [south, north, west, east] = place.bbox.map(Number);
+      layer = L.rectangle([[south, west], [north, east]], {
+        interactive: false,
+        color: "#FFC83D", weight: 2, fillColor: "#FFC83D", fillOpacity: 0.15,
+      });
+    } else {
+      return;
+    }
+    layer.addTo(map);
+    placeLayers.set(label, layer);
+  }
+
+  function hidePlaceBoundary(label) {
+    const layer = placeLayers.get(label);
+    if (layer) {
+      map.removeLayer(layer);
+      placeLayers.delete(label);
+    }
+  }
+
+  function clearPlaceBoundaries() {
+    placeLayers.forEach((layer) => map.removeLayer(layer));
+    placeLayers.clear();
+  }
+
+  function fitToPlaceBoundary(place) {
+    let bounds;
+    if (place.geojson) {
+      bounds = L.geoJSON(place.geojson).getBounds();
+    } else if (place.bbox) {
+      const [south, north, west, east] = place.bbox.map(Number);
+      bounds = L.latLngBounds([south, west], [north, east]);
+    }
+    if (bounds && bounds.isValid() && !map.getBounds().intersects(bounds)) {
+      map.fitBounds(bounds.pad(0.1));
+    }
+  }
+
   let userLocationMarker = null;
 
   function showUserLocation(lat, lng) {
@@ -256,6 +304,10 @@ export function createMapController(mapElId) {
     placeTempMarker,
     locate,
     showUserLocation,
+    showPlaceBoundary,
+    hidePlaceBoundary,
+    clearPlaceBoundaries,
+    fitToPlaceBoundary,
     invalidateSize,
     toggleMapType,
   };
