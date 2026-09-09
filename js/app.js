@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=37";
-import * as store from "./store.js?v=37";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=37";
+import { createMapController } from "./map.js?v=38";
+import * as store from "./store.js?v=38";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=38";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -124,9 +124,10 @@ function spotInPlaceFilter(spot) {
   return placeFilters.some((p) => (p.geojson ? pointInGeoJson(spot.lng, spot.lat, p.geojson) : pointInBoundingBox(spot.lat, spot.lng, p.bbox)));
 }
 
-const PLACE_LAYERS = ["city", "district", "county", "state", "country"];
+const PLACE_LAYERS = ["city", "district", "locality", "county", "state", "country"];
 const PLACE_OSM_VALUES = new Set([
   "city", "town", "village", "municipality",
+  "suburb", "borough", "quarter", "neighbourhood",
   "county", "state", "region", "province",
   "country", "island",
 ]);
