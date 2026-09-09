@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=36";
-import * as store from "./store.js?v=36";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=36";
+import { createMapController } from "./map.js?v=37";
+import * as store from "./store.js?v=37";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=37";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -124,10 +124,22 @@ function spotInPlaceFilter(spot) {
   return placeFilters.some((p) => (p.geojson ? pointInGeoJson(spot.lng, spot.lat, p.geojson) : pointInBoundingBox(spot.lat, spot.lng, p.bbox)));
 }
 
-const PLACE_LAYERS = ["city", "town", "village", "locality", "district", "county", "state", "country"];
+const PLACE_LAYERS = ["city", "district", "county", "state", "country"];
+const PLACE_OSM_VALUES = new Set([
+  "city", "town", "village", "municipality",
+  "county", "state", "region", "province",
+  "country", "island",
+]);
+
+function isBoundaryPlace(props) {
+  if (props.osm_key === "place" && PLACE_OSM_VALUES.has(props.osm_value)) return true;
+  if (props.osm_key === "boundary" && props.osm_value === "administrative") return true;
+  return false;
+}
 
 function parsePhotonFeatures(data) {
   return (data.features || [])
+    .filter((f) => isBoundaryPlace(f.properties || {}))
     .map((f) => {
       const p = f.properties || {};
       const label = [p.name, p.city, p.state, p.country].filter((v, i, arr) => v && arr.indexOf(v) === i).join(", ");
@@ -145,11 +157,7 @@ async function runPhotonQuery(url) {
 
 async function fetchPlaceSuggestions(query) {
   const layerParams = PLACE_LAYERS.map((l) => `&layer=${l}`).join("");
-  let suggestions = await runPhotonQuery(`https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=8${layerParams}`);
-  if (suggestions.length === 0) {
-    // The layer restriction can occasionally be too narrow — fall back to an unfiltered search rather than showing nothing.
-    suggestions = await runPhotonQuery(`https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=8`);
-  }
+  const suggestions = await runPhotonQuery(`https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=10${layerParams}`);
   if (userLocation) {
     // Surface the closest match first rather than trusting raw search relevance.
     suggestions.sort((a, b) => distanceKm(userLocation, a) - distanceKm(userLocation, b));
