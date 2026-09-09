@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=40";
-import * as store from "./store.js?v=40";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=40";
+import { createMapController } from "./map.js?v=41";
+import * as store from "./store.js?v=41";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=41";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -734,6 +734,7 @@ function hideSuggestions() {
   $("placeSuggestions").innerHTML = "";
   currentSuggestions = [];
   clearTimeout(hoverPreviewTimer);
+  clearTimeout(touchHoldTimer);
   mapCtrl.clearHoverBoundary();
 }
 
@@ -848,6 +849,10 @@ $("placeSuggestions").addEventListener("mousedown", (e) => {
   const btn = e.target.closest("[data-idx]");
   if (!btn) return;
   e.preventDefault();
+  if (touchHoldTriggered) {
+    touchHoldTriggered = false; // consume this tap — they just previewed it, tap again (without holding) to confirm
+    return;
+  }
   const item = currentSuggestions[Number(btn.dataset.idx)];
   if (!item) return;
   if (item.type === "text") selectTextSuggestion(item.query);
@@ -880,6 +885,37 @@ $("placeSuggestions").addEventListener("mouseout", (e) => {
   if (!btn || btn.contains(e.relatedTarget)) return;
   clearTimeout(hoverPreviewTimer);
   mapCtrl.clearHoverBoundary();
+});
+
+// Touch has no hover, so a long-press stands in for it: hold to preview the
+// boundary, then a plain tap (handled by the mousedown listener above,
+// which touch also triggers as a synthetic event) confirms the selection.
+let touchHoldTimer = null;
+let touchHoldTriggered = false;
+
+$("placeSuggestions").addEventListener("pointerdown", (e) => {
+  if (e.pointerType !== "touch") return;
+  const btn = e.target.closest("[data-idx]");
+  touchHoldTriggered = false;
+  if (!btn) return;
+  const item = currentSuggestions[Number(btn.dataset.idx)];
+  if (!item || item.type !== "place") return;
+  touchHoldTimer = setTimeout(async () => {
+    touchHoldTriggered = true;
+    try {
+      const place = await fetchPlaceGeometry(item.osmType, item.osmId);
+      if (place) mapCtrl.showHoverBoundary(place);
+    } catch (_) {
+      /* preview is a nicety — fail silently */
+    }
+  }, 450);
+});
+
+$("placeSuggestions").addEventListener("pointerup", (e) => {
+  if (e.pointerType === "touch") clearTimeout(touchHoldTimer);
+});
+$("placeSuggestions").addEventListener("pointercancel", (e) => {
+  if (e.pointerType === "touch") clearTimeout(touchHoldTimer);
 });
 
 $("textFilterChips").addEventListener("click", (e) => {
