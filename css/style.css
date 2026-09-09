@@ -507,6 +507,9 @@ a{color:var(--rail-blue)}
   .wordmark__logo{height:30px}
   .filterstrip{padding:0 12px;top:var(--topbar-h)}
   .toast{bottom:calc(var(--tabs-h) + 14px + env(safe-area-inset-bottom, 0px))}
+  .place-suggestions{
+    position:fixed;left:12px;right:12px;top:calc(var(--topbar-h) + 8px);
+  }
 }
 @media (min-width:861px){
   .layout{ /* always both panes visible on desktop */ }
