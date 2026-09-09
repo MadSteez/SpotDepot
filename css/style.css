@@ -107,6 +107,7 @@ a{color:var(--rail-blue)}
 }
 .place-suggestion:hover,.place-suggestion:focus-visible{background:var(--concrete)}
 .place-suggestion + .place-suggestion{border-top:1px solid var(--line)}
+.place-suggestion--text{font-weight:600}
 .topbar__actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
 
 /* ---------------- Buttons ---------------- */
@@ -163,6 +164,9 @@ a{color:var(--rail-blue)}
 .chip--place{
   display:inline-flex;align-items:center;gap:5px;
   background:var(--curb-yellow);border-color:var(--curb-yellow);color:var(--ink);
+}
+.chip--text{
+  background:var(--rail-blue);border-color:var(--rail-blue);color:#fff;
 }
 .sort-wrap{position:relative;display:inline-flex}
 .sort-select{

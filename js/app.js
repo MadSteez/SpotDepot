@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=34";
-import * as store from "./store.js?v=34";
-import { escapeHtml, showToast, setLoading, debounce, uid } from "./utils.js?v=34";
+import { createMapController } from "./map.js?v=35";
+import * as store from "./store.js?v=35";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=35";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -10,7 +10,7 @@ const COMMON_TAGS = [
 // ---------------- state ----------------
 let allSpots = [];
 let activeTagFilters = new Set();
-let searchQuery = "";
+let textFilters = []; // array of lowercase query strings, each an independent filter chip
 let mobileView = "map"; // 'map' | 'list'
 
 let previewItems = []; // { type:'existing', url } | { type:'pending', file, previewUrl }
@@ -43,12 +43,17 @@ function allTags() {
   return [...known, ...unknown];
 }
 
+function matchesTextFilters(s) {
+  if (textFilters.length === 0) return true;
+  return textFilters.some(
+    (q) => s.name.toLowerCase().includes(q) || (s.description || "").toLowerCase().includes(q) || (s.tags || []).some((t) => t.toLowerCase().includes(q))
+  );
+}
+
 function filteredSpots() {
-  const q = searchQuery.trim().toLowerCase();
   return allSpots.filter((s) => {
-    const matchesQuery = !q || s.name.toLowerCase().includes(q) || (s.description || "").toLowerCase().includes(q) || (s.tags || []).some((t) => t.toLowerCase().includes(q));
     const matchesTags = activeTagFilters.size === 0 || (s.tags || []).some((t) => activeTagFilters.has(t));
-    return matchesQuery && matchesTags && spotInPlaceFilter(s);
+    return matchesTextFilters(s) && matchesTags && spotInPlaceFilter(s);
   });
 }
 
@@ -119,12 +124,27 @@ function spotInPlaceFilter(spot) {
   return placeFilters.some((p) => (p.geojson ? pointInGeoJson(spot.lng, spot.lat, p.geojson) : pointInBoundingBox(spot.lat, spot.lng, p.bbox)));
 }
 
+const PLACE_LAYERS = ["city", "town", "village", "locality", "district", "county", "state", "country"];
+const PLACE_OSM_VALUES = new Set([
+  "city", "town", "village", "hamlet", "isolated_dwelling", "municipality",
+  "suburb", "borough", "district", "county", "state", "region", "province",
+  "country", "island", "locality", "neighbourhood",
+]);
+
+function isPlaceFeature(props) {
+  if (props.osm_key === "place" && PLACE_OSM_VALUES.has(props.osm_value)) return true;
+  if (props.osm_key === "boundary" && props.osm_value === "administrative") return true;
+  return false;
+}
+
 async function fetchPlaceSuggestions(query) {
-  const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=6`;
+  const layerParams = PLACE_LAYERS.map((l) => `&layer=${l}`).join("");
+  const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=8${layerParams}`;
   const res = await fetch(url);
   if (!res.ok) return [];
   const data = await res.json();
   const suggestions = (data.features || [])
+    .filter((f) => isPlaceFeature(f.properties || {}))
     .map((f) => {
       const p = f.properties || {};
       const label = [p.name, p.city, p.state, p.country].filter((v, i, arr) => v && arr.indexOf(v) === i).join(", ");
@@ -209,7 +229,8 @@ function renderTagChips() {
         `<button class="chip${activeTagFilters.has(t) ? " is-active" : ""}" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`
     )
     .join("");
-  clearFiltersBtn.classList.toggle("hidden", activeTagFilters.size === 0 && !searchQuery && placeFilters.length === 0);
+  clearFiltersBtn.classList.toggle("hidden", activeTagFilters.size === 0 && textFilters.length === 0 && placeFilters.length === 0);
+  updateTextFilterChip();
 }
 
 function renderTagPills(tags = []) {
@@ -693,14 +714,6 @@ $("layersBtn").addEventListener("click", () => {
   $("layersBtn").classList.toggle("is-active", type === "satellite");
 });
 
-$("searchInput").addEventListener(
-  "input",
-  debounce((e) => {
-    searchQuery = e.target.value;
-    render();
-  }, 150)
-);
-
 let currentSuggestions = [];
 let suggestionTimer = null;
 
@@ -710,18 +723,55 @@ function hideSuggestions() {
   currentSuggestions = [];
 }
 
-function renderSuggestions(suggestions) {
-  currentSuggestions = suggestions;
+function renderSuggestions(query, placeSuggestions) {
+  const items = [];
+  if (query) items.push({ type: "text", query, label: `Search spot cards for "${query}"` });
+  placeSuggestions.forEach((p) => items.push({ type: "place", ...p }));
+  currentSuggestions = items;
+
   const el = $("placeSuggestions");
-  if (!suggestions.length) {
+  if (!items.length) {
     el.classList.add("hidden");
     el.innerHTML = "";
     return;
   }
-  el.innerHTML = suggestions
-    .map((s, i) => `<button type="button" class="place-suggestion" data-idx="${i}"><svg class="icon" width="13" height="13"><use href="#icon-pin"/></svg> ${escapeHtml(s.label)}</button>`)
+  el.innerHTML = items
+    .map((item, i) => {
+      const icon = item.type === "text" ? "icon-search" : "icon-pin";
+      return `<button type="button" class="place-suggestion${item.type === "text" ? " place-suggestion--text" : ""}" data-idx="${i}"><svg class="icon" width="13" height="13"><use href="#${icon}"/></svg> ${escapeHtml(item.label)}</button>`;
+    })
     .join("");
   el.classList.remove("hidden");
+}
+
+function renderTextFilterChips() {
+  $("textFilterChips").innerHTML = textFilters
+    .map((q) => `<button type="button" class="chip chip--text" data-text="${escapeHtml(q)}">"${escapeHtml(q)}" ×</button>`)
+    .join("");
+}
+
+function addTextFilter(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return;
+  if (textFilters.includes(q)) {
+    showToast(`"${query}" is already added.`);
+    return;
+  }
+  textFilters.push(q);
+  renderTextFilterChips();
+  render();
+}
+
+function removeTextFilter(q) {
+  textFilters = textFilters.filter((t) => t !== q);
+  renderTextFilterChips();
+  render();
+}
+
+function selectTextSuggestion(query) {
+  hideSuggestions();
+  $("searchInput").value = "";
+  addTextFilter(query);
 }
 
 async function selectPlaceSuggestion(suggestion) {
@@ -733,7 +783,6 @@ async function selectPlaceSuggestion(suggestion) {
       showToast(`Couldn't load a boundary for "${suggestion.label}".`, { error: true });
       return;
     }
-    searchQuery = "";
     $("searchInput").value = "";
     const added = addPlaceFilter(place);
     showToast(added ? `Showing spots in ${place.label}.` : `${place.label} is already added.`);
@@ -747,21 +796,33 @@ async function selectPlaceSuggestion(suggestion) {
 $("searchInput").addEventListener("input", (e) => {
   const value = e.target.value.trim();
   clearTimeout(suggestionTimer);
-  if (value.length < 2) {
+  if (!value) {
     hideSuggestions();
     return;
   }
+  renderSuggestions(value, []); // show the text option immediately; places arrive shortly after
+  if (value.length < 2) return; // too short to bother querying
   suggestionTimer = setTimeout(async () => {
     try {
-      renderSuggestions(await fetchPlaceSuggestions(value));
+      const places = await fetchPlaceSuggestions(value);
+      if ($("searchInput").value.trim() === value) renderSuggestions(value, places);
     } catch (_) {
-      hideSuggestions();
+      if ($("searchInput").value.trim() === value) renderSuggestions(value, []);
     }
   }, 350);
 });
 
 $("searchInput").addEventListener("keydown", (e) => {
-  if (e.key === "Escape") hideSuggestions();
+  if (e.key === "Escape") {
+    hideSuggestions();
+    return;
+  }
+  if (e.key === "Enter" && currentSuggestions.length) {
+    e.preventDefault();
+    const item = currentSuggestions[0];
+    if (item.type === "text") selectTextSuggestion(item.query);
+    else selectPlaceSuggestion(item);
+  }
 });
 
 $("searchInput").addEventListener("blur", () => {
@@ -773,8 +834,15 @@ $("placeSuggestions").addEventListener("mousedown", (e) => {
   const btn = e.target.closest("[data-idx]");
   if (!btn) return;
   e.preventDefault();
-  const suggestion = currentSuggestions[Number(btn.dataset.idx)];
-  if (suggestion) selectPlaceSuggestion(suggestion);
+  const item = currentSuggestions[Number(btn.dataset.idx)];
+  if (!item) return;
+  if (item.type === "text") selectTextSuggestion(item.query);
+  else selectPlaceSuggestion(item);
+});
+
+$("textFilterChips").addEventListener("click", (e) => {
+  const chip = e.target.closest("[data-text]");
+  if (chip) removeTextFilter(chip.dataset.text);
 });
 
 $("placeFilterChips").addEventListener("click", (e) => {
@@ -793,7 +861,8 @@ tagChipsEl.addEventListener("click", (e) => {
 
 clearFiltersBtn.addEventListener("click", () => {
   activeTagFilters.clear();
-  searchQuery = "";
+  textFilters = [];
+  renderTextFilterChips();
   $("searchInput").value = "";
   clearPlaceFilters();
   render();
