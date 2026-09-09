@@ -244,6 +244,29 @@ export function createMapController(mapElId) {
     placeLayers.clear();
   }
 
+  let hoverBoundaryLayer = null;
+
+  function showHoverBoundary(place) {
+    clearHoverBoundary();
+    const style = { color: "#2F5D9C", weight: 2, dashArray: "5 4", fillColor: "#2F5D9C", fillOpacity: 0.1, interactive: false };
+    if (place.geojson) {
+      hoverBoundaryLayer = L.geoJSON(place.geojson, { style });
+    } else if (place.bbox) {
+      const [south, north, west, east] = place.bbox.map(Number);
+      hoverBoundaryLayer = L.rectangle([[south, west], [north, east]], style);
+    } else {
+      return;
+    }
+    hoverBoundaryLayer.addTo(map);
+  }
+
+  function clearHoverBoundary() {
+    if (hoverBoundaryLayer) {
+      map.removeLayer(hoverBoundaryLayer);
+      hoverBoundaryLayer = null;
+    }
+  }
+
   function fitToPlaceBoundary(place) {
     let bounds;
     if (place.geojson) {
@@ -308,6 +331,8 @@ export function createMapController(mapElId) {
     hidePlaceBoundary,
     clearPlaceBoundaries,
     fitToPlaceBoundary,
+    showHoverBoundary,
+    clearHoverBoundary,
     invalidateSize,
     toggleMapType,
   };

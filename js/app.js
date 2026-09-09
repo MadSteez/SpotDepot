@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=38";
-import * as store from "./store.js?v=38";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=38";
+import { createMapController } from "./map.js?v=39";
+import * as store from "./store.js?v=39";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=39";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -166,14 +166,20 @@ async function fetchPlaceSuggestions(query) {
   return suggestions;
 }
 
+const placeGeometryCache = new Map(); // "osmType+osmId" -> place, avoids re-fetching on repeated hover/click
+
 async function fetchPlaceGeometry(osmType, osmId) {
+  const key = `${osmType}${osmId}`;
+  if (placeGeometryCache.has(key)) return placeGeometryCache.get(key);
   const url = `https://nominatim.openstreetmap.org/lookup?osm_ids=${osmType}${osmId}&format=jsonv2&polygon_geojson=1`;
   const res = await fetch(url);
   if (!res.ok) return null;
   const results = await res.json();
   if (!results.length) return null;
   const r = results[0];
-  return { label: r.display_name.split(",")[0], geojson: r.geojson || null, bbox: r.boundingbox };
+  const place = { label: r.display_name.split(",")[0], geojson: r.geojson || null, bbox: r.boundingbox };
+  placeGeometryCache.set(key, place);
+  return place;
 }
 
 function renderPlaceChips() {
@@ -727,6 +733,8 @@ function hideSuggestions() {
   $("placeSuggestions").classList.add("hidden");
   $("placeSuggestions").innerHTML = "";
   currentSuggestions = [];
+  clearTimeout(hoverPreviewTimer);
+  mapCtrl.clearHoverBoundary();
 }
 
 function renderSuggestions(query, placeSuggestions) {
@@ -844,6 +852,34 @@ $("placeSuggestions").addEventListener("mousedown", (e) => {
   if (!item) return;
   if (item.type === "text") selectTextSuggestion(item.query);
   else selectPlaceSuggestion(item);
+});
+
+let hoverPreviewTimer = null;
+
+$("placeSuggestions").addEventListener("mouseover", (e) => {
+  const btn = e.target.closest("[data-idx]");
+  if (!btn || btn.contains(e.relatedTarget)) return; // moving within the same button
+  const item = currentSuggestions[Number(btn.dataset.idx)];
+  clearTimeout(hoverPreviewTimer);
+  if (!item || item.type !== "place") {
+    mapCtrl.clearHoverBoundary();
+    return;
+  }
+  hoverPreviewTimer = setTimeout(async () => {
+    try {
+      const place = await fetchPlaceGeometry(item.osmType, item.osmId);
+      if (place) mapCtrl.showHoverBoundary(place);
+    } catch (_) {
+      /* preview is a nicety — fail silently */
+    }
+  }, 250);
+});
+
+$("placeSuggestions").addEventListener("mouseout", (e) => {
+  const btn = e.target.closest("[data-idx]");
+  if (!btn || btn.contains(e.relatedTarget)) return;
+  clearTimeout(hoverPreviewTimer);
+  mapCtrl.clearHoverBoundary();
 });
 
 $("textFilterChips").addEventListener("click", (e) => {
