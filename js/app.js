@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=35";
-import * as store from "./store.js?v=35";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=35";
+import { createMapController } from "./map.js?v=36";
+import * as store from "./store.js?v=36";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=36";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -125,26 +125,9 @@ function spotInPlaceFilter(spot) {
 }
 
 const PLACE_LAYERS = ["city", "town", "village", "locality", "district", "county", "state", "country"];
-const PLACE_OSM_VALUES = new Set([
-  "city", "town", "village", "hamlet", "isolated_dwelling", "municipality",
-  "suburb", "borough", "district", "county", "state", "region", "province",
-  "country", "island", "locality", "neighbourhood",
-]);
 
-function isPlaceFeature(props) {
-  if (props.osm_key === "place" && PLACE_OSM_VALUES.has(props.osm_value)) return true;
-  if (props.osm_key === "boundary" && props.osm_value === "administrative") return true;
-  return false;
-}
-
-async function fetchPlaceSuggestions(query) {
-  const layerParams = PLACE_LAYERS.map((l) => `&layer=${l}`).join("");
-  const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=8${layerParams}`;
-  const res = await fetch(url);
-  if (!res.ok) return [];
-  const data = await res.json();
-  const suggestions = (data.features || [])
-    .filter((f) => isPlaceFeature(f.properties || {}))
+function parsePhotonFeatures(data) {
+  return (data.features || [])
     .map((f) => {
       const p = f.properties || {};
       const label = [p.name, p.city, p.state, p.country].filter((v, i, arr) => v && arr.indexOf(v) === i).join(", ");
@@ -152,6 +135,21 @@ async function fetchPlaceSuggestions(query) {
       return { label, osmType: p.osm_type, osmId: p.osm_id, lat, lng };
     })
     .filter((s) => s.label && s.osmType && s.osmId);
+}
+
+async function runPhotonQuery(url) {
+  const res = await fetch(url);
+  if (!res.ok) return [];
+  return parsePhotonFeatures(await res.json());
+}
+
+async function fetchPlaceSuggestions(query) {
+  const layerParams = PLACE_LAYERS.map((l) => `&layer=${l}`).join("");
+  let suggestions = await runPhotonQuery(`https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=8${layerParams}`);
+  if (suggestions.length === 0) {
+    // The layer restriction can occasionally be too narrow — fall back to an unfiltered search rather than showing nothing.
+    suggestions = await runPhotonQuery(`https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=8`);
+  }
   if (userLocation) {
     // Surface the closest match first rather than trusting raw search relevance.
     suggestions.sort((a, b) => distanceKm(userLocation, a) - distanceKm(userLocation, b));
@@ -230,7 +228,6 @@ function renderTagChips() {
     )
     .join("");
   clearFiltersBtn.classList.toggle("hidden", activeTagFilters.size === 0 && textFilters.length === 0 && placeFilters.length === 0);
-  updateTextFilterChip();
 }
 
 function renderTagPills(tags = []) {
