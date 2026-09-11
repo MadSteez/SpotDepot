@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=42";
-import * as store from "./store.js?v=42";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=42";
+import { createMapController } from "./map.js?v=43";
+import * as store from "./store.js?v=43";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=43";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -854,7 +854,13 @@ $("searchInput").addEventListener("keydown", (e) => {
   }
 });
 
+let suppressNextBlurHide = false;
+
 $("searchInput").addEventListener("blur", () => {
+  if (suppressNextBlurHide) {
+    suppressNextBlurHide = false;
+    return;
+  }
   setTimeout(hideSuggestions, 150); // delay so a click on a suggestion still registers
 });
 
@@ -917,6 +923,8 @@ $("placeSuggestions").addEventListener("pointerdown", (e) => {
   if (!item || item.type !== "place") return;
   touchHoldTimer = setTimeout(async () => {
     touchHoldTriggered = true;
+    suppressNextBlurHide = true;
+    $("searchInput").blur(); // hide the keyboard so the preview underneath is actually visible
     try {
       const place = await fetchPlaceGeometry(item.osmType, item.osmId);
       if (place) mapCtrl.showHoverBoundary(place);
