@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=47";
-import * as store from "./store.js?v=47";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=47";
+import { createMapController } from "./map.js?v=48";
+import * as store from "./store.js?v=48";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=48";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -847,7 +847,10 @@ $("searchInput").addEventListener("input", (e) => {
 
 $("searchInput").addEventListener("focus", (e) => {
   const input = e.target;
-  input.setSelectionRange(input.value.length, input.value.length); // resume typing at the end, not wherever the click landed
+  setTimeout(() => {
+    const len = input.value.length;
+    input.setSelectionRange(len, len); // resume typing at the end, not wherever the click landed
+  }, 0);
   const value = input.value.trim();
   if (value) triggerSuggestions(value);
 });
