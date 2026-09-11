@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=50";
-import * as store from "./store.js?v=50";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=50";
+import { createMapController } from "./map.js?v=51";
+import * as store from "./store.js?v=51";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=51";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -206,6 +206,7 @@ function renderPlaceChips() {
       </button>`
     )
     .join("");
+  updateActiveFiltersRow();
 }
 
 function addPlaceFilter(place) {
@@ -256,7 +257,13 @@ function renderTagChips() {
         `<button class="chip${activeTagFilters.has(t) ? " is-active" : ""}" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`
     )
     .join("");
-  clearFiltersBtn.classList.toggle("hidden", activeTagFilters.size === 0 && textFilters.length === 0 && placeFilters.length === 0);
+  updateActiveFiltersRow();
+}
+
+function updateActiveFiltersRow() {
+  const hasActive = activeTagFilters.size > 0 || textFilters.length > 0 || placeFilters.length > 0;
+  clearFiltersBtn.classList.toggle("hidden", !hasActive);
+  $("activeFiltersRow").classList.toggle("hidden", !hasActive);
 }
 
 function renderTagPills(tags = []) {
@@ -778,6 +785,7 @@ function renderTextFilterChips() {
   $("textFilterChips").innerHTML = textFilters
     .map((q) => `<button type="button" class="chip chip--text" data-text="${escapeHtml(q)}">"${escapeHtml(q)}" ×</button>`)
     .join("");
+  updateActiveFiltersRow();
 }
 
 function addTextFilter(query) {
@@ -900,21 +908,6 @@ document.addEventListener("pointercancel", () => {
   outsidePointerStart = null;
 });
 
-$("placeSuggestions").addEventListener("mousedown", (e) => {
-  // mousedown (not click) fires before the input's blur handler hides this list
-  const btn = e.target.closest("[data-idx]");
-  if (!btn) return;
-  e.preventDefault();
-  if (touchHoldTriggered) {
-    touchHoldTriggered = false; // consume this tap — they just previewed it, tap again (without holding) to confirm
-    return;
-  }
-  const item = currentSuggestions[Number(btn.dataset.idx)];
-  if (!item) return;
-  if (item.type === "text") selectTextSuggestion(item.query);
-  else selectPlaceSuggestion(item);
-});
-
 let hoverPreviewTimer = null;
 
 $("placeSuggestions").addEventListener("mouseover", (e) => {
@@ -944,17 +937,19 @@ $("placeSuggestions").addEventListener("mouseout", (e) => {
 });
 
 // Touch has no hover, so a long-press stands in for it: hold to preview the
-// boundary, then a plain tap (handled by the mousedown listener above,
-// which touch also triggers as a synthetic event) confirms the selection.
+// boundary, then a plain tap confirms the selection. Everything (both the
+// preview and the selection) runs through pointer events uniformly, since
+// canceling a touch pointerdown suppresses the synthetic mouse-event chain
+// a separate mousedown-based handler would otherwise have relied on.
 let touchHoldTimer = null;
 let touchHoldTriggered = false;
 
 $("placeSuggestions").addEventListener("pointerdown", (e) => {
-  if (e.pointerType !== "touch") return;
   const btn = e.target.closest("[data-idx]");
   touchHoldTriggered = false;
   if (!btn) return;
-  e.preventDefault(); // keep focus on the search input so the blur-based hide doesn't fire mid-hold
+  e.preventDefault(); // keep focus on the search input so the blur-based hide doesn't fire
+  if (e.pointerType !== "touch") return;
   const item = currentSuggestions[Number(btn.dataset.idx)];
   if (!item || item.type !== "place") return;
   touchHoldTimer = setTimeout(async () => {
@@ -971,10 +966,21 @@ $("placeSuggestions").addEventListener("pointerdown", (e) => {
 });
 
 $("placeSuggestions").addEventListener("pointerup", (e) => {
-  if (e.pointerType === "touch") clearTimeout(touchHoldTimer);
+  clearTimeout(touchHoldTimer);
+  const btn = e.target.closest("[data-idx]");
+  if (!btn) return;
+  if (e.pointerType === "touch" && touchHoldTriggered) {
+    touchHoldTriggered = false; // consume this tap — they just previewed it, tap again (without holding) to confirm
+    return;
+  }
+  const item = currentSuggestions[Number(btn.dataset.idx)];
+  if (!item) return;
+  if (item.type === "text") selectTextSuggestion(item.query);
+  else selectPlaceSuggestion(item);
 });
-$("placeSuggestions").addEventListener("pointercancel", (e) => {
-  if (e.pointerType === "touch") clearTimeout(touchHoldTimer);
+
+$("placeSuggestions").addEventListener("pointercancel", () => {
+  clearTimeout(touchHoldTimer);
 });
 
 $("textFilterChips").addEventListener("click", (e) => {

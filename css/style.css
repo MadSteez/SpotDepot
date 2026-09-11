@@ -135,19 +135,27 @@ a{color:var(--rail-blue)}
 
 /* ---------------- Filter strip ---------------- */
 .filterstrip{
-  height:var(--filterstrip-h);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:0 18px;
+  display:flex;flex-direction:column;
   background:var(--paper);
   border-bottom:1.5px solid var(--line);
-  overflow-x:auto;
   position:sticky;
   top:var(--topbar-h);
   z-index:30;
 }
+.filterstrip__row{
+  display:flex;align-items:center;gap:10px;
+  padding:0 18px;height:var(--filterstrip-h);
+  overflow-x:auto;flex-shrink:0;
+}
+.filterstrip__row--active{
+  height:auto;min-height:var(--filterstrip-h);
+  padding:8px 18px;
+  border-top:1.5px solid var(--line);
+  flex-wrap:wrap;row-gap:6px;
+  overflow-x:visible;
+}
 .filterstrip__chips{display:flex;gap:8px;flex-wrap:nowrap}
+.filterstrip__row--active .filterstrip__chips{flex-wrap:wrap;row-gap:6px}
 .chip{
   font-family:var(--font-mono);
   font-size:12.5px;
@@ -507,12 +515,8 @@ a{color:var(--rail-blue)}
   .mobile-tabs{display:flex}
   .topbar{padding:0 12px;gap:10px}
   .wordmark__logo{height:30px}
-  .filterstrip{
-    padding:8px 12px;top:var(--topbar-h);
-    height:auto;flex-wrap:wrap;overflow-x:visible;row-gap:6px;
-  }
-  .filterstrip__chips{flex-wrap:wrap;row-gap:6px}
-  .filterstrip__count{margin-left:0;flex-basis:100%;padding-left:0}
+  .filterstrip__row{padding:0 12px}
+  .filterstrip__row--active{padding:8px 12px}
   .toast{bottom:calc(var(--tabs-h) + 14px + env(safe-area-inset-bottom, 0px))}
   .place-suggestions{
     position:fixed;left:12px;right:12px;top:calc(var(--topbar-h) + 8px);
