@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=45";
-import * as store from "./store.js?v=45";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=45";
+import { createMapController } from "./map.js?v=46";
+import * as store from "./store.js?v=46";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=46";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -133,6 +133,7 @@ const PLACE_OSM_VALUES = new Set([
 ]);
 
 function isBoundaryPlace(props) {
+  if (props.osm_type === "N") return false; // a node is just a point — it can never have a real boundary
   if (props.osm_key === "place" && PLACE_OSM_VALUES.has(props.osm_value)) return true;
   if (props.osm_key === "boundary" && props.osm_value === "administrative") return true;
   return false;
