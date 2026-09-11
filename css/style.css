@@ -104,10 +104,12 @@ a{color:var(--rail-blue)}
   display:flex;align-items:center;gap:8px;width:100%;text-align:left;
   padding:10px 14px;border:none;background:none;color:var(--ink);
   font-size:13.5px;cursor:pointer;
+  -webkit-touch-callout:none;-webkit-user-select:none;user-select:none;
 }
 .place-suggestion:hover,.place-suggestion:focus-visible{background:var(--concrete)}
 .place-suggestion + .place-suggestion{border-top:1px solid var(--line)}
 .place-suggestion--text{font-weight:600}
+.place-suggestion__type{color:var(--ink-soft);font-size:12px}
 .topbar__actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
 
 /* ---------------- Buttons ---------------- */

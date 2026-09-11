@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=41";
-import * as store from "./store.js?v=41";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=41";
+import { createMapController } from "./map.js?v=42";
+import * as store from "./store.js?v=42";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=42";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -138,6 +138,19 @@ function isBoundaryPlace(props) {
   return false;
 }
 
+const PLACE_TYPE_LABELS = {
+  city: "city", town: "town", village: "village", municipality: "municipality",
+  suburb: "district", borough: "district", quarter: "district", neighbourhood: "neighbourhood",
+  county: "county", state: "state", region: "region", province: "province",
+  country: "country", island: "island",
+};
+
+function placeTypeLabel(props) {
+  if (props.osm_key === "place") return PLACE_TYPE_LABELS[props.osm_value] || props.osm_value;
+  if (props.osm_key === "boundary" && props.osm_value === "administrative") return "region";
+  return "";
+}
+
 function parsePhotonFeatures(data) {
   return (data.features || [])
     .filter((f) => isBoundaryPlace(f.properties || {}))
@@ -145,7 +158,7 @@ function parsePhotonFeatures(data) {
       const p = f.properties || {};
       const label = [p.name, p.city, p.state, p.country].filter((v, i, arr) => v && arr.indexOf(v) === i).join(", ");
       const [lng, lat] = f.geometry?.coordinates || [];
-      return { label, osmType: p.osm_type, osmId: p.osm_id, lat, lng };
+      return { label, placeType: placeTypeLabel(p), osmType: p.osm_type, osmId: p.osm_id, lat, lng };
     })
     .filter((s) => s.label && s.osmType && s.osmId);
 }
@@ -753,7 +766,8 @@ function renderSuggestions(query, placeSuggestions) {
   el.innerHTML = items
     .map((item, i) => {
       const icon = item.type === "text" ? "icon-search" : "icon-pin";
-      return `<button type="button" class="place-suggestion${item.type === "text" ? " place-suggestion--text" : ""}" data-idx="${i}"><svg class="icon" width="13" height="13"><use href="#${icon}"/></svg> ${escapeHtml(item.label)}</button>`;
+      const suffix = item.placeType ? ` <span class="place-suggestion__type">(${escapeHtml(item.placeType)})</span>` : "";
+      return `<button type="button" class="place-suggestion${item.type === "text" ? " place-suggestion--text" : ""}" data-idx="${i}"><svg class="icon" width="13" height="13"><use href="#${icon}"/></svg> ${escapeHtml(item.label)}${suffix}</button>`;
     })
     .join("");
   el.classList.remove("hidden");
@@ -898,6 +912,7 @@ $("placeSuggestions").addEventListener("pointerdown", (e) => {
   const btn = e.target.closest("[data-idx]");
   touchHoldTriggered = false;
   if (!btn) return;
+  e.preventDefault(); // keep focus on the search input so the blur-based hide doesn't fire mid-hold
   const item = currentSuggestions[Number(btn.dataset.idx)];
   if (!item || item.type !== "place") return;
   touchHoldTimer = setTimeout(async () => {
