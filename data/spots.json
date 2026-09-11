@@ -105,12 +105,13 @@
     "description": "",
     "lat": 51.159363,
     "lng": 4.40577,
-    "tags": [],
+    "tags": [
+      "voorbeeld"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/Skatespots/main/images/mtpfywm4hwljcj-1788676835644-0.jpg"
     ],
-    "location": "Universiteitsplein 1, Antwerpen, Wilrijk, Antwerpen, 2610, België",
-    "updatedAt": "2026-09-07T19:30:46.445Z",
+    "updatedAt": "2026-09-11T20:08:14.090Z",
     "createdAt": "2026-09-06T06:39:35.791Z"
   },
   {
