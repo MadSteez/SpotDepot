@@ -176,6 +176,7 @@ a{color:var(--rail-blue)}
   background:var(--curb-yellow);border-color:var(--curb-yellow);color:var(--ink);
 }
 .chip--text{
+  display:inline-flex;align-items:center;gap:5px;
   background:var(--curb-yellow);border-color:var(--curb-yellow);color:var(--ink);
 }
 .sort-wrap{position:relative;display:inline-flex}

@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=53";
-import * as store from "./store.js?v=53";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=53";
+import { createMapController } from "./map.js?v=54";
+import * as store from "./store.js?v=54";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=54";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -783,7 +783,13 @@ function renderSuggestions(query, placeSuggestions) {
 
 function renderTextFilterChips() {
   $("textFilterChips").innerHTML = textFilters
-    .map((q) => `<button type="button" class="chip chip--text" data-text="${escapeHtml(q)}">"${escapeHtml(q)}" ×</button>`)
+    .map(
+      (q) => `
+      <button type="button" class="chip chip--text" data-text="${escapeHtml(q)}">
+        <svg class="icon" width="12" height="12"><use href="#icon-search"/></svg>
+        ${escapeHtml(q)} ×
+      </button>`
+    )
     .join("");
   updateActiveFiltersRow();
 }
