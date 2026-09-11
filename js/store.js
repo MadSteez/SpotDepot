@@ -1,6 +1,6 @@
-import { GitHubStore } from "./github.js?v=52";
-import { SITE_CONFIG } from "./site-config.js?v=52";
-import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=52";
+import { GitHubStore } from "./github.js?v=53";
+import { SITE_CONFIG } from "./site-config.js?v=53";
+import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=53";
 
 const TOKEN_KEY = "skatespots_token";
 const LEGACY_CONFIG_KEY = "skatespots_config"; // older versions saved a whole config object here, including owner/repo — that could permanently shadow site-config.js, so it's no longer read except to migrate a saved token out of it once.

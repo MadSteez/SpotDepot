@@ -176,7 +176,7 @@ a{color:var(--rail-blue)}
   background:var(--curb-yellow);border-color:var(--curb-yellow);color:var(--ink);
 }
 .chip--text{
-  background:var(--rail-blue);border-color:var(--rail-blue);color:#fff;
+  background:var(--curb-yellow);border-color:var(--curb-yellow);color:var(--ink);
 }
 .sort-wrap{position:relative;display:inline-flex}
 .sort-select{
