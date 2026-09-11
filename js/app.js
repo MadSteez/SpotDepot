@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=56";
-import * as store from "./store.js?v=56";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=56";
+import { createMapController } from "./map.js?v=57";
+import * as store from "./store.js?v=57";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=57";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -740,7 +740,6 @@ document.querySelectorAll(".mobile-tabs__btn").forEach((btn) => {
 $("addSpotBtn").addEventListener("click", () => {
   if (requireWriteAccess()) openFormModal();
 });
-$("settingsBtn").addEventListener("click", openSettingsModal);
 $("locateBtn").addEventListener("click", () => mapCtrl.locate());
 $("layersBtn").addEventListener("click", () => {
   const type = mapCtrl.toggleMapType();
@@ -1105,7 +1104,7 @@ refreshAll().then(() => {
   if (!alreadySeenTip) {
     localStorage.setItem("skatespots_seen_tip", "1");
     if (cfg.mode === "github" && !cfg.token) {
-      showToast("Showing this repo's shared spots. Tap the gear icon to add a token and contribute your own.", { duration: 5500 });
+      showToast("Showing this repo's shared spots. Add a token when you go to add, edit, or delete one.", { duration: 5500 });
     } else if (cfg.mode === "local") {
       showToast("This page hasn't been pointed at a repo yet — see js/site-config.js.", { duration: 5500 });
     }
