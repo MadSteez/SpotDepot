@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=55";
-import * as store from "./store.js?v=55";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=55";
+import { createMapController } from "./map.js?v=56";
+import * as store from "./store.js?v=56";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=56";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -326,7 +326,7 @@ async function refreshAll({ silent = false } = {}) {
     render();
     if (!silent) setLoading(false);
     if (needsSetup) {
-      showToast("GitHub sync isn't set up yet — open Setup & sync.", { error: true, duration: 4500 });
+      showToast("This page hasn't been pointed at a repo yet — see js/site-config.js.", { error: true, duration: 4500 });
     }
   } catch (err) {
     console.error(err);
@@ -454,7 +454,7 @@ $("detailDirectionsBtn").addEventListener("click", () => {
 
 function requireWriteAccess() {
   if (store.canWrite()) return true;
-  showToast("Add a GitHub token in Setup & sync before adding, editing, or deleting spots.", { error: true, duration: 5500 });
+  showToast("Add a token to make changes.", { error: true, duration: 5500 });
   openSettingsModal();
   return false;
 }
@@ -1105,9 +1105,9 @@ refreshAll().then(() => {
   if (!alreadySeenTip) {
     localStorage.setItem("skatespots_seen_tip", "1");
     if (cfg.mode === "github" && !cfg.token) {
-      showToast("Showing this repo's shared spots. Open Setup & sync and add a token to contribute your own.", { duration: 5500 });
+      showToast("Showing this repo's shared spots. Tap the gear icon to add a token and contribute your own.", { duration: 5500 });
     } else if (cfg.mode === "local") {
-      showToast("This page hasn't been set up to sync yet — see Setup & sync for details.", { duration: 5500 });
+      showToast("This page hasn't been pointed at a repo yet — see js/site-config.js.", { duration: 5500 });
     }
   }
 });

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css?v=55">
+<link rel="stylesheet" href="css/style.css?v=56">
 
 <!-- inline SVG icon sprite, referenced via <use> throughout the app -->
 </head>
@@ -65,7 +65,7 @@
     </div>
 
     <div class="topbar__actions">
-      <button class="btn btn--ghost btn--icon" id="settingsBtn" title="Setup & sync" aria-label="Setup and sync">
+      <button class="btn btn--ghost btn--icon" id="settingsBtn" title="Add a token to edit" aria-label="Add a token to edit">
         <svg class="icon" width="20" height="20"><use href="#icon-gear"/></svg>
       </button>
       <button class="btn btn--primary" id="addSpotBtn">
@@ -225,18 +225,18 @@
   </div>
 </div>
 
-<!-- ============ SETTINGS / SYNC MODAL ============ -->
+<!-- ============ TOKEN MODAL ============ -->
 <div class="modal-overlay hidden" id="settingsModal">
   <div class="modal modal--settings">
     <button class="modal__close" data-close><svg class="icon" width="22" height="22"><use href="#icon-close"/></svg></button>
-    <h2>Setup &amp; sync</h2>
-    <p class="settings__intro">Anyone can view spots. Add a token below to add, edit, or delete them from this device.</p>
+    <h2>Add a token to edit</h2>
+    <p class="settings__intro">Viewing spots never needs one — this is only for adding, editing, or deleting them.</p>
 
-    <p class="settings__note" id="repoInfoNote">Reading spots from <strong id="repoInfoText"></strong>.</p>
+    <p class="settings__note" id="repoInfoNote">Scope your token to <strong id="repoInfoText"></strong>.</p>
     <p class="settings__note settings__note--warn hidden" id="notConfiguredNote">This page hasn't been pointed at a repo yet — whoever set it up needs to fill in <code>js/site-config.js</code>. Spots will only be saved on this device until then.</p>
 
     <label class="field">
-      <span class="field__label">Personal access token <span class="field__label-sub">(optional — needed to save changes)</span></span>
+      <span class="field__label">Personal access token</span>
       <input type="password" id="cfgToken" placeholder="github_pat_…" autocomplete="off">
     </label>
     <p class="settings__note">Create a <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">fine‑grained token</a> scoped to <strong>this repo only</strong>, with <strong>Contents: Read and write</strong> permission.</p>
@@ -250,6 +250,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="js/app.js?v=55"></script>
+<script type="module" src="js/app.js?v=56"></script>
 </body>
 </html>
