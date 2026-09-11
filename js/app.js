@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=44";
-import * as store from "./store.js?v=44";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=44";
+import { createMapController } from "./map.js?v=45";
+import * as store from "./store.js?v=45";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=45";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -864,10 +864,26 @@ $("searchInput").addEventListener("blur", () => {
   setTimeout(hideSuggestions, 150); // delay so a click on a suggestion still registers
 });
 
+let outsidePointerStart = null;
+
 document.addEventListener("pointerdown", (e) => {
   if ($("placeSuggestions").classList.contains("hidden")) return;
   if (e.target.closest(".searchbar") || e.target.closest("#placeSuggestions")) return;
+  outsidePointerStart = { x: e.clientX, y: e.clientY };
+});
+
+document.addEventListener("pointerup", (e) => {
+  if (!outsidePointerStart) return;
+  const moved = Math.hypot(e.clientX - outsidePointerStart.x, e.clientY - outsidePointerStart.y);
+  outsidePointerStart = null;
+  if (moved >= 8) return; // a pan/drag, not a tap — leave the suggestions open
+  if ($("placeSuggestions").classList.contains("hidden")) return;
+  if (e.target.closest(".searchbar") || e.target.closest("#placeSuggestions")) return;
   hideSuggestions();
+});
+
+document.addEventListener("pointercancel", () => {
+  outsidePointerStart = null;
 });
 
 $("placeSuggestions").addEventListener("mousedown", (e) => {
