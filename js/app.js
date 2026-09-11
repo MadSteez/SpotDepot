@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=43";
-import * as store from "./store.js?v=43";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=43";
+import { createMapController } from "./map.js?v=44";
+import * as store from "./store.js?v=44";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=44";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -862,6 +862,12 @@ $("searchInput").addEventListener("blur", () => {
     return;
   }
   setTimeout(hideSuggestions, 150); // delay so a click on a suggestion still registers
+});
+
+document.addEventListener("pointerdown", (e) => {
+  if ($("placeSuggestions").classList.contains("hidden")) return;
+  if (e.target.closest(".searchbar") || e.target.closest("#placeSuggestions")) return;
+  hideSuggestions();
 });
 
 $("placeSuggestions").addEventListener("mousedown", (e) => {
