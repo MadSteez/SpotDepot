@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css?v=51">
+<link rel="stylesheet" href="css/style.css?v=52">
 
 <!-- inline SVG icon sprite, referenced via <use> throughout the app -->
 </head>
@@ -78,13 +78,14 @@
   <!-- ============ TAG FILTER STRIP ============ -->
   <div class="filterstrip" id="filterStrip">
     <div class="filterstrip__row">
+      <span class="filterstrip__label">Filter by tag</span>
       <div class="filterstrip__chips" id="tagChips"></div>
-      <span class="filterstrip__count" id="resultCount"></span>
     </div>
     <div class="filterstrip__row filterstrip__row--active hidden" id="activeFiltersRow">
       <div class="filterstrip__chips" id="textFilterChips"></div>
       <div class="filterstrip__chips" id="placeFilterChips"></div>
       <button class="chip chip--clear hidden" id="clearFiltersBtn">Clear filters ×</button>
+      <span class="filterstrip__count" id="resultCount"></span>
     </div>
   </div>
 
@@ -249,6 +250,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="js/app.js?v=51"></script>
+<script type="module" src="js/app.js?v=52"></script>
 </body>
 </html>
