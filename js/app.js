@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=46";
-import * as store from "./store.js?v=46";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=46";
+import { createMapController } from "./map.js?v=47";
+import * as store from "./store.js?v=47";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=47";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -823,8 +823,7 @@ async function selectPlaceSuggestion(suggestion) {
   }
 }
 
-$("searchInput").addEventListener("input", (e) => {
-  const value = e.target.value.trim();
+function triggerSuggestions(value) {
   clearTimeout(suggestionTimer);
   if (!value) {
     hideSuggestions();
@@ -840,6 +839,17 @@ $("searchInput").addEventListener("input", (e) => {
       if ($("searchInput").value.trim() === value) renderSuggestions(value, []);
     }
   }, 350);
+}
+
+$("searchInput").addEventListener("input", (e) => {
+  triggerSuggestions(e.target.value.trim());
+});
+
+$("searchInput").addEventListener("focus", (e) => {
+  const input = e.target;
+  input.setSelectionRange(input.value.length, input.value.length); // resume typing at the end, not wherever the click landed
+  const value = input.value.trim();
+  if (value) triggerSuggestions(value);
 });
 
 $("searchInput").addEventListener("keydown", (e) => {
