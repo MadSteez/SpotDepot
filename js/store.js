@@ -1,27 +1,14 @@
-import { GitHubStore } from "./github.js?v=61";
-import { SITE_CONFIG } from "./site-config.js?v=61";
-import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=61";
+import { GitHubStore } from "./github.js?v=63";
+import { SITE_CONFIG } from "./site-config.js?v=63";
+import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=63";
 
-const TOKEN_KEY = "skatespots_token";
-const LEGACY_CONFIG_KEY = "skatespots_config"; // older versions saved a whole config object here, including owner/repo — that could permanently shadow site-config.js, so it's no longer read except to migrate a saved token out of it once.
-const LOCAL_DATA_KEY = "skatespots_local_data";
+const TOKEN_KEY = "spotdepot_token";
+const LOCAL_DATA_KEY = "spotdepot_local_data";
 const SPOTS_PATH = "data/spots.json";
 
 let cachedSpots = [];
 
-function migrateLegacyToken() {
-  if (localStorage.getItem(TOKEN_KEY) !== null) return;
-  try {
-    const raw = localStorage.getItem(LEGACY_CONFIG_KEY);
-    if (raw) {
-      const legacy = JSON.parse(raw);
-      if (legacy && legacy.token) localStorage.setItem(TOKEN_KEY, legacy.token);
-    }
-  } catch (_) {}
-}
-
 export function getToken() {
-  migrateLegacyToken();
   return localStorage.getItem(TOKEN_KEY) || "";
 }
 

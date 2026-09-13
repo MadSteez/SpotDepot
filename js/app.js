@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=61";
-import * as store from "./store.js?v=61";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=61";
+import { createMapController } from "./map.js?v=63";
+import * as store from "./store.js?v=63";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=63";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -1100,9 +1100,9 @@ refreshAll().then(() => {
     render();
   });
   const cfg = store.getConfig();
-  const alreadySeenTip = localStorage.getItem("skatespots_seen_tip");
+  const alreadySeenTip = localStorage.getItem("spotdepot_seen_tip");
   if (!alreadySeenTip) {
-    localStorage.setItem("skatespots_seen_tip", "1");
+    localStorage.setItem("spotdepot_seen_tip", "1");
     if (cfg.mode === "github" && !cfg.token) {
       showToast("Showing this repo's shared spots. Add a token when you go to add, edit, or delete one.", { duration: 5500 });
     } else if (cfg.mode === "local") {
