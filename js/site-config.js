@@ -10,6 +10,6 @@
 
 export const SITE_CONFIG = {
   owner: "MadSteez",
-  repo: "Skatespots",
+  repo: "SpotDepot",
   branch: "", // e.g. "main" — leave blank to use the repo's default branch
 };

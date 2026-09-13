@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=60";
-import * as store from "./store.js?v=60";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=60";
+import { createMapController } from "./map.js?v=61";
+import * as store from "./store.js?v=61";
+import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=61";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
