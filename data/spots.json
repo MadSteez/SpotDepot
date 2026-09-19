@@ -1,19 +1,5 @@
 [
   {
-    "id": "mtfwelx21ay09t",
-    "name": "test 2",
-    "description": "",
-    "lat": 51.227595,
-    "lng": 5.43853,
-    "tags": [],
-    "images": [
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mtfwelx21ay09t-1788099720508-0.jpg"
-    ],
-    "location": "Saxbylaan, Neerpelt, Neerpelt, Limburg, 3910, België",
-    "updatedAt": "2026-09-07T19:30:30.113Z",
-    "createdAt": "2026-08-30T14:22:01.958Z"
-  },
-  {
     "id": "mtfwf5ksqwmdyk",
     "name": "test 1",
     "description": "",
