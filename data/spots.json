@@ -2805,22 +2805,6 @@
     "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
-    "id": "1a0b91e0d80174a",
-    "name": "Walferdange bank to rail",
-    "description": "bank to rail",
-    "lat": 49.6581443,
-    "lng": 6.1309834,
-    "tags": [
-      "flatrail",
-      "bank"
-    ],
-    "images": [
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d80174a-0.jpg"
-    ],
-    "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-20T20:24:10.000Z"
-  },
-  {
     "id": "1a0b91e0d83818d",
     "name": "Stella Artois bank to ledge",
     "description": "bank to ledge",
