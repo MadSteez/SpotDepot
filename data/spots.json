@@ -2822,19 +2822,6 @@
     "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
-    "id": "1a0b91e0d7e682",
-    "name": "Stadsplein water gap",
-    "description": "water gap",
-    "lat": 50.9655104,
-    "lng": 5.4958989,
-    "tags": [
-      "gap"
-    ],
-    "images": [],
-    "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-20T20:24:10.000Z"
-  },
-  {
     "id": "1a0b91e0d80174a",
     "name": "Walferdange bank to rail",
     "description": "bank to rail",
