@@ -1326,22 +1326,6 @@
     "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
-    "id": "1a0b91e0d169628",
-    "name": "De Brug 9 stair",
-    "description": "9 stair with handrail",
-    "lat": 50.9272562,
-    "lng": 4.4220032,
-    "tags": [
-      "stairs",
-      "handrail"
-    ],
-    "images": [
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d169628-0.jpg"
-    ],
-    "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-20T20:24:10.000Z"
-  },
-  {
     "id": "1a0b91e0d177648",
     "name": "Adecco 12 stair",
     "description": "12 stair with handrail",
