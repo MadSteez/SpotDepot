@@ -2394,19 +2394,6 @@
     "updatedAt": "2026-09-19T10:02:29.000Z"
   },
   {
-    "id": "1a0b91e0d7c3433",
-    "name": "Skatepark Péitruss",
-    "description": "Skatepark",
-    "lat": 49.6066296,
-    "lng": 6.1329816,
-    "tags": [],
-    "images": [
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d7c3433-0.jpg"
-    ],
-    "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
-  },
-  {
     "id": "1a0b91e0d7d3fa9",
     "name": "Stadhuis 8 Stair",
     "description": "8 Stair",
