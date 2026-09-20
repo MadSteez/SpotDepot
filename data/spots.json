@@ -2909,22 +2909,6 @@
     "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
-    "id": "1a0b91e0d8147e8",
-    "name": "Cents 9 stair",
-    "description": "9 stair with downledge",
-    "lat": 49.6175364,
-    "lng": 6.1634691,
-    "tags": [
-      "stairs",
-      "downledge"
-    ],
-    "images": [
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8147e8-0.jpg"
-    ],
-    "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-20T20:24:10.000Z"
-  },
-  {
     "id": "1a0b91e0d826f82",
     "name": "stadhuis 11 stair",
     "description": "11 stair",
