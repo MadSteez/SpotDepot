@@ -2952,5 +2952,16 @@
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
     "updatedAt": "2026-09-19T10:02:29.000Z"
+  },
+  {
+    "id": "mua3d2nu8qyvs6",
+    "name": "test",
+    "description": "",
+    "lat": 51.135167,
+    "lng": 5.599369,
+    "tags": [],
+    "images": [],
+    "updatedAt": "2026-09-20T17:29:51.324Z",
+    "createdAt": "2026-09-20T17:29:51.324Z"
   }
 ]
