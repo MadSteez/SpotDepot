@@ -2427,22 +2427,6 @@
     "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
-    "id": "1a0b91e0d5b95d3",
-    "name": "Panos ledges",
-    "description": "ledges and manual pads",
-    "lat": 50.9364669,
-    "lng": 5.3358057,
-    "tags": [
-      "ledge",
-      "manual pad"
-    ],
-    "images": [
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5b95d3-0.jpg"
-    ],
-    "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-20T20:24:10.000Z"
-  },
-  {
     "id": "1a0b91e0d5c3f00",
     "name": "brug bank",
     "description": "bank",
