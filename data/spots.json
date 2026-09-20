@@ -2484,5 +2484,18 @@
     "images": [],
     "createdAt": "2026-09-19T10:00:01.000Z",
     "updatedAt": "2026-09-19T10:00:01.000Z"
+  },
+  {
+    "id": "mu9szmmjg8um2y",
+    "name": "test",
+    "description": "",
+    "lat": 51.244966,
+    "lng": 5.44372,
+    "tags": [],
+    "images": [
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mu9szmmjg8um2y-1789907967851-0.jpg"
+    ],
+    "updatedAt": "2026-09-20T12:39:29.448Z",
+    "createdAt": "2026-09-20T12:39:29.448Z"
   }
 ]
