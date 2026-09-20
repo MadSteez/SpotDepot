@@ -1,11 +1,13 @@
 [
   {
     "id": "1a0b91e0cc580a4",
-    "name": "TISM Banks",
-    "description": "Banks",
+    "name": "TISM banks",
+    "description": "banks",
     "lat": 51.1348135,
     "lng": 5.6009626,
-    "tags": [],
+    "tags": [
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cc580a4-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cc580a4-1.jpg",
@@ -13,53 +15,64 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cc580a4-3.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cc62c7c",
-    "name": "Curved Handrail",
-    "description": "6 Stair with curved handrail",
+    "name": "curved handrail",
+    "description": "6 stair with curved handrail",
     "lat": 50.9640371,
     "lng": 5.4901717,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cc62c7c-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cc62c7c-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cc7a6a6",
-    "name": "Stadhuis 10 Stair",
-    "description": "Big 10 Stair with handrail",
+    "name": "stadhuis 10 stair",
+    "description": "10 stair with handrail",
     "lat": 50.9652488,
     "lng": 5.493371,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cc7a6a6-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cc85559",
-    "name": "Stadhuis 5 Stairs",
-    "description": "5 Stairs with low ledges",
+    "name": "stadhuis 5 stairs",
+    "description": "5 stairs",
     "lat": 50.9652511,
     "lng": 5.4945898,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cc929ce",
-    "name": "Virga Jesse 8 Stair",
-    "description": "8 Stair with handrail",
+    "name": "Virga Jesse 8 stair",
+    "description": "8 stair with handrail",
     "lat": 50.9269446,
     "lng": 5.3401135,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cc929ce-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cc929ce-1.jpg",
@@ -67,28 +80,33 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cc929ce-3.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ccab0d4",
-    "name": "OCMW 7 Stair",
-    "description": "7 Stair with handrail",
+    "name": "OCMW 7 stair",
+    "description": "7 stair with handrail",
     "lat": 50.9237014,
     "lng": 5.3420344,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ccab0d4-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ccb542",
-    "name": "Sportschool",
-    "description": "Benches and ledges",
+    "name": "sportschool",
+    "description": "benches and ledges",
     "lat": 50.9359151,
     "lng": 5.3461989,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ccb542-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ccb542-1.jpg",
@@ -97,15 +115,19 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ccb542-4.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ccc30f",
     "name": "Kunsthumaniora",
-    "description": "Stairs, handrails, gaps and ledges.",
+    "description": "6 stair with handrail and gaps",
     "lat": 50.9366217,
     "lng": 5.3519882,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "gap",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ccc30f-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ccc30f-1.jpg",
@@ -114,83 +136,99 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ccc30f-4.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ccd9b87",
-    "name": "Lambrechts 7 Stair",
-    "description": "7 Stair",
+    "name": "Lambrechts 7 stair",
+    "description": "7 stair with handrail",
     "lat": 50.9374172,
     "lng": 5.3572028,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ccd9b87-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cce8d87",
-    "name": "Capucienenplein Curved Ledges",
-    "description": "Curved ledges",
+    "name": "Capucienenplein curved ledges",
+    "description": "curved ledges",
     "lat": 50.9293691,
     "lng": 5.3410302,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cce8d87-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ccf573b",
-    "name": "Station 9 Stair",
-    "description": "9 Stair",
+    "name": "station 9 stair",
+    "description": "9 stair",
     "lat": 51.0176161,
     "lng": 4.4799659,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ccf573b-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ccf573b-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cd09181",
-    "name": "Gele Rail",
-    "description": "Flatrail and wallrides",
+    "name": "gele flatrail",
+    "description": "flatrail and banks",
     "lat": 50.9271101,
     "lng": 5.3371772,
-    "tags": [],
+    "tags": [
+      "flatrail",
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd09181-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cd1aeb7",
-    "name": "De Kroon Manny Pads",
-    "description": "Manny pads, ledges and gaps",
+    "name": "De Kroon",
+    "description": "manual pads, ledges and gaps",
     "lat": 51.1895068,
     "lng": 5.51873,
-    "tags": [],
+    "tags": [
+      "gap",
+      "ledge",
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd1aeb7-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd1aeb7-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd1aeb7-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cd25fb8",
-    "name": "Basisschool De Regenboog Ledges",
-    "description": "Ledges",
+    "name": "basisschool De Regenboog ledges",
+    "description": "ledges",
     "lat": 51.2469288,
     "lng": 5.439524,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd25fb8-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd25fb8-1.jpg",
@@ -198,269 +236,321 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd25fb8-3.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cd34cef",
-    "name": "De Libellenschool 5 Stair",
-    "description": "5 Stair",
+    "name": "De Libellenschool 5 stair",
+    "description": "5 stair",
     "lat": 51.2296441,
     "lng": 5.4325563,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd34cef-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cd46773",
-    "name": "Saxbylaan Banks",
-    "description": "Banks and gaps",
+    "name": "Saxbylaan banks",
+    "description": "banks and gaps",
     "lat": 51.2275433,
     "lng": 5.4385172,
-    "tags": [],
+    "tags": [
+      "gap",
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd46773-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd46773-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cd533a8",
-    "name": "Basisschool Boseind Ledges",
-    "description": "Ledges",
+    "name": "basisschool Boseind ledges",
+    "description": "ledges",
     "lat": 51.2246547,
     "lng": 5.4437563,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd533a8-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cd65452",
-    "name": "Station Ledges",
-    "description": "Ledges and benches",
+    "name": "station ledges",
+    "description": "ledges and benches",
     "lat": 51.2229463,
     "lng": 5.4371291,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd65452-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd65452-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd65452-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cd7b1ac",
-    "name": "Wico Campus 6 Stair",
-    "description": "6 Stair and benches",
+    "name": "Wico Campus 6 stair",
+    "description": "6 stair and benches",
     "lat": 51.2229694,
     "lng": 5.4367063,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd7b1ac-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cd846ec",
-    "name": "Koel Flatrail",
-    "description": "Long square flatrail",
+    "name": "Koel flatrail",
+    "description": "long square flatrail",
     "lat": 51.2183586,
     "lng": 5.4287669,
-    "tags": [],
+    "tags": [
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd846ec-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd846ec-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cd93934",
-    "name": "Palethe 6 Stair",
-    "description": "6 Stair",
+    "name": "Palethe 6 stair",
+    "description": "6 stair",
     "lat": 51.2113612,
     "lng": 5.4291409,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd93934-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd93934-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cd93934-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cda2396",
-    "name": "De linde Double Set",
-    "description": "Double 3 stair with handrail and benches",
+    "name": "basisschool De linde 3 flat 3 stair",
+    "description": "3 flat 3 stair with handrail and benches",
     "lat": 51.2120149,
     "lng": 5.4272075,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "ledge",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cda2396-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cdb4b8d",
     "name": "Mater Dei",
-    "description": "Ledges and flatrails",
+    "description": "ledges and flatrails",
     "lat": 51.2084496,
     "lng": 5.4282942,
-    "tags": [],
+    "tags": [
+      "ledge",
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cdb4b8d-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cdb4b8d-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cdc840",
-    "name": "Kiosk 6 Stair",
-    "description": "6 Stair",
+    "name": "kiosk 6 stair",
+    "description": "6 stair",
     "lat": 51.2115368,
     "lng": 5.4236686,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cdc840-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cdd3899",
-    "name": "Gemeentehuis Street Gap",
-    "description": "Gap to the street",
+    "name": "gemeentehuis gap",
+    "description": "gap",
     "lat": 51.2113176,
     "lng": 5.4231892,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cdd3899-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cdf3eea",
-    "name": "Sporthal Plaza",
-    "description": "5 Stairs, banks and manny pads",
+    "name": "sporthal plaza",
+    "description": "5 stairs, banks and manual pads",
     "lat": 51.0068458,
     "lng": 5.5955931,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "bank",
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cdf3eea-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cdf3eea-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cdf3eea-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ce01837",
-    "name": "De Soeverein 9 Stair",
-    "description": "9 Stair with handrail",
+    "name": "De Soeverein 9 stair",
+    "description": "9 stair with handrail",
     "lat": 51.2447467,
     "lng": 5.306268,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce01837-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ce18c5f",
-    "name": "Stadhuis 6 Stair",
-    "description": "6 Stair",
+    "name": "stadhuis 6 stair",
+    "description": "6 stair",
     "lat": 51.2306144,
     "lng": 5.3046096,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce18c5f-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ce276ed",
-    "name": "Kolonel Aertsplein 9 Stair",
-    "description": "9 Stair with square handrail",
+    "name": "Kolonel Aertsplein 9 stair",
+    "description": "9 stair with handrail",
     "lat": 51.0952163,
     "lng": 5.7858597,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce276ed-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ce34ba1",
-    "name": "Kloosterbempden 2 Stair Outledge",
-    "description": "2 Stair outledge",
+    "name": "Kloosterbempden 2 stair outledge",
+    "description": "2 stair outledge",
     "lat": 51.0930861,
     "lng": 5.7916237,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce34ba1-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ce46bc1",
-    "name": "Kloosterbempden Double Set Outledge",
-    "description": "Double 4 stair outledge",
+    "name": "Kloosterbempden 4 flat 4 stair outledges",
+    "description": "4 flat 4 stair outledges",
     "lat": 51.0930072,
     "lng": 5.7932137,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce46bc1-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ce52ff7",
-    "name": "Parking Manny Pads",
-    "description": "Manny pads",
+    "name": "parking manual pads",
+    "description": "manual pads",
     "lat": 51.0927523,
     "lng": 5.7928415,
-    "tags": [],
+    "tags": [
+      "manual pad"
+    ],
     "images": [],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ce658a8",
-    "name": "Station Rail Gap",
-    "description": "Gap over Rail",
+    "name": "station handrail gap",
+    "description": "gap over rail",
     "lat": 50.8167525,
     "lng": 5.1763207,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce658a8-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ce7a103",
-    "name": "Universiteit Gebouw A Stairs",
-    "description": "5 Flat 4 stair and 9 stair with handrail",
+    "name": "universiteit gebouw A stairs",
+    "description": "5 flat 4 stair and 9 stair with handrail",
     "lat": 51.1634664,
     "lng": 4.4007922,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce7a103-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce7a103-1.jpg",
@@ -468,15 +558,17 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce7a103-3.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ce8164b",
-    "name": "Linkeroever Stairs",
-    "description": "7 Stair and 8 flat 3 stair",
+    "name": "Linkeroever stairs",
+    "description": "7 stair and 8 flat 3 stair",
     "lat": 51.2251077,
     "lng": 4.3807745,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce8164b-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce8164b-1.jpg",
@@ -485,68 +577,81 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ce8164b-4.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ce977f9",
-    "name": "Elegastplein Ledge",
-    "description": "Ledge",
+    "name": "Elegastplein ledge",
+    "description": "ledge",
     "lat": 51.2264254,
     "lng": 4.3818989,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cea53ad",
-    "name": "Schengenplein Curved Ledges",
-    "description": "Curved ledges",
+    "name": "Schengenplein curved ledges",
+    "description": "curved ledges",
     "lat": 51.2330913,
     "lng": 4.4098994,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cea53ad-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cea53ad-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ceb3259",
-    "name": "Schijnpoort Rail",
-    "description": "Long mellow handrail",
+    "name": "Schijnpoort handrail",
+    "description": "handrail",
     "lat": 51.2271025,
     "lng": 4.4377506,
-    "tags": [],
+    "tags": [
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ceb3259-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ceb3259-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cec4650",
-    "name": "KNS",
-    "description": "Gaps and stairs",
+    "name": "KNS plaza",
+    "description": "14 stair with handrail, gaps and curved ledges",
     "lat": 51.2153045,
     "lng": 4.4101464,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "gap",
+      "ledge",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cec4650-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cec4650-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0ced79be",
-    "name": "De Singel Stairs",
-    "description": "9 Stair and 4 stair",
+    "name": "De Singel stairs",
+    "description": "9 stair and 4 stair",
     "lat": 51.1936176,
     "lng": 4.4023497,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ced79be-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ced79be-1.jpg",
@@ -557,148 +662,177 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0ced79be-6.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cee40b",
-    "name": "Plantin Blocks",
-    "description": "Gaps and ledges",
+    "name": "Plantin blocks",
+    "description": "gaps and ledges",
     "lat": 51.210656,
     "lng": 4.4230068,
-    "tags": [],
+    "tags": [
+      "gap",
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cee40b-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cee40b-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cee40b-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cef53d2",
-    "name": "Noordersingel 9 Stair",
-    "description": "9 Stair with handrail",
+    "name": "Noordersingel 9 stair",
+    "description": "9 stair with handrail",
     "lat": 51.2205762,
     "lng": 4.4499646,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cef53d2-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cf09852",
-    "name": "Marsstraat Ledges",
-    "description": "Ledges",
+    "name": "Marsstraat ledges",
+    "description": "ledges",
     "lat": 51.2016227,
     "lng": 4.4420036,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf09852-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cf16142",
-    "name": "Columbiastraat Banks",
-    "description": "Banks with grindable edge",
+    "name": "Columbiastraat bank",
+    "description": "bank",
     "lat": 51.2459551,
     "lng": 4.4235984,
-    "tags": [],
+    "tags": [
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf16142-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cf26507",
-    "name": "Columbiastraat Bank to Ledge",
-    "description": "Bank to Ledge",
+    "name": "Columbiastraat bank to ledge",
+    "description": "bank to ledge",
     "lat": 51.2450782,
     "lng": 4.4236257,
-    "tags": [],
+    "tags": [
+      "ledge",
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf26507-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cf31318",
-    "name": "Waalsekaai 9 Stair",
-    "description": "9 Stair with square handrail",
+    "name": "Waalsekaai 9 stair",
+    "description": "9 stair with handrail",
     "lat": 51.2097969,
     "lng": 4.3888083,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf31318-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf31318-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cf45cb2",
-    "name": "Overpoort 10 Stair",
-    "description": "10 Stair with handrail",
+    "name": "Overpoort 10 stair",
+    "description": "10 stair with handrail",
     "lat": 51.0391601,
     "lng": 3.7261381,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf45cb2-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cf53de",
-    "name": "Alphonse de Hollainhof Flatrail",
-    "description": "Flatrail",
+    "name": "Alphonse de Hollainhof flatrail",
+    "description": "flatrail",
     "lat": 51.0443775,
     "lng": 3.7369379,
-    "tags": [],
+    "tags": [
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf53de-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cf63de5",
-    "name": "Gerechtsgebouw Rail",
-    "description": "6 Stair handrail",
+    "name": "gerechtsgebouw handrail",
+    "description": "6 stair handrail",
     "lat": 51.062924,
     "lng": 3.7156816,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf63de5-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cf73a69",
-    "name": "3 Block",
-    "description": "3 Block",
+    "name": "Lange Munte 3 block",
+    "description": "3 block",
     "lat": 50.807421,
     "lng": 3.3010175,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf73a69-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cf86284",
-    "name": "Xpo 9 Stair",
-    "description": "9 Stair with handrail",
+    "name": "Xpo 9 stair",
+    "description": "9 stair with handrail",
     "lat": 50.8083904,
     "lng": 3.2760794,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf86284-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf86284-1.jpg",
@@ -706,28 +840,34 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf86284-3.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cf9994d",
-    "name": "Sint-Rochus Gap",
-    "description": "Gap",
+    "name": "Sint-Rochus gap",
+    "description": "gap",
     "lat": 50.8196988,
     "lng": 3.2705744,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf9994d-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cfa6ad2",
-    "name": "Vlaskaai Stairs",
-    "description": "7 Flat 9 stair with square handrails and ledge",
+    "name": "Vlaskaai stairs",
+    "description": "7 flat 9 stair with handrails and ledge",
     "lat": 50.8297376,
     "lng": 3.255916,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "ledge",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cfa6ad2-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cfa6ad2-1.jpg",
@@ -738,15 +878,17 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cfa6ad2-6.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cfb926b",
-    "name": "Marktstraat Rail",
-    "description": "Long mellow handrail",
+    "name": "Marktstraat handrail",
+    "description": "handrail",
     "lat": 50.8075138,
     "lng": 3.2338722,
-    "tags": [],
+    "tags": [
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cfb926b-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cfb926b-1.jpg",
@@ -754,69 +896,84 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cfb926b-3.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cfc9dc",
-    "name": "Westelijke Strekdam Blocks and Stairs",
-    "description": "3 Block, 2 Block, 9 Stair and 6 Stair",
+    "name": "Westelijke Strekdam blocks and stairs",
+    "description": "3 block, 2 block, 9 stair and 6 stair",
     "lat": 51.2357103,
     "lng": 2.9198957,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cfc9dc-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cfc9dc-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cfd879b",
-    "name": "Maria Hendrikapark Banks",
-    "description": "Banks",
+    "name": "Maria Hendrikapark banks",
+    "description": "banks",
     "lat": 51.220647,
     "lng": 2.9237494,
-    "tags": [],
+    "tags": [
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cfd879b-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cfef61",
-    "name": "COREtec Dôme 7 Stair",
-    "description": "7 Stair with handrail",
+    "name": "COREtec Dôme 7 stair",
+    "description": "7 stair with handrail",
     "lat": 51.2177864,
     "lng": 2.8891826,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cfef61-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0cffa3ae",
     "name": "Esplanadeplein",
-    "description": "Blocks, stairs and gaps",
+    "description": "blocks, stairs and gaps",
     "lat": 51.0994737,
     "lng": 2.5803668,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cffa3ae-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cffa3ae-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d006f83",
-    "name": "VDAB Plaza",
-    "description": "Stairs, manny pads, ledges",
+    "name": "VDAB plaza",
+    "description": "stairs, manual pads, ledges",
     "lat": 50.8835656,
     "lng": 4.7145109,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "ledge",
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d006f83-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d006f83-1.jpg",
@@ -828,15 +985,20 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d006f83-7.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d01a1b8",
-    "name": "De Grasmus Rails",
-    "description": "6 Stair and 3 block with handrails",
+    "name": "De Grasmus",
+    "description": "6 stair and 3 block with handrails and benches",
     "lat": 50.8771106,
     "lng": 4.689387,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "gap",
+      "ledge",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d01a1b8-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d01a1b8-1.jpg",
@@ -846,431 +1008,521 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d01a1b8-5.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d024788",
-    "name": "Solidaris 8 Stair",
-    "description": "8 Stair with handrail",
+    "name": "Solidaris 8 stair",
+    "description": "8 stair with handrail",
     "lat": 50.1961203,
     "lng": 4.5394692,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d024788-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d035ee5",
-    "name": "7 Tuinen 10 Stair",
-    "description": "10 Stair",
+    "name": "7 Tuinen 10 stair",
+    "description": "10 stair with handrail",
     "lat": 50.8776102,
     "lng": 4.7142296,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d035ee5-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d044018",
-    "name": "7 Tuinen 12 Stair",
-    "description": "12 Stair",
+    "name": "7 Tuinen 12 stair",
+    "description": "12 stair with handrail",
     "lat": 50.8773278,
     "lng": 4.7139021,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d044018-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d0544f0",
-    "name": "Campus Groep T 11 Stair",
-    "description": "11 Stair",
+    "name": "campus groep T 11 stair",
+    "description": "11 stair",
     "lat": 50.8750541,
     "lng": 4.708244,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d0544f0-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d06a5d6",
-    "name": "Decathlon 11 Stair",
-    "description": "11 Stair with handrail",
+    "name": "Decathlon 11 stair",
+    "description": "11 stair with handrail",
     "lat": 50.4170881,
     "lng": 4.4388643,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d06a5d6-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d078fdd",
-    "name": "Police Pyramids",
-    "description": "Banks and pyramids",
+    "name": "police pyramids",
+    "description": "banks and pyramids",
     "lat": 50.4116213,
     "lng": 4.4530092,
-    "tags": [],
+    "tags": [
+      "bank",
+      "pyramid"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d078fdd-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d081509",
-    "name": "Tribunal 8 Stair",
-    "description": "8 Stair with handrail",
+    "name": "Tribunal 8 stair",
+    "description": "8 stair with handrail",
     "lat": 50.5980629,
     "lng": 4.3450727,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d081509-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d093359",
-    "name": "Bibliothèque 8 Stair",
-    "description": "8 Stair with handrail",
+    "name": "bibliothèque 8 stair",
+    "description": "8 stair with handrail",
     "lat": 50.5574254,
     "lng": 4.689689,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d093359-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d0a24c5",
-    "name": "Aula Magna Outledges",
-    "description": "Outledges",
+    "name": "Aula Magna outledges",
+    "description": "outledges",
     "lat": 50.6691401,
     "lng": 4.6109011,
-    "tags": [],
+    "tags": [
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d0a24c5-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d0b9532",
-    "name": "Ecole 4 Block",
-    "description": "4 Block",
+    "name": "école 4 block",
+    "description": "4 block",
     "lat": 50.6721766,
     "lng": 4.6129249,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d0b9532-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d0c3ea9",
-    "name": "Gare Outledges",
-    "description": "Outledges",
+    "name": "gare 3 stair outledges",
+    "description": "3 stairs with outledges",
     "lat": 50.6706812,
     "lng": 4.6147963,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d0c3ea9-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d0d215d",
-    "name": "Place des Sciences 4 Block",
-    "description": "4 Block",
+    "name": "Place des Sciences 4 block",
+    "description": "4 block",
     "lat": 50.6681749,
     "lng": 4.6195996,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d0d215d-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d0e7cc7",
-    "name": "Kimkempois Downledges",
-    "description": "Downledges",
+    "name": "Kimkempois downledges",
+    "description": "downledges",
     "lat": 50.6160781,
     "lng": 5.5820498,
-    "tags": [],
+    "tags": [
+      "downledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d0e7cc7-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d0f271",
-    "name": "Pont Albert Plaza",
-    "description": "Stairs, outledges and flatrails",
+    "name": "Pont Albert plaza",
+    "description": "stairs, outledges and flatrails",
     "lat": 50.6324267,
     "lng": 5.5718257,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "outledge",
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d0f271-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d106b8e",
-    "name": "Province de Liège Plaza",
-    "description": "Stairs, ledges and flatrails",
+    "name": "Province de Liège plaza",
+    "description": "stairs, ledges and flatrails",
     "lat": 50.6442076,
     "lng": 5.5895392,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "ledge",
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d106b8e-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d1172c4",
-    "name": "Royal Sport Nautique Gap",
-    "description": "Gap",
+    "name": "Royal Sport Nautique gap",
+    "description": "gap",
     "lat": 50.6284519,
     "lng": 5.5752746,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d1172c4-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d126ef7",
-    "name": "Mac Seraing Ledges",
-    "description": "Ledges",
+    "name": "Mac Seraing ledges",
+    "description": "ledges",
     "lat": 50.6149262,
     "lng": 5.5115287,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d126ef7-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d1388d5",
-    "name": "Parc Bernard Serin Banks",
-    "description": "Banks",
+    "name": "Parc Bernard Serin banks",
+    "description": "banks",
     "lat": 50.6133199,
     "lng": 5.5106359,
-    "tags": [],
+    "tags": [
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d1388d5-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d1450e8",
-    "name": "Fléron Downledges",
-    "description": "Downledges",
+    "name": "Fléron 7 stair",
+    "description": "7 stair with downledges",
     "lat": 50.6106782,
     "lng": 5.6650676,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "downledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d1450e8-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d156f92",
-    "name": "Lozenberg 8 Stair",
-    "description": "8 Stair with handrail and downledges",
+    "name": "Lozenberg 8 stair",
+    "description": "8 stair with handrail and downledges",
     "lat": 50.8683693,
     "lng": 4.459267,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail",
+      "downledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d156f92-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d169628",
-    "name": "De Brug 9 Stair",
-    "description": "9 Stair with square handrail",
+    "name": "De Brug 9 stair",
+    "description": "9 stair with handrail",
     "lat": 50.9272562,
     "lng": 4.4220032,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d169628-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d177648",
-    "name": "Adecco 12 Stair",
-    "description": "12 Stair with handrail",
+    "name": "Adecco 12 stair",
+    "description": "12 stair with handrail",
     "lat": 50.8770239,
     "lng": 4.2799417,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d177648-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d18585b",
-    "name": "Koningin Boudewijnstadion Flatrail",
-    "description": "Flatrail",
+    "name": "Koningin Boudewijnstadion flatrail",
+    "description": "flatrail",
     "lat": 50.8974263,
     "lng": 4.3367142,
-    "tags": [],
+    "tags": [
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d18585b-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d19368c",
-    "name": "Parc Bonnevie 3 Block",
-    "description": "3 Block",
+    "name": "Parc Bonnevie 3 block",
+    "description": "3 block",
     "lat": 50.8563308,
     "lng": 4.3366535,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d19368c-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d1a3dde",
-    "name": "Brunfautplein Ledges",
-    "description": "Ledges",
+    "name": "Brunfautplein ledges",
+    "description": "ledges",
     "lat": 50.8527401,
     "lng": 4.338756,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d1a3dde-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d1b7496",
-    "name": "Brico 4 Stair",
-    "description": "4 Stair with handrail",
+    "name": "Brico 4 stair",
+    "description": "4 stair with handrail",
     "lat": 50.8273837,
     "lng": 4.2888611,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d1b7496-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d1c9fde",
-    "name": "Parc Joseph Lemaire Ledge",
-    "description": "Ledge",
+    "name": "Parc Joseph Lemaire ledge",
+    "description": "ledge",
     "lat": 50.8282544,
     "lng": 4.2937384,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d1c9fde-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d1d9047",
-    "name": "Parc Aristide Briand 6 Flat 1 Stair",
-    "description": "6 Flat 1 Stair with kinked handrail",
+    "name": "Parc Aristide Briand 6 flat 1 stair",
+    "description": "6 flat 1 stair with handrail",
     "lat": 50.8472394,
     "lng": 4.4357462,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d1d9047-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d1e3a2c",
-    "name": "Besix 8 Stair",
-    "description": "8 Stair with handrail",
+    "name": "Besix 8 stair",
+    "description": "8 stair with handrail",
     "lat": 50.8557985,
     "lng": 4.4268214,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d1e3a2c-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d1fd34",
-    "name": "Decathlon 5 Stair",
-    "description": "5 Stair with handrail",
+    "name": "Decathlon 5 stair",
+    "description": "5 stair with handrail",
     "lat": 50.8778031,
     "lng": 4.4136321,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d1fd34-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d20835b",
-    "name": "Flageyplein Ledges",
-    "description": "Ledges",
+    "name": "Flageyplein ledges",
+    "description": "ledges",
     "lat": 50.8278829,
     "lng": 4.371859,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d20835b-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d21acb0",
-    "name": "Trone Ledges",
-    "description": "Ledges",
+    "name": "Trone ledges",
+    "description": "ledges",
     "lat": 50.8400127,
     "lng": 4.3653758,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d21acb0-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d226c9c",
-    "name": "European Parliament",
-    "description": "Stairs, gaps and ledges",
+    "name": "Europees parlement",
+    "description": "stairs, gaps and ledges",
     "lat": 50.837827,
     "lng": 4.3738692,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "gap",
+      "ledge",
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d226c9c-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d226c9c-1.jpg",
@@ -1279,201 +1531,238 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d226c9c-4.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d239a43",
-    "name": "Securex Ledges",
-    "description": "Ledges",
+    "name": "Securex ledges",
+    "description": "ledges",
     "lat": 50.8362464,
     "lng": 4.4008487,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d239a43-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d245dcb",
-    "name": "Rue Marie-Thérèse Manny Pad",
-    "description": "Manny pad",
+    "name": "Rue Marie-Thérèse manual pad",
+    "description": "manual pad",
     "lat": 50.8464171,
     "lng": 4.3716705,
-    "tags": [],
+    "tags": [
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d245dcb-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d254c0e",
-    "name": "Maelbeek 8 Stair",
-    "description": "8 Stair with handrail",
+    "name": "Maelbeek 8 stair",
+    "description": "8 stair with handrail",
     "lat": 50.8433781,
     "lng": 4.3787827,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d254c0e-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d26248c",
-    "name": "Madou 3 Flat 3 Stair",
-    "description": "3 Flat 3 Stair",
+    "name": "Madou 3 flat 3 stair",
+    "description": "3 flat 3 stair",
     "lat": 50.849935,
     "lng": 4.369839,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d26248c-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d27252d",
-    "name": "Noordstation Outledges",
-    "description": "Outledges",
+    "name": "Noordstation 2 stair outledges",
+    "description": "2 stair outledges",
     "lat": 50.859167,
     "lng": 4.360395,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d27252d-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d281427",
-    "name": "Simon Bolivarlaan Ledges",
-    "description": "Ledges",
+    "name": "Simon Bolivarlaan ledges",
+    "description": "ledges",
     "lat": 50.8604188,
     "lng": 4.3583151,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d281427-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d281427-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d29b316",
-    "name": "Finance Tower 10 Stair",
-    "description": "10 Stair",
+    "name": "Finance Tower 10 stair",
+    "description": "10 stair",
     "lat": 50.8534397,
     "lng": 4.3637875,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d29b316-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d2a86be",
-    "name": "Cirque Royal 5 Flat 7 Stair",
-    "description": "5 Flat 7 stair",
+    "name": "Cirque Royal 5 flat 7 stair",
+    "description": "5 flat 7 stair",
     "lat": 50.8489818,
     "lng": 4.365827,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d2a86be-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d2ba726",
-    "name": "Muntplein Ledges",
-    "description": "Ledges",
+    "name": "Muntplein ledges",
+    "description": "ledges",
     "lat": 50.8499839,
     "lng": 4.3536929,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d2ba726-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d2c34e6",
-    "name": "Recyclart Ledge",
-    "description": "Ledge",
+    "name": "Recyclart ledge",
+    "description": "ledge",
     "lat": 50.841399,
     "lng": 4.3481107,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d2c34e6-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d2d87f3",
-    "name": "Egmontpark 3 Flat 4 Stair",
-    "description": "3 Flat 4 stair",
+    "name": "Egmontpark 3 flat 4 stair",
+    "description": "3 flat 4 stair",
     "lat": 50.8379787,
     "lng": 4.355679,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d2d87f3-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d2e24a9",
-    "name": "Fonsnylaan Outledges",
-    "description": "Outledges",
+    "name": "Fonsnylaan 3 stair outledges",
+    "description": "3 stairs with outledges",
     "lat": 50.8353077,
     "lng": 4.3376502,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d2e24a9-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d2e24a9-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d2f3f27",
     "name": "Mont des Arts",
-    "description": "Stairs, gaps and ledges",
+    "description": "stairs, gaps, ledges and downledges",
     "lat": 50.8436114,
     "lng": 4.3576544,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "gap",
+      "ledge",
+      "downledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d2f3f27-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d2f3f27-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d2f3f27-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d30b248",
-    "name": "De Gendarmerie Ledges",
-    "description": "Ledges",
+    "name": "De Gendarmerie ledges",
+    "description": "ledges",
     "lat": 50.9437365,
     "lng": 4.0358904,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d30b248-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d317669",
-    "name": "Reebou schoul 8 Stair",
-    "description": "8 Stair with handrails",
+    "name": "Reebou schoul 8 stair",
+    "description": "8 stair with handrails",
     "lat": 49.5177657,
     "lng": 6.108645,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d317669-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d317669-1.jpg",
@@ -1484,41 +1773,50 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d317669-6.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d32787d",
-    "name": "Reebou schoul Ledges",
-    "description": "Ledges",
+    "name": "Reebou schoul ledges",
+    "description": "ledges",
     "lat": 49.5172747,
     "lng": 6.1092928,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d32787d-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d331b36",
-    "name": "Ecole Européenne Stairs",
-    "description": "Stairs with handrail",
+    "name": "école Européenne stairs",
+    "description": "stairs with handrail",
     "lat": 49.6175103,
     "lng": 6.0344677,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d331b36-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d34af50",
     "name": "Philharmonie",
-    "description": "Ledges and stairs with handrail",
+    "description": "stairs with handrails and ledges",
     "lat": 49.6178921,
     "lng": 6.1425372,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail",
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d34af50-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d34af50-1.jpg",
@@ -1529,150 +1827,180 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d34af50-6.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d35aaba",
-    "name": "Geesseknäppchen 3 Block",
-    "description": "3 Block and ledges",
+    "name": "Geesseknäppchen 3 block",
+    "description": "3 block and ledges",
     "lat": 49.6011515,
     "lng": 6.1115289,
-    "tags": [],
+    "tags": [
+      "gap",
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d35aaba-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d36668c",
-    "name": "FEDAS 8 Stair",
-    "description": "8 Stair with handrail",
+    "name": "FEDAS 8 stair",
+    "description": "8 stair with handrail",
     "lat": 49.5856083,
     "lng": 6.1436721,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d36668c-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d376eff",
-    "name": "Sanem Quarterpipes",
-    "description": "Quarterpipes",
+    "name": "Sanem quarterpipes",
+    "description": "quarterpipes",
     "lat": 49.5477866,
     "lng": 5.9131461,
-    "tags": [],
+    "tags": [
+      "quarterpipe"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d376eff-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d376eff-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d388864",
-    "name": "Bibliotheek 10 Stair",
-    "description": "10 Stair",
+    "name": "bibliotheek 10 stair",
+    "description": "10 stair",
     "lat": 50.8458091,
     "lng": 5.701621,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d388864-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d3970e1",
-    "name": "Veldhoven Quarterpipe",
-    "description": "Quarterpipe",
+    "name": "Veldhoven quarterpipe",
+    "description": "quarterpipe",
     "lat": 51.4290718,
     "lng": 5.4262777,
-    "tags": [],
+    "tags": [
+      "quarterpipe"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3970e1-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d3a5f66",
-    "name": "Stadhuis 7 Stair",
-    "description": "7 Stair with handrail",
+    "name": "stadhuis 7 stair",
+    "description": "7 stair with handrail",
     "lat": 51.3377876,
     "lng": 3.83089,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3a5f66-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d3b4239",
-    "name": "Jeugdhuis 9 Stair",
-    "description": "9 Stair with handrail",
+    "name": "jeugdhuis 9 stair",
+    "description": "9 stair with handrail",
     "lat": 50.8481139,
     "lng": 5.4844645,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3b4239-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3b4239-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3b4239-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d3c55c1",
-    "name": "Stadsplein Pyramide",
-    "description": "Pyramide",
+    "name": "stadsplein pyramide",
+    "description": "pyramide",
     "lat": 51.0480125,
     "lng": 5.2245313,
-    "tags": [],
+    "tags": [
+      "pyramid"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3c55c1-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d3d8171",
-    "name": "Stadsplein Banks",
-    "description": "Banks and ledge",
+    "name": "stadsplein banks",
+    "description": "banks and ledge",
     "lat": 51.0480373,
     "lng": 5.2238934,
-    "tags": [],
+    "tags": [
+      "ledge",
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3d8171-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d3e7779",
-    "name": "Kiel Banks",
-    "description": "Banks",
+    "name": "Kiel banks",
+    "description": "banks",
     "lat": 51.1902084,
     "lng": 4.3848414,
-    "tags": [],
+    "tags": [
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3e7779-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3e7779-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3e7779-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d3f7b5d",
-    "name": "Universiteit gebouw V Plaza",
-    "description": "9 Stair, 2 block, ledges and manny pads",
+    "name": "universiteit gebouw V plaza",
+    "description": "9 stair, 2 block, ledges and manual pads",
     "lat": 51.1595001,
     "lng": 4.407959,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "gap",
+      "ledge",
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3f7b5d-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3f7b5d-1.jpg",
@@ -1680,42 +2008,50 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d3f7b5d-3.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d403341",
-    "name": "Universiteit Gebouw M Banks",
-    "description": "Banks",
+    "name": "universiteit gebouw M banks",
+    "description": "banks",
     "lat": 51.160533,
     "lng": 4.4059521,
-    "tags": [],
+    "tags": [
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d403341-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d403341-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d41a28",
-    "name": "Bosdel Ledge",
-    "description": "Ledge",
+    "name": "Bosdel ledge",
+    "description": "gap and ledge",
     "lat": 50.9506228,
     "lng": 5.4878996,
-    "tags": [],
+    "tags": [
+      "gap",
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d41a28-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d427069",
-    "name": "Versuz Manny Pads",
-    "description": "Manny pads or ledges",
+    "name": "Versuz manual pads",
+    "description": "ledges and manual pads",
     "lat": 50.9330006,
     "lng": 5.3646478,
-    "tags": [],
+    "tags": [
+      "ledge",
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d427069-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d427069-1.jpg",
@@ -1723,28 +2059,32 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d427069-3.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d431591",
-    "name": "Delacenseriestraat Ledge",
-    "description": "Ledge",
+    "name": "Delacenseriestraat ledge",
+    "description": "ledge",
     "lat": 51.2116607,
     "lng": 4.4231135,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d431591-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d441ba9",
-    "name": "Lago Ledges",
-    "description": "Ledges",
+    "name": "Lago ledges",
+    "description": "ledges",
     "lat": 50.8264602,
     "lng": 3.2537907,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d441ba9-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d441ba9-1.jpg",
@@ -1752,199 +2092,237 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d441ba9-3.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d4543d9",
-    "name": "Wave Ledges",
-    "description": "Ledges",
+    "name": "Lange Dijkstraat wave ledges",
+    "description": "ledges",
     "lat": 51.2295759,
     "lng": 4.4203148,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d4543d9-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d466977",
-    "name": "Bank to 4 Stair",
-    "description": "Bank to 4 Stair",
+    "name": "bank to 4 stair",
+    "description": "bank to 4 stair",
     "lat": 51.2265821,
     "lng": 4.42383,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d466977-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d476775",
-    "name": "Scheldekaaien Ledges",
-    "description": "Ledges",
+    "name": "Scheldekaaien ledges",
+    "description": "ledges",
     "lat": 51.2156157,
     "lng": 4.392587,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d476775-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d476775-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d483d5c",
-    "name": "Velleke 8 Stair",
-    "description": "8 Stair with handrail",
+    "name": "Velleke 8 stair",
+    "description": "8 stair with handrail",
     "lat": 51.1655639,
     "lng": 4.9830232,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d483d5c-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d483d5c-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d49a2d3",
-    "name": "Velleke 10 Stair",
-    "description": "10 Stair with handrail",
+    "name": "Velleke 10 stair",
+    "description": "10 stair with handrail",
     "lat": 51.1659768,
     "lng": 4.9820334,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d49a2d3-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d4aa0ea",
-    "name": "Auditorium 8 Stair",
-    "description": "8 Stair with handrails",
+    "name": "auditorium 8 stair",
+    "description": "8 stair with handrails",
     "lat": 51.049055,
     "lng": 3.7034818,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d4aa0ea-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d4b6371",
-    "name": "Van Hombeeckplein Flatrails",
-    "description": "Flatrails",
+    "name": "Van Hombeeckplein flatrails",
+    "description": "flatrails",
     "lat": 51.1951317,
     "lng": 4.417248,
-    "tags": [],
+    "tags": [
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d4b6371-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d4c199f",
     "name": "Stationsplein",
-    "description": "4 Stair with hubba, ledges, flatrails",
+    "description": "4 stair with downledges, ledges, flatrails",
     "lat": 51.1339076,
     "lng": 4.476243,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "ledge",
+      "downledge",
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d4c199f-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d4dadc4",
-    "name": "Oude Markt Outrail",
-    "description": "4 Stair with outrail",
+    "name": "Oude Markt outrail",
+    "description": "4 stair with outrail",
     "lat": 50.9631987,
     "lng": 5.4986099,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "outrail"
+    ],
     "images": [],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d4e518b",
-    "name": "Jeugdhuis Gap to Flatrail",
-    "description": "Gap to flatrail",
+    "name": "jeugdhuis gap to flatrail",
+    "description": "gap to flatrail",
     "lat": 51.2250636,
     "lng": 4.3839211,
-    "tags": [],
+    "tags": [
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d4e518b-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d4f4d07",
-    "name": "Apolloplein Ledges",
-    "description": "Ledges",
+    "name": "Apolloplein ledges",
+    "description": "ledges",
     "lat": 51.1985891,
     "lng": 4.4458604,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d4f4d07-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d502bf6",
-    "name": "Brouwerijplein 9 Stair",
-    "description": "9 Stair",
+    "name": "Brouwerijplein 9 stair",
+    "description": "9 stair",
     "lat": 50.8867459,
     "lng": 4.7074893,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d502bf6-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d502bf6-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d502bf6-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d518f93",
-    "name": "Engels Plein Gap",
-    "description": "Gap",
+    "name": "Engels plein gap",
+    "description": "gap",
     "lat": 50.8875108,
     "lng": 4.7055842,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d518f93-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5271a4",
-    "name": "Residentie VIVID 5 Stair",
-    "description": "5 Stair",
+    "name": "residentie VIVID 5 stair",
+    "description": "5 stair",
     "lat": 50.8862657,
     "lng": 4.7089538,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5271a4-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d53780",
-    "name": "Hamme-Mille Pyramids",
-    "description": "Pyramids",
+    "name": "Hamme-Mille pyramids",
+    "description": "pyramids",
     "lat": 50.7797005,
     "lng": 4.7134141,
-    "tags": [],
+    "tags": [
+      "pyramid"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d53780-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d53780-1.jpg",
@@ -1952,832 +2330,996 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d53780-3.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5447e7",
-    "name": "Sint-Augustinus 10 Stair",
-    "description": "10 Stair with handrail",
+    "name": "Sint-Augustinus 10 stair",
+    "description": "10 stair with handrail",
     "lat": 50.8837694,
     "lng": 4.6975091,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5447e7-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5512c6",
-    "name": "Sluispark Manny Pad",
-    "description": "Manny Pad",
+    "name": "Sluispark manual pad",
+    "description": "manual pad",
     "lat": 50.8866804,
     "lng": 4.7002346,
-    "tags": [],
+    "tags": [
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5512c6-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d568720",
-    "name": "De Boogerd 8 Stair",
-    "description": "8 Stair with handrail",
+    "name": "De Boogerd 8 stair",
+    "description": "8 stair with handrail",
     "lat": 51.0471545,
     "lng": 5.2243268,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d568720-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5727b",
-    "name": "Campus Beringen 6 Stair",
-    "description": "6 Stair with handrail",
+    "name": "campus Beringen 6 stair",
+    "description": "6 stair with handrail",
     "lat": 51.0525559,
     "lng": 5.2205096,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5727b-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d587903",
-    "name": "Campus Beringen Ledges",
-    "description": "Ledges",
+    "name": "campus Beringen ledges",
+    "description": "ledges",
     "lat": 51.0519663,
     "lng": 5.2200647,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d587903-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5988ce",
-    "name": "De Waai Outledge",
-    "description": "Outledge",
+    "name": "De Waai outledge",
+    "description": "outledge",
     "lat": 51.1607387,
     "lng": 4.9862534,
-    "tags": [],
+    "tags": [
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5988ce-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5988ce-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5a5a30",
-    "name": "Xior 4 Flat 4 Stair",
-    "description": "4 Flat 4 Stair",
+    "name": "Xior 4 flat 4 stair",
+    "description": "4 flat 4 stair",
     "lat": 50.9347689,
     "lng": 5.3345504,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5a5a30-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5a5a30-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5b95d3",
-    "name": "Panos Ledges",
-    "description": "Ledges and manny pads",
+    "name": "Panos ledges",
+    "description": "ledges and manual pads",
     "lat": 50.9364669,
     "lng": 5.3358057,
-    "tags": [],
+    "tags": [
+      "ledge",
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5b95d3-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5c3f00",
-    "name": "Brug Bank",
-    "description": "Bank",
+    "name": "brug bank",
+    "description": "bank",
     "lat": 51.1360031,
     "lng": 4.9400121,
-    "tags": [],
+    "tags": [
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5c3f00-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5d7522",
-    "name": "Universiteit Gebouw O 5 Stair",
-    "description": "5 Stair",
+    "name": "universiteit gebouw O 5 stair",
+    "description": "5 stair",
     "lat": 51.160958,
     "lng": 4.4065577,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5d7522-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5e5490",
     "name": "Kerkplein",
-    "description": "Ledges, stairs and manual pads",
+    "description": "ledges, stairs and manual pads",
     "lat": 51.0064539,
     "lng": 5.583247,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "ledge",
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5e5490-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d5f43ec",
     "name": "Regetta Urban Sports Park",
-    "description": "Banks and ledges",
+    "description": "banks and ledges",
     "lat": 51.2185138,
     "lng": 4.3685879,
-    "tags": [],
+    "tags": [
+      "ledge",
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d5f43ec-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d606664",
-    "name": "Cathedrale 7 Stair",
-    "description": "7 Stair",
+    "name": "cathedrale 7 stair",
+    "description": "7 stair",
     "lat": 49.6094825,
     "lng": 6.1310704,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d606664-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d616393",
-    "name": "Lycée 3 Flat 3 Star",
-    "description": "3 Flat 3 stair",
+    "name": "lycée 3 flat 3 Star",
+    "description": "3 flat 3 stair",
     "lat": 49.6090175,
     "lng": 6.1332044,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d616393-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d62aba4",
-    "name": "Cactus 4 Stair",
-    "description": "4 Stair with downledge",
+    "name": "Cactus 4 stair",
+    "description": "4 stair with downledge",
     "lat": 49.6036617,
     "lng": 6.101133,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "downledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d62aba4-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d62aba4-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d63106f",
-    "name": "Trappenkade Ledges",
-    "description": "Ledges",
+    "name": "trappenkade ledges",
+    "description": "ledges",
     "lat": 51.235357,
     "lng": 4.4144841,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d63106f-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d63106f-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d646ed7",
-    "name": "Italiëlei Curved Ledge",
-    "description": "Curved Ledge",
+    "name": "Italiëlei curved ledge",
+    "description": "curved ledge",
     "lat": 51.226501,
     "lng": 4.4139726,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d646ed7-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d652470",
-    "name": "Italiëlei Manual Pads",
-    "description": "Manual pads",
+    "name": "Italiëlei manual pads",
+    "description": "manual pads",
     "lat": 51.2259619,
     "lng": 4.414067,
-    "tags": [],
+    "tags": [
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d652470-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d652470-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d652470-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d667a73",
-    "name": "De Colonnade",
-    "description": "5 Stair with outledge and kinked handrail",
+    "name": "De Colonnade 5 stair",
+    "description": "5 stair with outledge and handrail",
     "lat": 51.4379029,
     "lng": 5.4823245,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "outledge",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d667a73-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d671083",
-    "name": "Waterfront 6 Stair",
-    "description": "6 Stair with handrail",
+    "name": "Waterfront 6 stair",
+    "description": "6 stair with handrail",
     "lat": 51.4409169,
     "lng": 5.3988727,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d671083-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d68b4ba",
-    "name": "Kanaaldijk 5 Stair",
-    "description": "5 Stair with handrail",
+    "name": "Kanaaldijk 5 stair",
+    "description": "5 stair with handrail and outledges",
     "lat": 51.4373903,
     "lng": 5.4867472,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail",
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d68b4ba-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d68b4ba-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d6916dd",
-    "name": "Strijp S Ledge",
-    "description": "Ledge",
+    "name": "Strijp S ledge",
+    "description": "ledge",
     "lat": 51.4454094,
     "lng": 5.4624123,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d6916dd-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d6a780f",
-    "name": "Fontys Blocks",
+    "name": "Fontys blocks",
     "description": "1-7 block",
     "lat": 51.4515051,
     "lng": 5.4805013,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d6a780f-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d6b7eda",
-    "name": "Technische Universiteit 7 Stair",
-    "description": "7 Stair with kinked handrail",
+    "name": "Technische Universiteit 7 stair",
+    "description": "7 stair with handrail",
     "lat": 51.4472361,
     "lng": 5.4874624,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d6b7eda-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d6c72c0",
-    "name": "Technische Universiteit Ledges",
-    "description": "Ledges",
+    "name": "Technische Universiteit ledges",
+    "description": "ledges",
     "lat": 51.4470455,
     "lng": 5.4874624,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d6c72c0-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d6da75",
-    "name": "Technische Universiteit 6 Stair",
-    "description": "6 Stair with handrail",
+    "name": "Technische Universiteit 6 stair",
+    "description": "6 stair with handrail",
     "lat": 51.4478572,
     "lng": 5.4857662,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d6da75-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d6e7a6f",
-    "name": "Technische Universiteit 7 Stair",
-    "description": "7 Stair",
+    "name": "Technische Universiteit 7 stair",
+    "description": "7 stair",
     "lat": 51.4459997,
     "lng": 5.4903904,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d6e7a6f-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d6f378e",
-    "name": "Technische Universiteit 3 Block",
-    "description": "3 Block",
+    "name": "Technische Universiteit 3 block",
+    "description": "3 block",
     "lat": 51.446909,
     "lng": 5.4920829,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d6f378e-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d707b0f",
-    "name": "Lichttoren Ledges",
-    "description": "Ledges",
+    "name": "Lichttoren ledges",
+    "description": "ledges",
     "lat": 51.4408501,
     "lng": 5.4746143,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d707b0f-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d7161da",
-    "name": "Stadhuisplein Manual Pad",
-    "description": "Manual pad",
+    "name": "Stadhuisplein manual pad",
+    "description": "manual pad",
     "lat": 51.4358504,
     "lng": 5.4807523,
-    "tags": [],
+    "tags": [
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d7161da-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d728fe6",
-    "name": "Designhuis Ledge",
-    "description": "Ledge",
+    "name": "Designhuis ledge",
+    "description": "ledge",
     "lat": 51.4355335,
     "lng": 5.4818849,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d728fe6-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d73262f",
-    "name": "Gelissendomein Outledges",
-    "description": "Wooden outledges",
+    "name": "Gelissendomein outledges",
+    "description": "wooden outledges",
     "lat": 50.8387888,
     "lng": 5.7048735,
-    "tags": [],
+    "tags": [
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d73262f-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d73262f-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d73262f-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d74ab06",
-    "name": "Faculty of Science and Engineering 3 Stair",
-    "description": "3 Stair with handrail",
+    "name": "Faculty of Science and Engineering 3 stair",
+    "description": "3 stair with handrail",
     "lat": 50.8394333,
     "lng": 5.7147997,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d74ab06-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d74ab06-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d7d3fa9",
-    "name": "Stadhuis 8 Stair",
-    "description": "8 Stair",
+    "name": "stadhuis 8 stair",
+    "description": "8 stair",
     "lat": 50.9647372,
     "lng": 5.4950444,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d7e682",
-    "name": "Stadsplein Water Gap",
-    "description": "Water Gap",
+    "name": "Stadsplein water gap",
+    "description": "water gap",
     "lat": 50.9655104,
     "lng": 5.4958989,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d7f5364",
-    "name": "Klokstraat Gap",
-    "description": "Gap with short runup",
+    "name": "Klokstraat gap",
+    "description": "gap",
     "lat": 50.964998,
     "lng": 5.4997371,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d80174a",
-    "name": "Walferdange Bump to Rail",
-    "description": "Bump to rail",
+    "name": "Walferdange bank to rail",
+    "description": "bank to rail",
     "lat": 49.6581443,
     "lng": 6.1309834,
-    "tags": [],
+    "tags": [
+      "flatrail",
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d80174a-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d8147e8",
-    "name": "Cents 9 Stair",
-    "description": "9 Stair with downledge",
+    "name": "Cents 9 stair",
+    "description": "9 stair with downledge",
     "lat": 49.6175364,
     "lng": 6.1634691,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "downledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8147e8-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d826f82",
-    "name": "Stadhuis 11 Stair",
-    "description": "11 Stair",
+    "name": "stadhuis 11 stair",
+    "description": "11 stair",
     "lat": 51.0484053,
     "lng": 5.2244944,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d826f82-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d83818d",
-    "name": "Stella Artois Bank to Ledge",
-    "description": "Bank to Ledge",
+    "name": "Stella Artois bank to ledge",
+    "description": "bank to ledge",
     "lat": 50.891778,
     "lng": 4.7091727,
-    "tags": [],
+    "tags": [
+      "ledge",
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d83818d-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d8440de",
-    "name": "8 Stair Rail",
-    "description": "",
+    "name": "8 stair handrail",
+    "description": "8 stair with handrail",
     "lat": 41.4540411,
     "lng": 2.2264333,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8440de-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d8551fa",
-    "name": "Fondo",
-    "description": "",
+    "name": "Fondo plaza",
+    "description": "ledges, banks and pyramids",
     "lat": 41.4533685,
     "lng": 2.2246844,
-    "tags": [],
+    "tags": [
+      "ledge",
+      "bank",
+      "pyramid"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8551fa-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8551fa-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d86a8f1",
-    "name": "6 flat 8 Stair",
-    "description": "",
+    "name": "6 flat 8 stair",
+    "description": "6 flat 8 stair",
     "lat": 41.4530859,
     "lng": 2.2233916,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d86a8f1-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d87acb2",
-    "name": "Flatrails",
-    "description": "",
+    "name": "flatrails",
+    "description": "flatrails",
     "lat": 41.4525668,
     "lng": 2.2206109,
-    "tags": [],
+    "tags": [
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d87acb2-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d882d52",
-    "name": "Outledge and Kicker",
-    "description": "",
+    "name": "2 block, outledge and bank",
+    "description": "2 block, outledge and bank",
     "lat": 41.4500799,
     "lng": 2.2189598,
-    "tags": [],
+    "tags": [
+      "gap",
+      "outledge",
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d882d52-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d882d52-1.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d882d52-2.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d8916c3",
-    "name": "6 Stair Hubba",
-    "description": "",
+    "name": "6 stair",
+    "description": "6 stair with downledge",
     "lat": 41.4542698,
     "lng": 2.1875674,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "downledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8916c3-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d8aa4e3",
-    "name": "Pyramids",
-    "description": "",
+    "name": "pyramids",
+    "description": "pyramids",
     "lat": 41.4432548,
     "lng": 2.2294268,
-    "tags": [],
+    "tags": [
+      "pyramid"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8aa4e3-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d8b9128",
-    "name": "7 Stair Hubba",
-    "description": "",
+    "name": "7 stair downledge",
+    "description": "7 stair with downledge",
     "lat": 41.4415749,
     "lng": 2.2209845,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "downledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8b9128-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d8c723c",
-    "name": "10 Stair Hubba",
-    "description": "",
+    "name": "10 stair",
+    "description": "10 stair with downledge",
     "lat": 41.4161293,
     "lng": 2.2273884,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "downledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8c723c-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8c723c-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d8d3515",
-    "name": "Banks",
-    "description": "",
+    "name": "banks",
+    "description": "banks",
     "lat": 41.4117686,
     "lng": 2.2215871,
-    "tags": [],
+    "tags": [
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8d3515-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d8e9078",
-    "name": "10 Stair Rail",
-    "description": "",
+    "name": "10 stair",
+    "description": "10 stair with handrail",
     "lat": 41.4192595,
     "lng": 2.2089085,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8e9078-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d8f89d3",
-    "name": "9 Stair gap",
-    "description": "",
+    "name": "9 stair gap",
+    "description": "9 stair gap",
     "lat": 41.4179696,
     "lng": 2.1912696,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d8f89d3-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d9054a7",
-    "name": "Long rail",
-    "description": "",
+    "name": "flatrail",
+    "description": "flatrail",
     "lat": 41.413198,
     "lng": 2.1846457,
-    "tags": [],
+    "tags": [
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9054a7-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9054a7-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d919cd",
-    "name": "Pyramids",
-    "description": "",
+    "name": "pyramids",
+    "description": "pyramids",
     "lat": 41.4293446,
     "lng": 2.1760794,
-    "tags": [],
+    "tags": [
+      "pyramid"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d919cd-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d924a5d",
-    "name": "Flatrails",
-    "description": "",
+    "name": "flatrails",
+    "description": "flatrails",
     "lat": 41.4363739,
     "lng": 2.1747882,
-    "tags": [],
+    "tags": [
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d924a5d-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d931708",
-    "name": "10 Stair Rail",
-    "description": "",
+    "name": "10 stair",
+    "description": "10 stair with handrail",
     "lat": 41.4299704,
     "lng": 2.143013,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d931708-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d94919a",
-    "name": "Rails",
-    "description": "",
+    "name": "handrails",
+    "description": "stairs with handrail",
     "lat": 41.4253066,
     "lng": 2.1563083,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d94919a-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d952928",
-    "name": "7 Stair Rail",
-    "description": "",
+    "name": "7 stair handrail",
+    "description": "7 stair with handrail",
     "lat": 41.4120639,
     "lng": 2.1622553,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d952928-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d952928-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d96936d",
-    "name": "12 Stair",
-    "description": "",
+    "name": "12 stair",
+    "description": "12 stair with handrail",
     "lat": 41.402607,
     "lng": 2.1545333,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d96936d-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d97bca",
-    "name": "Banks",
-    "description": "",
+    "name": "banks",
+    "description": "banks",
     "lat": 41.380579,
     "lng": 2.1867404,
-    "tags": [],
+    "tags": [
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d97bca-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d985999",
-    "name": "3 flat 6 Stair",
-    "description": "",
+    "name": "3 flat 6 stair",
+    "description": "3 flat 6 stair",
     "lat": 41.3869517,
     "lng": 2.1708086,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d985999-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d991619",
     "name": "Macba",
-    "description": "",
+    "description": "macba",
     "lat": 41.382972,
     "lng": 2.1670297,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "gap",
+      "ledge",
+      "outledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d991619-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d991619-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d9a52b4",
-    "name": "Plaza",
-    "description": "",
+    "name": "plaza",
+    "description": "stairs, ledges, downledges and handrails",
     "lat": 41.3764,
     "lng": 2.1702619,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "ledge",
+      "downledge",
+      "handrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9a52b4-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9a52b4-1.jpg",
@@ -2786,41 +3328,49 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9a52b4-4.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d9b67f5",
     "name": "Paral-lel",
-    "description": "",
+    "description": "paral-lel",
     "lat": 41.3739437,
     "lng": 2.1717258,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "ledge",
+      "manual pad"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9b67f5-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d9c2460",
-    "name": "8 Stair",
-    "description": "",
+    "name": "8 stair",
+    "description": "8 stair",
     "lat": 41.3739396,
     "lng": 2.1492124,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9c2460-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d9d558e",
-    "name": "Ledges",
-    "description": "",
+    "name": "ledges",
+    "description": "ledges",
     "lat": 41.3802493,
     "lng": 2.1288466,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9d558e-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9d558e-1.jpg",
@@ -2829,28 +3379,33 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9d558e-4.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d9e3685",
-    "name": "Ledges",
-    "description": "",
+    "name": "ledges",
+    "description": "ledges",
     "lat": 41.3830701,
     "lng": 2.1146986,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9e3685-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0d9f80fa",
-    "name": "Plaza",
-    "description": "",
+    "name": "plaza",
+    "description": "stairs and ledges",
     "lat": 41.3821295,
     "lng": 2.0765247,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9f80fa-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9f80fa-1.jpg",
@@ -2859,98 +3414,114 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d9f80fa-4.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0da08ae8",
-    "name": "7 Stair",
-    "description": "",
+    "name": "7 stair",
+    "description": "7 stair",
     "lat": 41.3821443,
     "lng": 2.0742409,
-    "tags": [],
+    "tags": [
+      "stairs"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0da08ae8-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0da08ae8-1.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0da1320d",
-    "name": "Ledge",
-    "description": "",
+    "name": "ledge",
+    "description": "ledge",
     "lat": 41.3782809,
     "lng": 2.0751216,
-    "tags": [],
+    "tags": [
+      "ledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0da1320d-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0da25b23",
-    "name": "4 Block",
-    "description": "",
+    "name": "4 block",
+    "description": "4 block",
     "lat": 41.3647853,
     "lng": 2.060377,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0da25b23-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0da36663",
-    "name": "Flatrails and Ledges",
-    "description": "",
+    "name": "flatrails and ledges",
+    "description": "flatrails and ledges",
     "lat": 41.3507833,
     "lng": 2.0909807,
-    "tags": [],
+    "tags": [
+      "ledge",
+      "flatrail"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0da36663-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0da438db",
-    "name": "Blocks",
-    "description": "",
+    "name": "blocks",
+    "description": "blocks",
     "lat": 41.3526681,
     "lng": 2.1124979,
-    "tags": [],
+    "tags": [
+      "gap"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0da438db-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0da5244d",
-    "name": "5 flat 4 Stair Hubba",
-    "description": "",
+    "name": "5 flat 4 stair",
+    "description": "5 flat 4 stair with downledge",
     "lat": 41.346133,
     "lng": 2.1063434,
-    "tags": [],
+    "tags": [
+      "stairs",
+      "downledge"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0da5244d-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
     "id": "1a0b91e0da6502d",
-    "name": "Banks",
-    "description": "",
+    "name": "banks",
+    "description": "banks",
     "lat": 41.5380139,
     "lng": 2.2053869,
-    "tags": [],
+    "tags": [
+      "bank"
+    ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0da6502d-0.jpg"
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
+    "updatedAt": "2026-09-20T20:24:10.000Z"
   }
 ]
