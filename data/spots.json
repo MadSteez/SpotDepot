@@ -2864,19 +2864,6 @@
     "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
-    "id": "1a0b91e0d7f5364",
-    "name": "Klokstraat gap",
-    "description": "gap",
-    "lat": 50.964998,
-    "lng": 5.4997371,
-    "tags": [
-      "gap"
-    ],
-    "images": [],
-    "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-20T20:24:10.000Z"
-  },
-  {
     "id": "1a0b91e0d80174a",
     "name": "Walferdange bank to rail",
     "description": "bank to rail",
