@@ -1,6 +1,6 @@
-import { GitHubStore } from "./github.js?v=63";
-import { SITE_CONFIG } from "./site-config.js?v=63";
-import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=63";
+import { GitHubStore } from "./github.js?v=64";
+import { SITE_CONFIG } from "./site-config.js?v=64";
+import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=64";
 
 const TOKEN_KEY = "spotdepot_token";
 const LOCAL_DATA_KEY = "spotdepot_local_data";
@@ -59,6 +59,28 @@ export function canWrite(cfg = getConfig()) {
 
 function ghFromConfig(cfg) {
   return new GitHubStore(cfg);
+}
+
+// Given "https://raw.githubusercontent.com/{owner}/{repo}/{branch}/images/x.jpg",
+// returns "images/x.jpg" — without needing to know the branch name up front,
+// since whatever the first path segment is after owner/repo, that's it.
+function pathFromRawUrl(url, owner, repo) {
+  const prefix = `https://raw.githubusercontent.com/${owner}/${repo}/`;
+  if (!url.startsWith(prefix)) return null;
+  const rest = url.slice(prefix.length);
+  const slashIdx = rest.indexOf("/");
+  return slashIdx === -1 ? null : rest.slice(slashIdx + 1);
+}
+
+async function deleteRepoFile(gh, url, owner, repo, message) {
+  const path = pathFromRawUrl(url, owner, repo);
+  if (!path) return;
+  try {
+    const f = await gh.getFile(path);
+    if (f) await gh.deleteFile(path, message, f.sha);
+  } catch (_) {
+    /* best effort only — a missing/already-gone file shouldn't block anything */
+  }
 }
 
 /**
@@ -174,6 +196,18 @@ export async function saveSpot(spotData, newFiles = [], keepImageUrls = null, on
   const idx = spots.findIndex((s) => s.id === spotData.id);
   const next = idx >= 0 ? spots.map((s, i) => (i === idx ? finalSpot : s)) : [...spots, finalSpot];
   await persist(next, `${idx >= 0 ? "Update" : "Add"} spot: ${finalSpot.name}`);
+
+  const cfg = getConfig();
+  if (cfg.mode === "github" && existing) {
+    const removed = (existing.images || []).filter((u) => !kept.includes(u));
+    if (removed.length) {
+      const gh = ghFromConfig(cfg);
+      for (const url of removed) {
+        await deleteRepoFile(gh, url, cfg.owner, cfg.repo, `Delete photo for spot ${finalSpot.name}`);
+      }
+    }
+  }
+
   return finalSpot;
 }
 
@@ -190,18 +224,8 @@ export async function deleteSpot(id) {
   const cfg = getConfig();
   if (cfg.mode === "github" && spot && spot.images && spot.images.length) {
     const gh = ghFromConfig(cfg);
-    const branch = await resolveBranch(cfg);
-    const marker = `/${branch}/`;
     for (const url of spot.images) {
-      try {
-        const idx = url.indexOf(marker);
-        if (idx === -1) continue;
-        const path = url.slice(idx + marker.length);
-        const f = await gh.getFile(path);
-        if (f) await gh.deleteFile(path, `Delete photo for spot ${spot.name}`, f.sha);
-      } catch (_) {
-        /* best effort only */
-      }
+      await deleteRepoFile(gh, url, cfg.owner, cfg.repo, `Delete photo for spot ${spot.name}`);
     }
   }
   return remaining;
