@@ -2431,19 +2431,6 @@
     "updatedAt": "2026-09-19T10:02:29.000Z"
   },
   {
-    "id": "1a0b91e0d7a15f3",
-    "name": "Skatepark As",
-    "description": "Skatepark",
-    "lat": 51.0068855,
-    "lng": 5.5949896,
-    "tags": [],
-    "images": [
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d7a15f3-0.jpg"
-    ],
-    "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
-  },
-  {
     "id": "1a0b91e0d7c3433",
     "name": "Skatepark Péitruss",
     "description": "Skatepark",
