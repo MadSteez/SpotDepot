@@ -745,23 +745,6 @@
     "updatedAt": "2026-09-20T20:24:10.000Z"
   },
   {
-    "id": "1a0b91e0cf31318",
-    "name": "Waalsekaai 9 stair",
-    "description": "9 stair with handrail",
-    "lat": 51.2097969,
-    "lng": 4.3888083,
-    "tags": [
-      "stairs",
-      "handrail"
-    ],
-    "images": [
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf31318-0.jpg",
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0cf31318-1.jpg"
-    ],
-    "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-20T20:24:10.000Z"
-  },
-  {
     "id": "1a0b91e0cf45cb2",
     "name": "Overpoort 10 stair",
     "description": "10 stair with handrail",
