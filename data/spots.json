@@ -2394,19 +2394,6 @@
     "updatedAt": "2026-09-19T10:02:29.000Z"
   },
   {
-    "id": "1a0b91e0d75b4c1",
-    "name": "Skatepark Sportcentrum",
-    "description": "Skatepark",
-    "lat": 50.9829775,
-    "lng": 5.5111879,
-    "tags": [],
-    "images": [
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/1a0b91e0d75b4c1-0.jpg"
-    ],
-    "createdAt": "2026-09-19T10:02:29.000Z",
-    "updatedAt": "2026-09-19T10:02:29.000Z"
-  },
-  {
     "id": "1a0b91e0d76733e",
     "name": "Skatepark Kapermolen",
     "description": "Skatepark",
