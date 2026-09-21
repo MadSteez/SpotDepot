@@ -1,6 +1,6 @@
-import { GitHubStore } from "./github.js?v=64";
-import { SITE_CONFIG } from "./site-config.js?v=64";
-import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=64";
+import { GitHubStore } from "./github.js?v=65";
+import { SITE_CONFIG } from "./site-config.js?v=65";
+import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=65";
 
 const TOKEN_KEY = "spotdepot_token";
 const LOCAL_DATA_KEY = "spotdepot_local_data";

@@ -10,6 +10,11 @@ export function escapeHtml(str = "") {
   }[c]));
 }
 
+// Strips accents/diacritics so search matching treats "e" the same as "é", "è", "ë", etc.
+export function foldAccents(str = "") {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 // UTF-8 safe base64 encode/decode (for JSON text committed to GitHub)
 export function utf8ToB64(str) {
   return btoa(unescape(encodeURIComponent(str)));

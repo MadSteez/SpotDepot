@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=64";
-import * as store from "./store.js?v=64";
-import { escapeHtml, showToast, setLoading, uid } from "./utils.js?v=64";
+import { createMapController } from "./map.js?v=65";
+import * as store from "./store.js?v=65";
+import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=65";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -10,7 +10,7 @@ const COMMON_TAGS = [
 // ---------------- state ----------------
 let allSpots = [];
 let activeTagFilters = new Set();
-let textFilters = []; // array of lowercase query strings, each an independent filter chip
+let textFilters = []; // [{ label, key }] — label is shown as-typed, key is accent/case-folded for matching
 let mobileView = "map"; // 'map' | 'list'
 
 let previewItems = []; // { type:'existing', url } | { type:'pending', file, previewUrl }
@@ -46,7 +46,10 @@ function allTags() {
 function matchesTextFilters(s) {
   if (textFilters.length === 0) return true;
   return textFilters.some(
-    (q) => s.name.toLowerCase().includes(q) || (s.description || "").toLowerCase().includes(q) || (s.tags || []).some((t) => t.toLowerCase().includes(q))
+    ({ key }) =>
+      foldAccents(s.name.toLowerCase()).includes(key) ||
+      foldAccents((s.description || "").toLowerCase()).includes(key) ||
+      (s.tags || []).some((t) => foldAccents(t.toLowerCase()).includes(key))
   );
 }
 
@@ -398,6 +401,7 @@ function openDetailModal(id) {
   ].filter(Boolean).join(" · ");
 
   detailModal.classList.remove("hidden");
+  mapCtrl.map.keyboard.disable();
   history.replaceState(null, "", `${location.pathname}${location.search}#spot=${encodeURIComponent(id)}`);
 }
 
@@ -693,8 +697,11 @@ function closeModal(modalEl) {
   modalEl.classList.add("hidden");
   mapCtrl.disablePickMode();
   mapCtrl.clearTempMarker();
-  if (modalEl === detailModal && location.hash.startsWith("#spot=")) {
-    history.replaceState(null, "", location.pathname + location.search);
+  if (modalEl === detailModal) {
+    mapCtrl.map.keyboard.enable();
+    if (location.hash.startsWith("#spot=")) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
   }
 }
 document.querySelectorAll("[data-close]").forEach((btn) => {
@@ -783,10 +790,10 @@ function renderSuggestions(query, placeSuggestions) {
 function renderTextFilterChips() {
   $("textFilterChips").innerHTML = textFilters
     .map(
-      (q) => `
-      <button type="button" class="chip chip--text" data-text="${escapeHtml(q)}">
+      ({ label, key }) => `
+      <button type="button" class="chip chip--text" data-text="${escapeHtml(key)}">
         <svg class="icon" width="12" height="12"><use href="#icon-search"/></svg>
-        ${escapeHtml(q)} ×
+        ${escapeHtml(label)} ×
       </button>`
     )
     .join("");
@@ -794,19 +801,20 @@ function renderTextFilterChips() {
 }
 
 function addTextFilter(query) {
-  const q = query.trim().toLowerCase();
-  if (!q) return;
-  if (textFilters.includes(q)) {
-    showToast(`"${query}" is already added.`);
+  const label = query.trim();
+  const key = foldAccents(label.toLowerCase());
+  if (!key) return;
+  if (textFilters.some((f) => f.key === key)) {
+    showToast(`"${label}" is already added.`);
     return;
   }
-  textFilters.push(q);
+  textFilters.push({ label, key });
   renderTextFilterChips();
   render();
 }
 
-function removeTextFilter(q) {
-  textFilters = textFilters.filter((t) => t !== q);
+function removeTextFilter(key) {
+  textFilters = textFilters.filter((f) => f.key !== key);
   renderTextFilterChips();
   render();
 }
