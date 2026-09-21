@@ -3388,5 +3388,21 @@
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
     "updatedAt": "2026-09-20T20:24:10.000Z"
+  },
+  {
+    "id": "mubqqm2a0su98a",
+    "name": "test",
+    "description": "",
+    "lat": 51.341765,
+    "lng": 4.829865,
+    "tags": [],
+    "images": [
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mubqqm2a0su98a-1790025120422-0.jpg",
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mubqqm2a0su98a-1790025123752-1.jpg",
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mubqqm2a0su98a-1790025125344-2.jpg",
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mubqqm2a0su98a-1790025127176-3.jpg"
+    ],
+    "updatedAt": "2026-09-21T21:12:08.877Z",
+    "createdAt": "2026-09-21T21:12:08.877Z"
   }
 ]
