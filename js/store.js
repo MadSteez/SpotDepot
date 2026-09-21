@@ -1,6 +1,6 @@
-import { GitHubStore } from "./github.js?v=66";
-import { SITE_CONFIG } from "./site-config.js?v=66";
-import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=66";
+import { GitHubStore } from "./github.js?v=67";
+import { SITE_CONFIG } from "./site-config.js?v=67";
+import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=67";
 
 const TOKEN_KEY = "spotdepot_token";
 const LOCAL_DATA_KEY = "spotdepot_local_data";
@@ -78,8 +78,10 @@ async function deleteRepoFile(gh, url, owner, repo, message) {
   try {
     const f = await gh.getFile(path);
     if (f) await gh.deleteFile(path, message, f.sha);
-  } catch (_) {
-    /* best effort only — a missing/already-gone file shouldn't block anything */
+  } catch (err) {
+    // Best effort only — a missing/already-gone file shouldn't block anything
+    // the user is actually doing, but leave a trace for anyone debugging.
+    console.error(`Couldn't delete ${path}:`, err);
   }
 }
 
@@ -202,7 +204,12 @@ export async function saveSpot(spotData, newFiles = [], keepImageUrls = null, on
     const removed = (existing.images || []).filter((u) => !kept.includes(u));
     if (removed.length) {
       const gh = ghFromConfig(cfg);
-      await Promise.all(removed.map((url) => deleteRepoFile(gh, url, cfg.owner, cfg.repo, `Delete photo for spot ${finalSpot.name}`)));
+      // GitHub's Contents API requires these run one at a time — every write
+      // creates a new commit on the branch, so parallel requests (even to
+      // different files) race to update the same ref and all but one fail.
+      for (const url of removed) {
+        await deleteRepoFile(gh, url, cfg.owner, cfg.repo, `Delete photo for spot ${finalSpot.name}`);
+      }
     }
   }
 
@@ -222,7 +229,10 @@ export async function deleteSpot(id) {
   const cfg = getConfig();
   if (cfg.mode === "github" && spot && spot.images && spot.images.length) {
     const gh = ghFromConfig(cfg);
-    await Promise.all(spot.images.map((url) => deleteRepoFile(gh, url, cfg.owner, cfg.repo, `Delete photo for spot ${spot.name}`)));
+    // Same reason as saveSpot's cleanup above — must be serial, not parallel.
+    for (const url of spot.images) {
+      await deleteRepoFile(gh, url, cfg.owner, cfg.repo, `Delete photo for spot ${spot.name}`);
+    }
   }
   return remaining;
 }
