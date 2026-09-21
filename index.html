@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css?v=65">
+<link rel="stylesheet" href="css/style.css?v=66">
 
 <!-- inline SVG icon sprite, referenced via <use> throughout the app -->
 </head>
@@ -27,21 +27,6 @@
   <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.3" fill="none"/><path d="M20 20l-4.35-4.35" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></symbol>
   <symbol id="icon-map" viewBox="0 0 24 24"><path d="M9 4l-5 2v14l5-2 6 2 5-2V4l-5 2-6-2z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M9 4v14M15 6v14" stroke="currentColor" stroke-width="2"/></symbol>
   <symbol id="icon-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></symbol>
-  <symbol id="icon-gear" viewBox="0 0 24 24">
-    <g fill="currentColor">
-      <rect x="10.5" y="1.3" width="3" height="3.4" rx="0.7"/>
-      <rect x="10.5" y="19.3" width="3" height="3.4" rx="0.7"/>
-      <rect x="10.5" y="1.3" width="3" height="3.4" rx="0.7" transform="rotate(45 12 12)"/>
-      <rect x="10.5" y="1.3" width="3" height="3.4" rx="0.7" transform="rotate(90 12 12)"/>
-      <rect x="10.5" y="1.3" width="3" height="3.4" rx="0.7" transform="rotate(135 12 12)"/>
-      <rect x="10.5" y="1.3" width="3" height="3.4" rx="0.7" transform="rotate(180 12 12)"/>
-      <rect x="10.5" y="1.3" width="3" height="3.4" rx="0.7" transform="rotate(225 12 12)"/>
-      <rect x="10.5" y="1.3" width="3" height="3.4" rx="0.7" transform="rotate(270 12 12)"/>
-      <rect x="10.5" y="1.3" width="3" height="3.4" rx="0.7" transform="rotate(315 12 12)"/>
-    </g>
-    <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2.4"/>
-    <circle cx="12" cy="12" r="2" fill="currentColor"/>
-  </symbol>
   <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 22s7-7.4 7-12.6A7 7 0 105 9.4C5 14.6 12 22 12 22z" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="9.5" r="2.3" fill="currentColor"/></symbol>
   <symbol id="icon-edit" viewBox="0 0 24 24"><path d="M4 20h4l10-10-4-4L4 16v4z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></symbol>
   <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></symbol>
@@ -80,7 +65,7 @@
   </header>
 
   <!-- ============ TAG FILTER STRIP ============ -->
-  <div class="filterstrip" id="filterStrip">
+  <div class="filterstrip">
     <div class="filterstrip__row">
       <span class="filterstrip__label">Filter by tag</span>
       <div class="filterstrip__chips" id="tagChips"></div>
@@ -95,7 +80,7 @@
 
   <!-- ============ MAIN LAYOUT ============ -->
   <div class="layout">
-    <aside class="sidebar" id="sidebarPane">
+    <aside class="sidebar">
       <div class="sidebar__toolbar">
         <div class="sort-wrap">
           <select class="sort-select" id="sortSelect" aria-label="Sort spots by">
@@ -118,7 +103,7 @@
       </div>
     </aside>
 
-    <main class="map-pane" id="mapPane">
+    <main class="map-pane">
       <div id="map"></div>
       <button class="fab fab--locate" id="locateBtn" title="Find my location" aria-label="Find my location">
         <svg class="icon" width="20" height="20"><use href="#icon-locate"/></svg>
@@ -130,7 +115,7 @@
   </div>
 
   <!-- ============ MOBILE TAB BAR ============ -->
-  <nav class="mobile-tabs" id="mobileTabs">
+  <nav class="mobile-tabs">
     <button class="mobile-tabs__btn is-active" data-view="map">
       <svg class="icon" width="20" height="20"><use href="#icon-map"/></svg>
       Map
@@ -254,6 +239,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="js/app.js?v=65"></script>
+<script type="module" src="js/app.js?v=66"></script>
 </body>
 </html>

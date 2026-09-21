@@ -1,6 +1,6 @@
-import { GitHubStore } from "./github.js?v=65";
-import { SITE_CONFIG } from "./site-config.js?v=65";
-import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=65";
+import { GitHubStore } from "./github.js?v=66";
+import { SITE_CONFIG } from "./site-config.js?v=66";
+import { utf8ToB64, b64ToUtf8, compressImage, blobToRawBase64, blobToDataUrl } from "./utils.js?v=66";
 
 const TOKEN_KEY = "spotdepot_token";
 const LOCAL_DATA_KEY = "spotdepot_local_data";
@@ -202,9 +202,7 @@ export async function saveSpot(spotData, newFiles = [], keepImageUrls = null, on
     const removed = (existing.images || []).filter((u) => !kept.includes(u));
     if (removed.length) {
       const gh = ghFromConfig(cfg);
-      for (const url of removed) {
-        await deleteRepoFile(gh, url, cfg.owner, cfg.repo, `Delete photo for spot ${finalSpot.name}`);
-      }
+      await Promise.all(removed.map((url) => deleteRepoFile(gh, url, cfg.owner, cfg.repo, `Delete photo for spot ${finalSpot.name}`)));
     }
   }
 
@@ -224,41 +222,7 @@ export async function deleteSpot(id) {
   const cfg = getConfig();
   if (cfg.mode === "github" && spot && spot.images && spot.images.length) {
     const gh = ghFromConfig(cfg);
-    for (const url of spot.images) {
-      await deleteRepoFile(gh, url, cfg.owner, cfg.repo, `Delete photo for spot ${spot.name}`);
-    }
+    await Promise.all(spot.images.map((url) => deleteRepoFile(gh, url, cfg.owner, cfg.repo, `Delete photo for spot ${spot.name}`)));
   }
   return remaining;
-}
-
-export function exportSpotsAsFile(spots) {
-  const blob = new Blob([JSON.stringify(spots, null, 2)], { type: "application/json" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "spots.json";
-  a.click();
-  URL.revokeObjectURL(a.href);
-}
-
-export function importSpotsFromFile(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      try {
-        const parsed = JSON.parse(reader.result);
-        if (!Array.isArray(parsed)) throw new Error("File does not contain a list of spots.");
-        resolve(parsed);
-      } catch (e) {
-        reject(e);
-      }
-    };
-    reader.onerror = reject;
-    reader.readAsText(file);
-  });
-}
-
-export async function importAndPersist(file) {
-  const parsed = await importSpotsFromFile(file);
-  await persist(parsed, "Import spots.json");
-  return parsed;
 }

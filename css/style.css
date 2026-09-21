@@ -129,7 +129,6 @@ a{color:var(--rail-blue)}
 .btn--ghost:hover{background:rgba(255,255,255,0.1)}
 .btn--danger{background:transparent;border-color:var(--danger);color:var(--danger)}
 .btn--danger:hover{background:var(--danger);color:#fff}
-.btn--icon{padding:9px;border-radius:999px}
 .btn--sm{padding:6px 12px;font-size:13px}
 .topbar .btn--ghost{color:var(--paper)}
 
@@ -442,8 +441,7 @@ a{color:var(--rail-blue)}
 .detail__dates{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);margin-top:2px}
 .detail__actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
 
-/* Gallery frame — one photo at a time, click left/right thirds to navigate.
-   Shared by the detail modal and the lightbox. */
+/* Gallery frame — one photo at a time, click left/right thirds to navigate. */
 .gallery-frame{
   position:relative;width:100%;aspect-ratio:16/10;
   background:var(--concrete-dark);overflow:hidden;

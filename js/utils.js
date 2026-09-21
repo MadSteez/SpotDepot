@@ -23,16 +23,6 @@ export function b64ToUtf8(b64) {
   return decodeURIComponent(escape(atob(b64.replace(/\n/g, ""))));
 }
 
-// Read a File as a raw base64 string (no data: prefix) — used for image uploads
-export function fileToRawBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result.split(",")[1]);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
-
 // Resize + compress an image file client-side via canvas, returns a Blob (JPEG).
 // Defaults are intentionally close to lossless (most phone photos are already
 // at or below 4000px on their long edge, and JPEG quality 0.95 has no
@@ -109,12 +99,4 @@ export function setLoading(isLoading, text = "Syncing…") {
   if (!veil) return;
   if (label) label.textContent = text;
   veil.classList.toggle("hidden", !isLoading);
-}
-
-export function debounce(fn, wait = 200) {
-  let t;
-  return (...args) => {
-    clearTimeout(t);
-    t = setTimeout(() => fn(...args), wait);
-  };
 }

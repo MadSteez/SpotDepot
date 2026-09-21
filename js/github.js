@@ -11,10 +11,6 @@ export class GitHubStore {
     this.token = (token || "").trim();
   }
 
-  get canWrite() {
-    return !!this.token;
-  }
-
   _headers(extra = {}) {
     const h = { Accept: "application/vnd.github+json", ...extra };
     if (this.token) h.Authorization = `Bearer ${this.token}`;

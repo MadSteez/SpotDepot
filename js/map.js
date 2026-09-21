@@ -160,13 +160,6 @@ export function createMapController(mapElId) {
     refreshPreviewDisplay();
   }
 
-  function fitToMarkers() {
-    if (markers.size === 0) return;
-    const group = L.featureGroup([...markers.values()]);
-    const bounds = group.getBounds();
-    if (bounds.isValid()) map.fitBounds(bounds.pad(0.25), { maxZoom: 15 });
-  }
-
   function focusSpot(id) {
     const m = markers.get(id);
     if (!m) return;
@@ -314,7 +307,6 @@ export function createMapController(mapElId) {
   return {
     map,
     setSpots,
-    fitToMarkers,
     focusSpot,
     revealSpot,
     showPreview,

@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=65";
-import * as store from "./store.js?v=65";
-import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=65";
+import { createMapController } from "./map.js?v=66";
+import * as store from "./store.js?v=66";
+import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=66";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -425,7 +425,7 @@ $("detailGallery").addEventListener("click", (e) => {
 });
 
 function spotShareUrl(spot) {
-  return `${location.origin}${location.pathname}#spot=${encodeURIComponent(spot.id)}`;
+  return `${location.origin}${location.pathname}${location.search}#spot=${encodeURIComponent(spot.id)}`;
 }
 
 $("detailShareBtn").addEventListener("click", async () => {
@@ -673,7 +673,7 @@ $("spotForm").addEventListener("submit", async (e) => {
 // ============================================================
 function openSettingsModal() {
   const cfg = store.getConfig();
-  const configured = cfg.mode === "github";
+  const configured = store.isGithubConfigured(cfg);
   $("repoInfoNote").classList.toggle("hidden", !configured);
   $("notConfiguredNote").classList.toggle("hidden", configured);
   if (configured) {
