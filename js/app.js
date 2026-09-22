@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=70";
-import * as store from "./store.js?v=70";
-import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=70";
+import { createMapController } from "./map.js?v=71";
+import * as store from "./store.js?v=71";
+import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=71";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -1025,11 +1025,12 @@ clearFiltersBtn.addEventListener("click", () => {
 });
 
 $("sortSelect").addEventListener("change", (e) => {
-  const mode = e.target.value;
+  const [mode, dirStr] = e.target.value.split(":");
+  const direction = Number(dirStr);
   if (mode === "distance" && !userLocation) {
     if (!navigator.geolocation) {
       showToast("Location isn't available in this browser.", { error: true });
-      e.target.value = sortMode;
+      e.target.value = `${sortMode}:${sortDirection}`;
       return;
     }
     setLoading(true, "Finding your location…");
@@ -1037,25 +1038,17 @@ $("sortSelect").addEventListener("change", (e) => {
       setLoading(false);
       if (!success) {
         showToast("Couldn't get your location — check location permissions.", { error: true });
-        e.target.value = sortMode;
+        e.target.value = `${sortMode}:${sortDirection}`;
         return;
       }
       sortMode = "distance";
+      sortDirection = direction;
       render();
     });
     return;
   }
   sortMode = mode;
-  render();
-});
-
-$("sortDirectionBtn").addEventListener("click", () => {
-  sortDirection *= -1;
-  const btn = $("sortDirectionBtn");
-  const reversed = sortDirection === -1;
-  btn.classList.toggle("is-active", reversed);
-  btn.setAttribute("aria-pressed", reversed ? "true" : "false");
-  btn.querySelector("use").setAttribute("href", reversed ? "#icon-arrow-down" : "#icon-arrow-up");
+  sortDirection = direction;
   render();
 });
 
@@ -1105,8 +1098,11 @@ switchMobileView("map");
 refreshAll().then(() => {
   openSharedSpotFromUrl();
   requestUserLocation((success) => {
-    if (!success) sortMode = "name";
-    $("sortSelect").value = sortMode;
+    if (!success) {
+      sortMode = "name";
+      sortDirection = 1;
+    }
+    $("sortSelect").value = `${sortMode}:${sortDirection}`;
     render();
   });
   const cfg = store.getConfig();

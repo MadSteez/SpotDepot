@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css?v=70">
+<link rel="stylesheet" href="css/style.css?v=71">
 
 <!-- inline SVG icon sprite, referenced via <use> throughout the app -->
 </head>
@@ -35,8 +35,6 @@
   <symbol id="icon-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></symbol>
   <symbol id="icon-chevron-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="icon-chevron-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="icon-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M12 5l-5.5 5.5M12 5l5.5 5.5" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="icon-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M12 19l-5.5-5.5M12 19l5.5-5.5" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="icon-external" viewBox="0 0 24 24"><path d="M9 15L20 4M20 4h-6M20 4v6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="icon-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.6" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="6" cy="12" r="2.6" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="18" cy="19" r="2.6" stroke="currentColor" stroke-width="2" fill="none"/><path d="M8.3 10.6l7.4-4.3M8.3 13.4l7.4 4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="icon-directions" viewBox="0 0 24 24"><path d="M12 2.5L2.5 20.5l9.5-4.5 9.5 4.5L12 2.5z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></symbol>
@@ -85,16 +83,17 @@
       <div class="sidebar__toolbar">
         <div class="sort-wrap">
           <select class="sort-select" id="sortSelect" aria-label="Sort spots by">
-            <option value="distance">Distance</option>
-            <option value="name">Alphabetical</option>
-            <option value="created">Date added</option>
-            <option value="updated">Date updated</option>
+            <option value="distance:1">Distance (nearest first)</option>
+            <option value="distance:-1">Distance (farthest first)</option>
+            <option value="name:1">Alphabetical (A–Z)</option>
+            <option value="name:-1">Alphabetical (Z–A)</option>
+            <option value="created:1">Date added (oldest first)</option>
+            <option value="created:-1">Date added (newest first)</option>
+            <option value="updated:1">Date updated (oldest first)</option>
+            <option value="updated:-1">Date updated (newest first)</option>
           </select>
           <svg class="sort-wrap__chevron icon" width="12" height="12" aria-hidden="true"><use href="#icon-chevron-right"/></svg>
         </div>
-        <button type="button" class="sort-direction-btn" id="sortDirectionBtn" title="Reverse order" aria-label="Reverse sort order" aria-pressed="false">
-          <svg class="icon" width="16" height="16"><use href="#icon-arrow-up"/></svg>
-        </button>
       </div>
       <div class="sidebar__list" id="spotList"></div>
       <div class="empty-state hidden" id="emptyState">
@@ -240,6 +239,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="js/app.js?v=70"></script>
+<script type="module" src="js/app.js?v=71"></script>
 </body>
 </html>
