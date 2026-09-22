@@ -222,11 +222,11 @@ a{color:var(--rail-blue)}
 }
 .sidebar__toolbar{
   display:flex;align-items:center;justify-content:flex-end;
-  padding:12px 14px 0;
+  padding:12px 14px 14px;
   position:sticky;top:0;z-index:2;
   background:var(--concrete);
 }
-.sidebar__list{padding:14px;display:flex;flex-direction:column;gap:14px}
+.sidebar__list{padding:0 14px 14px;display:flex;flex-direction:column;gap:14px}
 .map-pane{position:relative;z-index:1} /* seals off Leaflet's internal panes (z-index up to 700) into their own stacking context so they can never render above modals/toasts */
 #map{position:absolute;inset:0}
 
