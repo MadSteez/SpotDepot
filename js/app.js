@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=69";
-import * as store from "./store.js?v=69";
-import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=69";
+import { createMapController } from "./map.js?v=70";
+import * as store from "./store.js?v=70";
+import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=70";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -1052,8 +1052,10 @@ $("sortSelect").addEventListener("change", (e) => {
 $("sortDirectionBtn").addEventListener("click", () => {
   sortDirection *= -1;
   const btn = $("sortDirectionBtn");
-  btn.classList.toggle("is-active", sortDirection === -1);
-  btn.setAttribute("aria-pressed", sortDirection === -1 ? "true" : "false");
+  const reversed = sortDirection === -1;
+  btn.classList.toggle("is-active", reversed);
+  btn.setAttribute("aria-pressed", reversed ? "true" : "false");
+  btn.querySelector("use").setAttribute("href", reversed ? "#icon-arrow-down" : "#icon-arrow-up");
   render();
 });
 
