@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=74";
-import * as store from "./store.js?v=74";
-import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=74";
+import { createMapController } from "./map.js?v=76";
+import * as store from "./store.js?v=76";
+import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=76";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -1118,7 +1118,7 @@ const ONBOARDING_STEPS = [
   {
     target: "#spotList",
     title: "Browse spots",
-    text: "Tap any spot here — or its pin on the map — to see its photos, description, coordinates, and directions.",
+    text: "Tap any spot in the list view — or its pin on the map — to see its photos, description, coordinates, and directions.",
     mobileView: "list",
   },
   {
@@ -1217,21 +1217,35 @@ function positionOnboarding(el) {
   // Match the element exactly — its own size and its own corner radius (so a
   // pill or circular button stays a pill/circle, and a plain rectangle gets
   // square corners), with no extra padding added around it.
-  onboardingSpotlight.style.top = `${r.top}px`;
+  let top = r.top;
+  let height = r.height;
+  // A tall scrollable element (like the spot list) can report a top edge
+  // that's actually hidden behind the sticky topbar + tag filter row above
+  // it — clip the highlight so it never creeps up underneath that header.
+  const header = document.querySelector(".filterstrip");
+  if (header) {
+    const headerBottom = header.getBoundingClientRect().bottom;
+    if (r.top < headerBottom && r.bottom > headerBottom) {
+      height = r.bottom - headerBottom;
+      top = headerBottom;
+    }
+  }
+  onboardingSpotlight.style.top = `${top}px`;
   onboardingSpotlight.style.left = `${r.left}px`;
   onboardingSpotlight.style.width = `${r.width}px`;
-  onboardingSpotlight.style.height = `${r.height}px`;
+  onboardingSpotlight.style.height = `${height}px`;
   onboardingSpotlight.style.borderRadius = getComputedStyle(el).borderRadius;
 
   const cardRect = onboardingCard.getBoundingClientRect();
   const gap = 12;
-  const spaceBelow = window.innerHeight - r.bottom;
-  const top =
+  const bottom = top + height;
+  const spaceBelow = window.innerHeight - bottom;
+  const cardTop =
     spaceBelow > cardRect.height + gap + 12
-      ? r.bottom + gap
-      : Math.max(16, r.top - gap - cardRect.height);
+      ? bottom + gap
+      : Math.max(16, top - gap - cardRect.height);
   const left = Math.min(Math.max(16, r.left), window.innerWidth - cardRect.width - 16);
-  onboardingCard.style.top = `${top}px`;
+  onboardingCard.style.top = `${cardTop}px`;
   onboardingCard.style.left = `${left}px`;
 }
 
