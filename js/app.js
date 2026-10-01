@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=72";
-import * as store from "./store.js?v=72";
-import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=72";
+import { createMapController } from "./map.js?v=73";
+import * as store from "./store.js?v=73";
+import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=73";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -1092,6 +1092,170 @@ function openSharedSpotFromUrl() {
 }
 
 // ============================================================
+// First-visit onboarding tour
+// ============================================================
+const ONBOARDING_STEPS = [
+  {
+    title: "Welcome to Spot Depot",
+    text: "A shared map of skate spots. Want a quick tour of how it works? You can replay this anytime from the ? button up top.",
+  },
+  {
+    target: "#searchInput",
+    title: "Search & explore",
+    text: "Type a spot name or tag to filter the map, or type a place — like a city or neighborhood — to jump straight there.",
+  },
+  {
+    target: ".filterstrip__row",
+    title: "Filter by tag",
+    text: "Tap a tag to show only spots with that obstacle. Tap it again to clear it — you can combine several at once.",
+  },
+  {
+    target: "#sortSelect",
+    title: "Sort the list",
+    text: "Choose how spots are ordered — nearest first, alphabetical, or by when they were added or last updated.",
+    mobileView: "list",
+  },
+  {
+    target: "#spotList",
+    title: "Browse spots",
+    text: "Tap any spot here — or its pin on the map — to see its photos, description, coordinates, and directions.",
+    mobileView: "list",
+  },
+  {
+    target: "#map",
+    title: "Explore the map",
+    text: "Pan and zoom around. Tap a pin to preview a spot, tap the preview to open the full details.",
+    mobileView: "map",
+  },
+  {
+    target: "#locateBtn",
+    title: "Find yourself",
+    text: "Jump the map to your current location.",
+    mobileView: "map",
+  },
+  {
+    target: "#layersBtn",
+    title: "Switch map style",
+    text: "Toggle between street and satellite view.",
+    mobileView: "map",
+  },
+  {
+    target: "#addSpotBtn",
+    title: "Add a spot",
+    text: "Found something new? Drop a pin and share it with the crew. You'll be asked for an access code the first time you add, edit, or delete a spot.",
+  },
+];
+
+function buildOnboardingSteps() {
+  const steps = ONBOARDING_STEPS.map((s) => ({ ...s }));
+  if (isMobileLayout()) {
+    steps.splice(1, 0, {
+      target: ".mobile-tabs",
+      title: "Map & list",
+      text: "Switch between the map and the spot list here.",
+    });
+  }
+  return steps;
+}
+
+let onboardingSteps = [];
+let onboardingIndex = 0;
+const onboardingEl = $("onboarding");
+const onboardingSpotlight = $("onboardingSpotlight");
+const onboardingCard = $("onboardingCard");
+
+function startOnboarding() {
+  onboardingSteps = buildOnboardingSteps();
+  onboardingIndex = 0;
+  onboardingEl.classList.remove("hidden");
+  showOnboardingStep();
+  window.addEventListener("resize", repositionOnboardingStep);
+}
+
+function endOnboarding() {
+  onboardingEl.classList.add("hidden");
+  window.removeEventListener("resize", repositionOnboardingStep);
+  localStorage.setItem("spotdepot_onboarding_done", "1");
+}
+
+function showOnboardingStep() {
+  const step = onboardingSteps[onboardingIndex];
+  $("onboardingTitle").textContent = step.title;
+  $("onboardingText").textContent = step.text;
+  $("onboardingBackBtn").classList.toggle("hidden", onboardingIndex === 0);
+  $("onboardingNextBtn").textContent =
+    onboardingIndex === onboardingSteps.length - 1 ? "Got it" : onboardingIndex === 0 ? "Start tour" : "Next";
+
+  const dots = $("onboardingDots");
+  dots.innerHTML = "";
+  onboardingSteps.forEach((_, i) => {
+    const d = document.createElement("span");
+    d.className = "onboarding__dot" + (i === onboardingIndex ? " is-active" : "");
+    dots.appendChild(d);
+  });
+
+  if (step.mobileView && isMobileLayout()) switchMobileView(step.mobileView);
+
+  const el = step.target ? document.querySelector(step.target) : null;
+  if (el) {
+    el.scrollIntoView({ block: "center", behavior: "instant" });
+    requestAnimationFrame(() => positionOnboarding(el));
+  } else {
+    positionOnboarding(null);
+  }
+}
+
+function positionOnboarding(el) {
+  if (!el) {
+    onboardingSpotlight.classList.add("hidden");
+    onboardingCard.classList.add("onboarding__card--center");
+    return;
+  }
+  onboardingCard.classList.remove("onboarding__card--center");
+  const r = el.getBoundingClientRect();
+  const pad = 8;
+  onboardingSpotlight.classList.remove("hidden");
+  onboardingSpotlight.style.top = `${r.top - pad}px`;
+  onboardingSpotlight.style.left = `${r.left - pad}px`;
+  onboardingSpotlight.style.width = `${r.width + pad * 2}px`;
+  onboardingSpotlight.style.height = `${r.height + pad * 2}px`;
+
+  const cardRect = onboardingCard.getBoundingClientRect();
+  const spaceBelow = window.innerHeight - r.bottom;
+  const top =
+    spaceBelow > cardRect.height + 24
+      ? r.bottom + pad + 8
+      : Math.max(16, r.top - pad - cardRect.height - 8);
+  const left = Math.min(Math.max(16, r.left), window.innerWidth - cardRect.width - 16);
+  onboardingCard.style.top = `${top}px`;
+  onboardingCard.style.left = `${left}px`;
+}
+
+function repositionOnboardingStep() {
+  if (onboardingEl.classList.contains("hidden")) return;
+  const step = onboardingSteps[onboardingIndex];
+  const el = step && step.target ? document.querySelector(step.target) : null;
+  if (el) positionOnboarding(el);
+}
+
+$("onboardingNextBtn").addEventListener("click", () => {
+  if (onboardingIndex < onboardingSteps.length - 1) {
+    onboardingIndex++;
+    showOnboardingStep();
+  } else {
+    endOnboarding();
+  }
+});
+$("onboardingBackBtn").addEventListener("click", () => {
+  if (onboardingIndex > 0) {
+    onboardingIndex--;
+    showOnboardingStep();
+  }
+});
+$("onboardingSkip").addEventListener("click", endOnboarding);
+$("helpBtn").addEventListener("click", startOnboarding);
+
+// ============================================================
 // Boot
 // ============================================================
 switchMobileView("map");
@@ -1109,10 +1273,10 @@ refreshAll().then(() => {
   const alreadySeenTip = localStorage.getItem("spotdepot_seen_tip");
   if (!alreadySeenTip) {
     localStorage.setItem("spotdepot_seen_tip", "1");
-    if (cfg.mode === "github" && !cfg.token) {
-      showToast("Showing this repo's shared spots. Add a token when you go to add, edit, or delete one.", { duration: 5500 });
-    } else if (cfg.mode === "local") {
+    if (cfg.mode === "local") {
       showToast("This page hasn't been pointed at a repo yet — see js/site-config.js.", { duration: 5500 });
+    } else if (!location.hash.startsWith("#spot=")) {
+      startOnboarding();
     }
   }
 });
