@@ -466,7 +466,9 @@ a{color:var(--rail-blue)}
   padding:3px 10px;border-radius:999px;pointer-events:none;
 }
 .gallery-expand{
-  position:absolute;top:10px;right:10px;z-index:2;
+  /* Sits left of the detail modal's own close button (top:10px/right:10px,
+     ~34px across) so the two never overlap. */
+  position:absolute;top:10px;right:52px;z-index:2;
   width:32px;height:32px;border-radius:50%;
   background:rgba(27,27,29,0.55);color:#fff;border:none;cursor:pointer;
   display:flex;align-items:center;justify-content:center;
@@ -534,9 +536,12 @@ a{color:var(--rail-blue)}
   position:fixed;inset:0;z-index:1150; /* above the loading veil (1100) — the tour must stay on top of everything */
 }
 .onboarding__spotlight{
-  position:fixed;border-radius:14px;
+  /* border-radius is set per-step in JS to match the highlighted element's
+     own shape exactly — square corners for a plain rectangle, round for a
+     pill or circular button. */
+  position:fixed;border-radius:0;
   box-shadow:0 0 0 9999px rgba(27,27,29,0.68);
-  transition:top .25s ease, left .25s ease, width .25s ease, height .25s ease;
+  transition:top .25s ease, left .25s ease, width .25s ease, height .25s ease, border-radius .25s ease;
   pointer-events:none;
 }
 .onboarding__card{

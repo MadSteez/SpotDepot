@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=73";
-import * as store from "./store.js?v=73";
-import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=73";
+import { createMapController } from "./map.js?v=74";
+import * as store from "./store.js?v=74";
+import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=74";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -1100,9 +1100,9 @@ const ONBOARDING_STEPS = [
     text: "A shared map of skate spots. Want a quick tour of how it works? You can replay this anytime from the ? button up top.",
   },
   {
-    target: "#searchInput",
+    target: ".searchbar",
     title: "Search & explore",
-    text: "Type a spot name or tag to filter the map, or type a place — like a city or neighborhood — to jump straight there.",
+    text: "Start typing, then pick a suggestion from the dropdown: choose your search text to filter spots by name, description, or tag, or pick a matching place to show only the spots within its boundary.",
   },
   {
     target: ".filterstrip__row",
@@ -1213,19 +1213,23 @@ function positionOnboarding(el) {
   }
   onboardingCard.classList.remove("onboarding__card--center");
   const r = el.getBoundingClientRect();
-  const pad = 8;
   onboardingSpotlight.classList.remove("hidden");
-  onboardingSpotlight.style.top = `${r.top - pad}px`;
-  onboardingSpotlight.style.left = `${r.left - pad}px`;
-  onboardingSpotlight.style.width = `${r.width + pad * 2}px`;
-  onboardingSpotlight.style.height = `${r.height + pad * 2}px`;
+  // Match the element exactly — its own size and its own corner radius (so a
+  // pill or circular button stays a pill/circle, and a plain rectangle gets
+  // square corners), with no extra padding added around it.
+  onboardingSpotlight.style.top = `${r.top}px`;
+  onboardingSpotlight.style.left = `${r.left}px`;
+  onboardingSpotlight.style.width = `${r.width}px`;
+  onboardingSpotlight.style.height = `${r.height}px`;
+  onboardingSpotlight.style.borderRadius = getComputedStyle(el).borderRadius;
 
   const cardRect = onboardingCard.getBoundingClientRect();
+  const gap = 12;
   const spaceBelow = window.innerHeight - r.bottom;
   const top =
-    spaceBelow > cardRect.height + 24
-      ? r.bottom + pad + 8
-      : Math.max(16, r.top - pad - cardRect.height - 8);
+    spaceBelow > cardRect.height + gap + 12
+      ? r.bottom + gap
+      : Math.max(16, r.top - gap - cardRect.height);
   const left = Math.min(Math.max(16, r.left), window.innerWidth - cardRect.width - 16);
   onboardingCard.style.top = `${top}px`;
   onboardingCard.style.left = `${left}px`;
