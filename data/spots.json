@@ -3388,5 +3388,22 @@
     ],
     "createdAt": "2026-09-19T10:02:29.000Z",
     "updatedAt": "2026-09-20T20:24:10.000Z"
+  },
+  {
+    "id": "mus66k8mes2kr8",
+    "name": "Place Morichar",
+    "description": "stairs, ledges and handrails",
+    "lat": 50.826911,
+    "lng": 4.348899,
+    "tags": [
+      "stairs",
+      "ledge",
+      "handrail"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mus66k8mes2kr8-1791018518495-0.jpg"
+    ],
+    "updatedAt": "2026-10-03T09:08:40.732Z",
+    "createdAt": "2026-10-03T09:08:40.732Z"
   }
 ]
