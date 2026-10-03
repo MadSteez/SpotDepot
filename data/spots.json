@@ -3392,7 +3392,7 @@
   {
     "id": "mus66k8mes2kr8",
     "name": "Place Morichar",
-    "description": "stairs, ledges and handrails",
+    "description": "stairs, ledges, benches and handrails",
     "lat": 50.826911,
     "lng": 4.348899,
     "tags": [
@@ -3404,7 +3404,7 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mus66k8mes2kr8-1791019334093-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mus66k8mes2kr8-1791018518495-0.jpg"
     ],
-    "updatedAt": "2026-10-03T09:22:43.479Z",
+    "updatedAt": "2026-10-03T09:23:21.812Z",
     "createdAt": "2026-10-03T09:08:40.732Z"
   }
 ]
