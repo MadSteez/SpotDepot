@@ -3406,5 +3406,21 @@
     ],
     "updatedAt": "2026-10-03T09:23:21.812Z",
     "createdAt": "2026-10-03T09:08:40.732Z"
+  },
+  {
+    "id": "mus6yv582do6ok",
+    "name": "Parc de Forest",
+    "description": "Stairs and ledges",
+    "lat": 50.823224,
+    "lng": 4.338747,
+    "tags": [
+      "stairs",
+      "ledge"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mus6yv582do6ok-1791019838172-0.jpg"
+    ],
+    "updatedAt": "2026-10-03T09:30:41.108Z",
+    "createdAt": "2026-10-03T09:30:41.108Z"
   }
 ]
