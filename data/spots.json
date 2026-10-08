@@ -3422,5 +3422,23 @@
     ],
     "updatedAt": "2026-10-03T09:30:41.108Z",
     "createdAt": "2026-10-03T09:30:41.108Z"
+  },
+  {
+    "id": "muzuy8clxtls8l",
+    "name": "Kanaaldijk 6 Stair",
+    "description": "",
+    "lat": 51.436402,
+    "lng": 5.491313,
+    "tags": [
+      "stairs",
+      "flatrail",
+      "outrail",
+      "handrail"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/muzuy8clxtls8l-1791483382867-0.jpg"
+    ],
+    "updatedAt": "2026-10-08T18:16:24.887Z",
+    "createdAt": "2026-10-08T18:16:24.887Z"
   }
 ]
