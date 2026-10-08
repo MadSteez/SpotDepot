@@ -3459,7 +3459,7 @@
   {
     "id": "muzvorbnnjvdzt",
     "name": "Aloysius plaza",
-    "description": "3 stairs with outledges and ledges",
+    "description": "3 stairs with outledges, ledges and a kicker",
     "lat": 51.428344,
     "lng": 5.503069,
     "tags": [
@@ -3468,9 +3468,10 @@
       "outledge"
     ],
     "images": [
-      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/muzvorbnnjvdzt-1791484620580-0.jpg"
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/muzvorbnnjvdzt-1791484620580-0.jpg",
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/muzvorbnnjvdzt-1791484844651-0.jpg"
     ],
-    "updatedAt": "2026-10-08T18:37:02.660Z",
+    "updatedAt": "2026-10-08T18:40:47.219Z",
     "createdAt": "2026-10-08T18:37:02.660Z"
   }
 ]
