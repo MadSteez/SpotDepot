@@ -3488,5 +3488,20 @@
     ],
     "updatedAt": "2026-10-08T18:50:09.580Z",
     "createdAt": "2026-10-08T18:50:09.580Z"
+  },
+  {
+    "id": "muzwdkna2zd2i6",
+    "name": "Huygens Lyceum 14 stair",
+    "description": "14 stair with handrail",
+    "lat": 51.429956,
+    "lng": 5.456772,
+    "tags": [
+      "handrail"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/muzwdkna2zd2i6-1791485778202-0.jpg"
+    ],
+    "updatedAt": "2026-10-08T18:56:20.733Z",
+    "createdAt": "2026-10-08T18:56:20.733Z"
   }
 ]
