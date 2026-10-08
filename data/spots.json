@@ -3439,5 +3439,21 @@
     ],
     "updatedAt": "2026-10-08T18:17:06.017Z",
     "createdAt": "2026-10-08T18:16:24.887Z"
+  },
+  {
+    "id": "muzv1cker0mc2p",
+    "name": "De Effenaar 4 stair",
+    "description": "4 stair with outledge",
+    "lat": 51.441707,
+    "lng": 5.483648,
+    "tags": [
+      "stairs",
+      "outledge"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/muzv1cker0mc2p-1791483528135-0.jpg"
+    ],
+    "updatedAt": "2026-10-08T18:18:49.817Z",
+    "createdAt": "2026-10-08T18:18:49.817Z"
   }
 ]
