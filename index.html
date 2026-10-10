@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css?v=78">
+<link rel="stylesheet" href="css/style.css?v=79">
 
 <!-- inline SVG icon sprite, referenced via <use> throughout the app -->
 </head>
@@ -172,8 +172,9 @@
           <svg class="icon" width="16" height="16"><use href="#icon-share"/></svg> Share
         </button>
         <div class="directions-wrap">
-          <button class="btn btn--secondary" id="detailDirectionsBtn">
+          <button class="btn btn--secondary" id="detailDirectionsBtn" aria-haspopup="true">
             <svg class="icon" width="16" height="16"><use href="#icon-directions"/></svg> Directions
+            <svg class="icon directions-btn__chevron" width="11" height="11" aria-hidden="true"><use href="#icon-chevron-right"/></svg>
           </button>
           <div class="directions-menu hidden" id="directionsMenu">
             <button type="button" class="directions-menu__item" data-nav="google">
@@ -271,6 +272,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="js/app.js?v=78"></script>
+<script type="module" src="js/app.js?v=79"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=78";
-import * as store from "./store.js?v=78";
-import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=78";
+import { createMapController } from "./map.js?v=79";
+import * as store from "./store.js?v=79";
+import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=79";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -459,19 +459,49 @@ function openDirections(provider) {
   window.open(url, "_blank", "noopener");
 }
 
+function positionDirectionsMenu() {
+  const btn = $("detailDirectionsBtn");
+  const menu = $("directionsMenu");
+  const r = btn.getBoundingClientRect();
+  const menuRect = menu.getBoundingClientRect();
+  const gap = 6;
+  const spaceBelow = window.innerHeight - r.bottom;
+  const top = spaceBelow > menuRect.height + gap + 12 ? r.bottom + gap : r.top - gap - menuRect.height;
+  menu.style.top = `${Math.max(12, top)}px`;
+  menu.style.left = `${Math.max(12, Math.min(r.left, window.innerWidth - menuRect.width - 12))}px`;
+}
+
+function closeDirectionsMenu() {
+  $("directionsMenu").classList.add("hidden");
+  // The menu is fixed-positioned (so it never pushes the scrollable modal
+  // taller) which means it won't track the button while the modal scrolls
+  // underneath it — simplest fix is to just close it when that happens.
+  $("detailGallery").closest(".modal").removeEventListener("scroll", closeDirectionsMenu);
+  window.removeEventListener("resize", closeDirectionsMenu);
+}
+
 $("detailDirectionsBtn").addEventListener("click", (e) => {
   e.stopPropagation();
-  $("directionsMenu").classList.toggle("hidden");
+  const menu = $("directionsMenu");
+  if (!menu.classList.contains("hidden")) {
+    closeDirectionsMenu();
+    return;
+  }
+  menu.classList.remove("hidden");
+  positionDirectionsMenu();
+  const modalEl = $("detailGallery").closest(".modal");
+  modalEl.addEventListener("scroll", closeDirectionsMenu, { passive: true });
+  window.addEventListener("resize", closeDirectionsMenu);
 });
 $("directionsMenu").addEventListener("click", (e) => {
   const item = e.target.closest(".directions-menu__item");
   if (!item) return;
-  $("directionsMenu").classList.add("hidden");
+  closeDirectionsMenu();
   openDirections(item.dataset.nav);
 });
 document.addEventListener("click", (e) => {
   if (!$("directionsMenu").classList.contains("hidden") && !e.target.closest(".directions-wrap")) {
-    $("directionsMenu").classList.add("hidden");
+    closeDirectionsMenu();
   }
 });
 
@@ -718,7 +748,7 @@ function closeModal(modalEl) {
   mapCtrl.clearTempMarker();
   if (modalEl === detailModal) {
     mapCtrl.map.keyboard.enable();
-    $("directionsMenu").classList.add("hidden");
+    closeDirectionsMenu();
     if (location.hash.startsWith("#spot=")) {
       history.replaceState(null, "", location.pathname + location.search);
     }

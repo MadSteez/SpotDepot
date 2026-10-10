@@ -445,10 +445,14 @@ a{color:var(--rail-blue)}
 .detail__dates{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);margin-top:2px}
 .detail__actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
 .directions-wrap{position:relative}
+.directions-btn__chevron{margin-left:-2px;transform:rotate(90deg)}
 .directions-menu{
-  position:absolute;top:calc(100% + 6px);left:0;min-width:170px;
+  /* Fixed (not absolute) and positioned in JS from the button's own rect —
+     an absolutely-positioned menu here would sit inside the scrollable
+     modal's content box and push its scrollable height down with it. */
+  position:fixed;min-width:170px;
   background:var(--paper);border:1.5px solid var(--line);border-radius:12px;
-  box-shadow:var(--shadow-pop);overflow:hidden;z-index:60;
+  box-shadow:var(--shadow-pop);overflow:hidden;z-index:600; /* above the modal overlay (500) */
 }
 .directions-menu__item{
   display:flex;align-items:center;gap:8px;width:100%;text-align:left;
