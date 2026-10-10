@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css?v=79">
+<link rel="stylesheet" href="css/style.css?v=80">
 
 <!-- inline SVG icon sprite, referenced via <use> throughout the app -->
 </head>
@@ -87,17 +87,20 @@
       <div class="sidebar__toolbar">
         <span class="filterstrip__label">Sort by</span>
         <div class="sort-wrap">
-          <select class="sort-select" id="sortSelect" aria-label="Sort spots by">
-            <option value="distance:1">Distance (nearest first)</option>
-            <option value="distance:-1">Distance (farthest first)</option>
-            <option value="name:1">Alphabetical (A–Z)</option>
-            <option value="name:-1">Alphabetical (Z–A)</option>
-            <option value="created:1">Date added (oldest first)</option>
-            <option value="created:-1">Date added (newest first)</option>
-            <option value="updated:1">Date updated (oldest first)</option>
-            <option value="updated:-1">Date updated (newest first)</option>
-          </select>
-          <svg class="sort-wrap__chevron icon" width="12" height="12" aria-hidden="true"><use href="#icon-chevron-right"/></svg>
+          <button type="button" class="btn btn--secondary btn--sm sort-btn" id="sortBtn" aria-haspopup="true" aria-label="Sort spots by">
+            <span id="sortBtnLabel">Distance (nearest first)</span>
+            <svg class="icon directions-btn__chevron" width="11" height="11" aria-hidden="true"><use href="#icon-chevron-right"/></svg>
+          </button>
+          <div class="directions-menu hidden" id="sortMenu">
+            <button type="button" class="directions-menu__item" data-sort="distance:1">Distance (nearest first)</button>
+            <button type="button" class="directions-menu__item" data-sort="distance:-1">Distance (farthest first)</button>
+            <button type="button" class="directions-menu__item" data-sort="name:1">Alphabetical (A–Z)</button>
+            <button type="button" class="directions-menu__item" data-sort="name:-1">Alphabetical (Z–A)</button>
+            <button type="button" class="directions-menu__item" data-sort="created:1">Date added (oldest first)</button>
+            <button type="button" class="directions-menu__item" data-sort="created:-1">Date added (newest first)</button>
+            <button type="button" class="directions-menu__item" data-sort="updated:1">Date updated (oldest first)</button>
+            <button type="button" class="directions-menu__item" data-sort="updated:-1">Date updated (newest first)</button>
+          </div>
         </div>
       </div>
       <div class="sidebar__list" id="spotList"></div>
@@ -272,6 +275,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="js/app.js?v=79"></script>
+<script type="module" src="js/app.js?v=80"></script>
 </body>
 </html>

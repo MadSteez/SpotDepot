@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=79";
-import * as store from "./store.js?v=79";
-import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=79";
+import { createMapController } from "./map.js?v=80";
+import * as store from "./store.js?v=80";
+import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=80";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -459,9 +459,13 @@ function openDirections(provider) {
   window.open(url, "_blank", "noopener");
 }
 
-function positionDirectionsMenu() {
-  const btn = $("detailDirectionsBtn");
-  const menu = $("directionsMenu");
+// ============================================================
+// Small popover menus (Directions, Sort) — a button that opens a
+// fixed-positioned dropdown of .directions-menu__item buttons. Fixed (not
+// absolute) so the menu floats over its scroll container instead of
+// expanding it, positioned from the button's own screen rect, and closed
+// on outside click, Escape, or if the thing underneath it scrolls/resizes.
+function positionPopoverMenu(btn, menu) {
   const r = btn.getBoundingClientRect();
   const menuRect = menu.getBoundingClientRect();
   const gap = 6;
@@ -471,37 +475,56 @@ function positionDirectionsMenu() {
   menu.style.left = `${Math.max(12, Math.min(r.left, window.innerWidth - menuRect.width - 12))}px`;
 }
 
-function closeDirectionsMenu() {
-  $("directionsMenu").classList.add("hidden");
-  // The menu is fixed-positioned (so it never pushes the scrollable modal
-  // taller) which means it won't track the button while the modal scrolls
-  // underneath it — simplest fix is to just close it when that happens.
-  $("detailGallery").closest(".modal").removeEventListener("scroll", closeDirectionsMenu);
-  window.removeEventListener("resize", closeDirectionsMenu);
+function openPopoverMenu(btn, menu, scrollHost) {
+  menu.classList.remove("hidden");
+  positionPopoverMenu(btn, menu);
+  const onScrollOrResize = () => closePopoverMenu(btn, menu, scrollHost);
+  menu._popoverCleanup = onScrollOrResize;
+  if (scrollHost) scrollHost.addEventListener("scroll", onScrollOrResize, { passive: true });
+  window.addEventListener("resize", onScrollOrResize);
 }
 
+function closePopoverMenu(btn, menu, scrollHost) {
+  menu.classList.add("hidden");
+  if (menu._popoverCleanup) {
+    if (scrollHost) scrollHost.removeEventListener("scroll", menu._popoverCleanup);
+    window.removeEventListener("resize", menu._popoverCleanup);
+    menu._popoverCleanup = null;
+  }
+}
+
+function togglePopoverMenu(btn, menu, scrollHost) {
+  if (menu.classList.contains("hidden")) openPopoverMenu(btn, menu, scrollHost);
+  else closePopoverMenu(btn, menu, scrollHost);
+}
+
+const directionsModalEl = $("detailGallery").closest(".modal");
+const sidebarEl = document.querySelector(".sidebar");
 $("detailDirectionsBtn").addEventListener("click", (e) => {
   e.stopPropagation();
-  const menu = $("directionsMenu");
-  if (!menu.classList.contains("hidden")) {
-    closeDirectionsMenu();
-    return;
-  }
-  menu.classList.remove("hidden");
-  positionDirectionsMenu();
-  const modalEl = $("detailGallery").closest(".modal");
-  modalEl.addEventListener("scroll", closeDirectionsMenu, { passive: true });
-  window.addEventListener("resize", closeDirectionsMenu);
+  togglePopoverMenu($("detailDirectionsBtn"), $("directionsMenu"), directionsModalEl);
 });
 $("directionsMenu").addEventListener("click", (e) => {
   const item = e.target.closest(".directions-menu__item");
   if (!item) return;
-  closeDirectionsMenu();
+  closePopoverMenu($("detailDirectionsBtn"), $("directionsMenu"), directionsModalEl);
   openDirections(item.dataset.nav);
 });
 document.addEventListener("click", (e) => {
   if (!$("directionsMenu").classList.contains("hidden") && !e.target.closest(".directions-wrap")) {
-    closeDirectionsMenu();
+    closePopoverMenu($("detailDirectionsBtn"), $("directionsMenu"), directionsModalEl);
+  }
+  if (!$("sortMenu").classList.contains("hidden") && !e.target.closest(".sort-wrap")) {
+    closePopoverMenu($("sortBtn"), $("sortMenu"), sidebarEl);
+  }
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  if (!$("directionsMenu").classList.contains("hidden")) {
+    closePopoverMenu($("detailDirectionsBtn"), $("directionsMenu"), directionsModalEl);
+  }
+  if (!$("sortMenu").classList.contains("hidden")) {
+    closePopoverMenu($("sortBtn"), $("sortMenu"), sidebarEl);
   }
 });
 
@@ -748,7 +771,7 @@ function closeModal(modalEl) {
   mapCtrl.clearTempMarker();
   if (modalEl === detailModal) {
     mapCtrl.map.keyboard.enable();
-    closeDirectionsMenu();
+    closePopoverMenu($("detailDirectionsBtn"), $("directionsMenu"), directionsModalEl);
     if (location.hash.startsWith("#spot=")) {
       history.replaceState(null, "", location.pathname + location.search);
     }
@@ -1074,13 +1097,39 @@ clearFiltersBtn.addEventListener("click", () => {
   render();
 });
 
-$("sortSelect").addEventListener("change", (e) => {
-  const [mode, dirStr] = e.target.value.split(":");
+const SORT_LABELS = {
+  "distance:1": "Distance (nearest first)",
+  "distance:-1": "Distance (farthest first)",
+  "name:1": "Alphabetical (A–Z)",
+  "name:-1": "Alphabetical (Z–A)",
+  "created:1": "Date added (oldest first)",
+  "created:-1": "Date added (newest first)",
+  "updated:1": "Date updated (oldest first)",
+  "updated:-1": "Date updated (newest first)",
+};
+
+function updateSortUI() {
+  const value = `${sortMode}:${sortDirection}`;
+  $("sortBtnLabel").textContent = SORT_LABELS[value] || SORT_LABELS["name:1"];
+  $("sortMenu").querySelectorAll(".directions-menu__item").forEach((item) => {
+    item.classList.toggle("is-active", item.dataset.sort === value);
+  });
+}
+
+$("sortBtn").addEventListener("click", (e) => {
+  e.stopPropagation();
+  togglePopoverMenu($("sortBtn"), $("sortMenu"), sidebarEl);
+});
+
+$("sortMenu").addEventListener("click", (e) => {
+  const item = e.target.closest(".directions-menu__item");
+  if (!item) return;
+  closePopoverMenu($("sortBtn"), $("sortMenu"), sidebarEl);
+  const [mode, dirStr] = item.dataset.sort.split(":");
   const direction = Number(dirStr);
   if (mode === "distance" && !userLocation) {
     if (!navigator.geolocation) {
       showToast("Location isn't available in this browser.", { error: true });
-      e.target.value = `${sortMode}:${sortDirection}`;
       return;
     }
     setLoading(true, "Finding your location…");
@@ -1088,17 +1137,18 @@ $("sortSelect").addEventListener("change", (e) => {
       setLoading(false);
       if (!success) {
         showToast("Couldn't get your location — check location permissions.", { error: true });
-        e.target.value = `${sortMode}:${sortDirection}`;
         return;
       }
       sortMode = "distance";
       sortDirection = direction;
+      updateSortUI();
       render();
     });
     return;
   }
   sortMode = mode;
   sortDirection = direction;
+  updateSortUI();
   render();
 });
 
@@ -1160,7 +1210,7 @@ const ONBOARDING_STEPS = [
     text: "Tap a tag to show only spots with that obstacle. Tap it again to clear it — you can combine several at once.",
   },
   {
-    target: "#sortSelect",
+    target: "#sortBtn",
     title: "Sort the list",
     text: "Choose how spots are ordered — nearest first, alphabetical, or by when they were added or last updated.",
     mobileView: "list",
@@ -1334,7 +1384,7 @@ refreshAll().then(() => {
       sortMode = "name";
       sortDirection = 1;
     }
-    $("sortSelect").value = `${sortMode}:${sortDirection}`;
+    updateSortUI();
     render();
   });
   const cfg = store.getConfig();
