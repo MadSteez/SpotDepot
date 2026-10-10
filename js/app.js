@@ -1,6 +1,6 @@
-import { createMapController } from "./map.js?v=77";
-import * as store from "./store.js?v=77";
-import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=77";
+import { createMapController } from "./map.js?v=78";
+import * as store from "./store.js?v=78";
+import { escapeHtml, showToast, setLoading, uid, foldAccents } from "./utils.js?v=78";
 
 const COMMON_TAGS = [
   "stairs", "gap", "ledge", "outledge", "downledge", "flatrail", "outrail",
@@ -448,12 +448,31 @@ $("detailShareBtn").addEventListener("click", async () => {
   }
 });
 
-$("detailDirectionsBtn").addEventListener("click", () => {
+function openDirections(provider) {
   const spot = allSpots.find((s) => s.id === currentDetailId);
   if (!spot) return;
-  // No origin param — Google Maps defaults that to the user's current location.
-  const url = `https://www.google.com/maps/dir/?api=1&destination=${spot.lat},${spot.lng}`;
+  const url =
+    provider === "waze"
+      ? `https://waze.com/ul?ll=${spot.lat},${spot.lng}&navigate=yes`
+      : // No origin param — Google Maps defaults that to the user's current location.
+        `https://www.google.com/maps/dir/?api=1&destination=${spot.lat},${spot.lng}`;
   window.open(url, "_blank", "noopener");
+}
+
+$("detailDirectionsBtn").addEventListener("click", (e) => {
+  e.stopPropagation();
+  $("directionsMenu").classList.toggle("hidden");
+});
+$("directionsMenu").addEventListener("click", (e) => {
+  const item = e.target.closest(".directions-menu__item");
+  if (!item) return;
+  $("directionsMenu").classList.add("hidden");
+  openDirections(item.dataset.nav);
+});
+document.addEventListener("click", (e) => {
+  if (!$("directionsMenu").classList.contains("hidden") && !e.target.closest(".directions-wrap")) {
+    $("directionsMenu").classList.add("hidden");
+  }
 });
 
 function requireWriteAccess() {
@@ -699,6 +718,7 @@ function closeModal(modalEl) {
   mapCtrl.clearTempMarker();
   if (modalEl === detailModal) {
     mapCtrl.map.keyboard.enable();
+    $("directionsMenu").classList.add("hidden");
     if (location.hash.startsWith("#spot=")) {
       history.replaceState(null, "", location.pathname + location.search);
     }

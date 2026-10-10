@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css?v=77">
+<link rel="stylesheet" href="css/style.css?v=78">
 
 <!-- inline SVG icon sprite, referenced via <use> throughout the app -->
 </head>
@@ -171,9 +171,19 @@
         <button class="btn btn--secondary" id="detailShareBtn">
           <svg class="icon" width="16" height="16"><use href="#icon-share"/></svg> Share
         </button>
-        <button class="btn btn--secondary" id="detailDirectionsBtn">
-          <svg class="icon" width="16" height="16"><use href="#icon-directions"/></svg> Directions
-        </button>
+        <div class="directions-wrap">
+          <button class="btn btn--secondary" id="detailDirectionsBtn">
+            <svg class="icon" width="16" height="16"><use href="#icon-directions"/></svg> Directions
+          </button>
+          <div class="directions-menu hidden" id="directionsMenu">
+            <button type="button" class="directions-menu__item" data-nav="google">
+              <svg class="icon" width="15" height="15"><use href="#icon-pin"/></svg> Google Maps
+            </button>
+            <button type="button" class="directions-menu__item" data-nav="waze">
+              <svg class="icon" width="15" height="15"><use href="#icon-pin"/></svg> Waze
+            </button>
+          </div>
+        </div>
         <button class="btn btn--secondary" id="detailEditBtn">
           <svg class="icon" width="16" height="16"><use href="#icon-edit"/></svg> Edit
         </button>
@@ -261,6 +271,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="js/app.js?v=77"></script>
+<script type="module" src="js/app.js?v=78"></script>
 </body>
 </html>
