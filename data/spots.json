@@ -3506,8 +3506,8 @@
   },
   {
     "id": "mvmgnk8q5j9fp8",
-    "name": "De Melkerij 9 stair",
-    "description": "9 stair with handrail",
+    "name": "De Melkerij",
+    "description": "9 stair with handrail, ledges and manual pads",
     "lat": 50.986151,
     "lng": 4.469912,
     "tags": [
@@ -3521,7 +3521,7 @@
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mvmgnk8q5j9fp8-1792850352239-0.jpg",
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mvmgnk8q5j9fp8-1792850377437-0.jpg"
     ],
-    "updatedAt": "2026-10-24T13:59:39.213Z",
+    "updatedAt": "2026-10-24T14:00:24.372Z",
     "createdAt": "2026-10-24T13:54:55.764Z"
   }
 ]
