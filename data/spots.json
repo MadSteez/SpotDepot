@@ -3512,12 +3512,14 @@
     "lng": 4.469912,
     "tags": [
       "stairs",
-      "handrail"
+      "ledge",
+      "handrail",
+      "manual pad"
     ],
     "images": [
       "https://raw.githubusercontent.com/MadSteez/SpotDepot/main/images/mvmgnk8q5j9fp8-1792850092438-0.jpg"
     ],
-    "updatedAt": "2026-10-24T13:54:55.759Z",
+    "updatedAt": "2026-10-24T13:58:42.268Z",
     "createdAt": "2026-10-24T13:54:55.764Z"
   }
 ]
